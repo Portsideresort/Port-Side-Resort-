@@ -18,18 +18,14 @@
 
   <header class="hero" id="home">
     <nav class="nav shell">
-      <div class="nav-spacer" aria-hidden="true"></div>
+      <a class="logo-link" href="#home" aria-label="Port Side Resort home">
+        <img src="logo.png" alt="Port Side Resort Hotel" class="site-logo" />
+      </a>
 
       <div class="nav-actions">
         <a href="#activities" class="nav-link" data-i18n="navActivities">Activities</a>
         <a href="#shows" class="nav-link" data-i18n="navShows">Shows</a>
         <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
-
-        <div class="nav-weather" aria-live="polite">
-          <span class="nav-weather-icon" id="navWeatherIcon">☀️</span>
-          <span class="nav-weather-temp" id="navWeatherTemp">—°</span>
-          <span class="nav-weather-place">Evrenseki</span>
-        </div>
 
         <div class="lang-switcher" aria-label="Language selector">
           <button type="button" data-lang="en" class="lang-btn active">EN</button>
@@ -43,37 +39,71 @@
     <div class="hero-orb orb-two"></div>
 
     <div class="hero-content shell">
-      <div class="hero-copy stage-copy">
-        <div class="stage-title-wrap">
-          <p class="stage-hotel" data-i18n="hotelName">PORT SIDE RESORT HOTEL</p>
+      <div class="hero-copy">
+        <div class="eyebrow-wrap">
+          <span class="eyebrow-line"></span>
+          <p class="eyebrow" data-i18n="eyebrow">ENTERTAINMENT & ACTIVITIES</p>
+        </div>
 
-          <div class="stage-stars" aria-label="5 stars">★ ★ ★ ★ ★</div>
+        <h1>
+          <span data-i18n="heroLine1">Your holiday.</span>
+          <span class="gold-text" data-i18n="heroLine2">Your moment.</span>
+        </h1>
 
-          <h1 data-i18n="entertainmentProgramme">
-            ENTERTAINMENT<br>PROGRAMME
-          </h1>
+        <p class="hero-text" data-i18n="heroText">
+          Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.
+        </p>
 
-          <div class="stage-ornament">
-            <span></span><b>✦</b><span></span>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#activities" data-i18n="explore">Explore Today</a>
+          <a class="secondary-btn" href="#shows" data-i18n="tonightButton">Tonight's Show</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label" data-i18n="locationLabel">LOCATION</span>
+            <strong>Side, Antalya</strong>
+          </div>
+          <div>
+            <span class="meta-label" data-i18n="experienceLabel">EXPERIENCE</span>
+            <strong data-i18n="experienceValue">Activities • Shows • Memories</strong>
           </div>
         </div>
       </div>
 
       <div class="hero-side">
-        <article class="tonight-card glass-card">
-          <div class="tonight-poster" id="tonightPoster">
-            <span class="tonight-poster-text" data-i18n="posterPlaceholder">Tonight's poster will appear here</span>
+        <section class="weather-card glass-card" aria-live="polite">
+          <div class="weather-topline">
+            <div>
+              <p class="weather-date" id="weatherDate">—</p>
+              <p class="weather-location">Evrenseki · Antalya</p>
+            </div>
+            <span class="weather-updated" id="weatherUpdated" data-i18n="loadingWeather">Loading weather…</span>
           </div>
 
-          <div class="tonight-info">
-            <span class="show-badge" data-i18n="tonight">TONIGHT</span>
-            <h2>Tonight's Show</h2>
-            <div class="tonight-meta">
-              <span>21:30</span>
-              <span data-i18n="theatre">Theatre</span>
+          <div class="weather-current">
+            <div class="weather-symbol" id="weatherSymbol">☀️</div>
+            <div>
+              <div class="weather-temperature"><span id="currentTemp">—</span><sup>°C</sup></div>
+              <p class="weather-condition" id="weatherCondition">—</p>
             </div>
           </div>
-        </article>
+
+          <div class="weather-metrics">
+            <div><span data-i18n="feelsLike">Feels like</span><strong id="feelsLike">—</strong></div>
+            <div><span data-i18n="humidity">Humidity</span><strong id="humidity">—</strong></div>
+            <div><span data-i18n="wind">Wind</span><strong id="windSpeed">—</strong></div>
+          </div>
+
+          <div class="weather-forecast" id="weatherForecast"></div>
+          <p class="weather-error" id="weatherError"></p>
+        </section>
+
+        <div class="hero-card glass-card">
+          <span class="live-pill"><span></span><span data-i18n="todayLive">TODAY AT PORT SIDE</span></span>
+          <h2 data-i18n="heroCardTitle">Your day starts here</h2>
+          <div class="mini-schedule" id="miniSchedule"></div>
+        </div>
       </div>
     </div>
 
