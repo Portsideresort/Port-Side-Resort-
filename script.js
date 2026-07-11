@@ -178,15 +178,17 @@ function renderActivities() {
     </article>
   `).join("");
 
-  miniSchedule.innerHTML = content.activities.slice(0, 3).map(item => `
-    <div class="mini-item">
-      <span class="mini-time">${item.time}</span>
-      <div>
-        <strong>${item.title}</strong>
-        <small>${translate(item.locationKey)}</small>
+  if (miniSchedule) {
+    miniSchedule.innerHTML = content.activities.slice(0, 3).map(item => `
+      <div class="mini-item">
+        <span class="mini-time">${item.time}</span>
+        <div>
+          <strong>${item.title}</strong>
+          <small>${translate(item.locationKey)}</small>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
+  }
 }
 
 function renderShow() {
@@ -195,12 +197,10 @@ function renderShow() {
 
   const mainTitle = document.getElementById("showTitle");
   const mainTime = document.getElementById("showTime");
-  const heroTitle = document.getElementById("heroShowTitle");
   const heroPoster = document.getElementById("tonightPoster");
 
   if (mainTitle) mainTitle.textContent = title;
   if (mainTime) mainTime.textContent = time;
-  if (heroTitle) heroTitle.textContent = title;
 
   const mainPoster = document.querySelector(".show-poster-placeholder");
 
@@ -296,7 +296,10 @@ function localeForLanguage() {
 }
 
 function renderWeatherDate() {
-  document.getElementById("weatherDate").textContent = new Intl.DateTimeFormat(
+  const weatherDate = document.getElementById("weatherDate");
+  if (!weatherDate) return;
+
+  weatherDate.textContent = new Intl.DateTimeFormat(
     localeForLanguage(),
     { weekday: "long", day: "numeric", month: "long", year: "numeric" }
   ).format(new Date());
