@@ -1,11 +1,14 @@
 const content = {
   activities: [
-    { time: "10:15", title: "Morning Gym", locationKey: "poolArea", icon: "✦" },
-    { time: "11:15", title: "Sea Gym", locationKey: "beach", icon: "≈" },
-    { time: "14:30", title: "Water Polo", locationKey: "poolArea", icon: "◉" },
-    { time: "15:30", title: "Water Gym", locationKey: "poolArea", icon: "✺" },
-    { time: "16:00", title: "Darts", locationKey: "theatre", icon: "➶" },
-    { time: "20:30", title: "Mini Disco", locationKey: "theatre", icon: "★" }
+    { time: "10:00", titleKey: "radioPortSide", locationKey: "poolArea", descriptionKey: "radioDesc", image: "activity-radio.svg" },
+    { time: "10:15", titleKey: "morningGym", locationKey: "stage", descriptionKey: "morningGymDesc", image: "activity-morning-gym.svg" },
+    { time: "10:15", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaDesc", image: "activity-boccia.svg" },
+    { time: "11:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsDesc", image: "activity-darts.svg" },
+    { time: "11:15", titleKey: "seaGym", locationKey: "sea", descriptionKey: "seaGymDesc", image: "activity-sea-gym.svg" },
+    { time: "14:30", titleKey: "waterGym", locationKey: "pool", descriptionKey: "waterGymDesc", image: "activity-water-gym.svg" },
+    { time: "15:00", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaAfternoonDesc", image: "activity-boccia.svg" },
+    { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", image: "activity-water-polo.svg" },
+    { time: "16:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsAfternoonDesc", image: "activity-darts.svg" }
   ],
   show: {
     title: "Face of Africa",
@@ -16,6 +19,26 @@ const content = {
 
 const translations = {
   en: {
+    radioPortSide: "Radio Port Side",
+    morningGym: "Morning Gym",
+    boccia: "Boccia",
+    darts: "Darts",
+    seaGym: "Sea Gym",
+    waterGym: "Water Gym",
+    waterPolo: "Water Polo",
+    stage: "Stage",
+    sea: "Sea",
+    pool: "Pool",
+    exceptSunday: "Every day except Sunday",
+    radioDesc: "Start the day with music, announcements and great holiday energy by the pool.",
+    morningGymDesc: "A light and energizing morning workout suitable for everyone.",
+    bocciaDesc: "Enjoy a friendly and relaxing boccia game by the beach.",
+    dartsDesc: "Test your aim in a fun and friendly darts competition.",
+    seaGymDesc: "Refreshing exercises in the sea with movement and positive energy.",
+    waterGymDesc: "Refreshing pool exercises with music, movement and good vibes.",
+    bocciaAfternoonDesc: "Join the afternoon boccia game and enjoy friendly competition by the sea.",
+    waterPoloDesc: "Team spirit, action and fun come together in the pool.",
+    dartsAfternoonDesc: "Another chance to compete, have fun and hit the target.",
     hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Activities",
     navShows: "Shows",
@@ -66,6 +89,26 @@ const translations = {
     weatherUnavailable: "Weather information is temporarily unavailable."
   },
   de: {
+    radioPortSide: "Radio Port Side",
+    morningGym: "Morgengymnastik",
+    boccia: "Boccia",
+    darts: "Darts",
+    seaGym: "Meeresgymnastik",
+    waterGym: "Wassergymnastik",
+    waterPolo: "Wasserball",
+    stage: "Bühne",
+    sea: "Meer",
+    pool: "Pool",
+    exceptSunday: "Täglich außer sonntags",
+    radioDesc: "Starten Sie den Tag mit Musik, Ankündigungen und guter Urlaubsstimmung am Pool.",
+    morningGymDesc: "Ein leichtes und belebendes Morgentraining für alle.",
+    bocciaDesc: "Genießen Sie eine freundliche und entspannte Boccia-Runde am Strand.",
+    dartsDesc: "Testen Sie Ihre Treffsicherheit bei einem unterhaltsamen Dartspiel.",
+    seaGymDesc: "Erfrischende Übungen im Meer mit Bewegung und positiver Energie.",
+    waterGymDesc: "Erfrischende Wassergymnastik mit Musik, Bewegung und guter Laune.",
+    bocciaAfternoonDesc: "Machen Sie beim Boccia am Nachmittag mit und genießen Sie den freundlichen Wettbewerb am Meer.",
+    waterPoloDesc: "Teamgeist, Action und Spaß treffen sich im Pool.",
+    dartsAfternoonDesc: "Eine weitere Gelegenheit für Spaß, Wettbewerb und einen Treffer ins Ziel.",
     hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktivitäten",
     navShows: "Shows",
@@ -116,6 +159,26 @@ const translations = {
     weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
   tr: {
+    radioPortSide: "Radio Port Side",
+    morningGym: "Sabah Gym",
+    boccia: "Boccia",
+    darts: "Dart",
+    seaGym: "Deniz Gym",
+    waterGym: "Su Gym",
+    waterPolo: "Su Topu",
+    stage: "Sahne",
+    sea: "Deniz",
+    pool: "Havuz",
+    exceptSunday: "Pazar hariç her gün",
+    radioDesc: "Havuz başında müzik, duyurular ve güzel tatil enerjisiyle güne başlayın.",
+    morningGymDesc: "Herkese uygun, hafif ve enerji verici sabah egzersizi.",
+    bocciaDesc: "Sahilde keyifli ve dostça bir boccia oyununa katılın.",
+    dartsDesc: "Eğlenceli ve dostça bir dart yarışmasında nişanınızı test edin.",
+    seaGymDesc: "Denizde hareket ve pozitif enerjiyle serinletici egzersizler.",
+    waterGymDesc: "Müzik, hareket ve güzel enerjiyle serinletici havuz egzersizi.",
+    bocciaAfternoonDesc: "Öğleden sonra sahilde düzenlenen eğlenceli boccia oyununa katılın.",
+    waterPoloDesc: "Takım ruhu, hareket ve eğlence havuzda bir araya geliyor.",
+    dartsAfternoonDesc: "Eğlenmek, yarışmak ve hedefi vurmak için bir fırsat daha.",
     hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktiviteler",
     navShows: "Şovlar",
@@ -175,25 +238,29 @@ function renderActivities() {
   const activityGrid = document.getElementById("activityGrid");
   const miniSchedule = document.getElementById("miniSchedule");
 
-  activityGrid.innerHTML = content.activities.map(item => `
-    <article class="activity-card">
-      <div class="activity-top">
-        <div class="activity-icon">${item.icon}</div>
-        <span class="activity-time">${item.time}</span>
-      </div>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${translate(item.locationKey)}</p>
-      </div>
-    </article>
-  `).join("");
+  if (activityGrid) {
+    activityGrid.innerHTML = content.activities.map(item => `
+      <article class="activity-card activity-card-visual">
+        <div class="activity-image" style="background-image:url('${item.image}')"></div>
+        <div class="activity-card-body">
+          <div class="activity-card-head">
+            <span class="activity-time">${item.time}</span>
+            <span class="activity-frequency">${translate("exceptSunday")}</span>
+          </div>
+          <h3>${translate(item.titleKey)}</h3>
+          <p class="activity-location">${translate(item.locationKey)}</p>
+          <p class="activity-description">${translate(item.descriptionKey)}</p>
+        </div>
+      </article>
+    `).join("");
+  }
 
   if (miniSchedule) {
     miniSchedule.innerHTML = content.activities.slice(0, 3).map(item => `
       <div class="mini-item">
         <span class="mini-time">${item.time}</span>
         <div>
-          <strong>${item.title}</strong>
+          <strong>${translate(item.titleKey)}</strong>
           <small>${translate(item.locationKey)}</small>
         </div>
       </div>
