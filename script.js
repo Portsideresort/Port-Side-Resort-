@@ -219,8 +219,6 @@ document.querySelectorAll("[data-lang]").forEach(button => {
 
 setLanguage(currentLanguage);
 renderShow();
-loadWeather();
-setInterval(loadWeather, 30 * 60 * 1000);
 
 
 const WEATHER_COORDINATES = {
@@ -326,6 +324,9 @@ async function loadWeather() {
   }
 }
 
+
+loadWeather();
+setInterval(loadWeather, 30 * 60 * 1000);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {

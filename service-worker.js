@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v2";
+const CACHE_NAME = "port-side-v3";
 const FILES = [
   "./",
   "./index.html",
