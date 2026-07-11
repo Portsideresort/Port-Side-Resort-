@@ -3,107 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07121f" />
+  <meta name="theme-color" content="#07131f" />
+  <meta name="description" content="Port Side Resort entertainment, daily activities and evening shows." />
   <title>Port Side Resort Entertainment</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <img src="logo.png" alt="Port Side Resort Hotel" class="site-logo" />
-      <div class="lang-switcher">
-        <button data-lang="en">EN</button>
-        <button data-lang="de">DE</button>
-        <button data-lang="tr">TR</button>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="hero" id="home">
+    <nav class="nav shell">
+      <a class="logo-link" href="#home" aria-label="Port Side Resort home">
+        <img src="logo.png" alt="Port Side Resort Hotel" class="site-logo" />
+      </a>
+
+      <div class="nav-actions">
+        <a href="#activities" class="nav-link" data-i18n="navActivities">Activities</a>
+        <a href="#shows" class="nav-link" data-i18n="navShows">Shows</a>
+        <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
+
+        <div class="lang-switcher" aria-label="Language selector">
+          <button type="button" data-lang="en" class="lang-btn active">EN</button>
+          <button type="button" data-lang="de" class="lang-btn">DE</button>
+          <button type="button" data-lang="tr" class="lang-btn">TR</button>
+        </div>
       </div>
     </nav>
 
-    <div class="hero-content">
-      <p class="eyebrow" data-i18n="eyebrow">ENTERTAINMENT & ACTIVITIES</p>
-      <h1 data-i18n="heroTitle">Welcome to Port Side Resort</h1>
-      <p class="hero-text" data-i18n="heroText">
-        Discover daily activities, evening shows and unforgettable holiday moments.
-      </p>
-      <a class="primary-btn" href="#activities" data-i18n="explore">Explore</a>
+    <div class="hero-orb orb-one"></div>
+    <div class="hero-orb orb-two"></div>
+
+    <div class="hero-content shell">
+      <div class="hero-copy">
+        <div class="eyebrow-wrap">
+          <span class="eyebrow-line"></span>
+          <p class="eyebrow" data-i18n="eyebrow">ENTERTAINMENT & ACTIVITIES</p>
+        </div>
+
+        <h1>
+          <span data-i18n="heroLine1">Your holiday.</span>
+          <span class="gold-text" data-i18n="heroLine2">Your moment.</span>
+        </h1>
+
+        <p class="hero-text" data-i18n="heroText">
+          Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#activities" data-i18n="explore">Explore Today</a>
+          <a class="secondary-btn" href="#shows" data-i18n="tonightButton">Tonight's Show</a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label" data-i18n="locationLabel">LOCATION</span>
+            <strong>Side, Antalya</strong>
+          </div>
+          <div>
+            <span class="meta-label" data-i18n="experienceLabel">EXPERIENCE</span>
+            <strong data-i18n="experienceValue">Activities • Shows • Memories</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card glass-card">
+        <span class="live-pill"><span></span><span data-i18n="todayLive">TODAY AT PORT SIDE</span></span>
+        <h2 data-i18n="heroCardTitle">Your day starts here</h2>
+        <div class="mini-schedule" id="miniSchedule"></div>
+      </div>
     </div>
+
+    <a class="scroll-indicator" href="#activities" aria-label="Scroll to activities">
+      <span></span>
+    </a>
   </header>
 
   <main>
-    <section id="activities" class="section">
-      <div class="section-heading">
-        <p data-i18n="today">TODAY</p>
-        <h2 data-i18n="activitiesTitle">Daily Activities</h2>
-      </div>
+    <section id="activities" class="section light-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker" data-i18n="today">TODAY</p>
+            <h2 data-i18n="activitiesTitle">Daily Activities</h2>
+          </div>
+          <p class="section-intro" data-i18n="activitiesIntro">
+            Stay active, have fun and enjoy every moment of your holiday.
+          </p>
+        </div>
 
-      <div class="cards">
-        <article class="card">
-          <span class="time">10:15</span>
-          <h3>Morning Gym</h3>
-          <p data-i18n="poolArea">Pool Area</p>
-        </article>
-
-        <article class="card">
-          <span class="time">11:15</span>
-          <h3>Sea Gym</h3>
-          <p data-i18n="beach">Beach</p>
-        </article>
-
-        <article class="card">
-          <span class="time">14:30</span>
-          <h3>Water Polo</h3>
-          <p data-i18n="poolArea">Pool Area</p>
-        </article>
-
-        <article class="card">
-          <span class="time">15:30</span>
-          <h3>Water Gym</h3>
-          <p data-i18n="poolArea">Pool Area</p>
-        </article>
+        <div class="activity-grid" id="activityGrid"></div>
       </div>
     </section>
 
     <section id="shows" class="section dark-section">
-      <div class="section-heading">
-        <p data-i18n="tonight">TONIGHT</p>
-        <h2 data-i18n="showsTitle">Evening Shows</h2>
-      </div>
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker gold" data-i18n="tonight">TONIGHT</p>
+            <h2 data-i18n="showsTitle">Evening Show</h2>
+          </div>
+          <p class="section-intro muted" data-i18n="showsIntro">
+            Join us at the theatre for a spectacular night.
+          </p>
+        </div>
 
-      <div class="show-feature">
-        <div>
-          <span class="show-badge">21:30</span>
-          <h3 data-i18n="showPlaceholder">Tonight's Show</h3>
-          <p data-i18n="theatre">At the theatre</p>
+        <article class="show-card">
+          <div class="show-visual">
+            <div class="show-poster-placeholder">
+              <span data-i18n="posterPlaceholder">Tonight's poster will appear here</span>
+            </div>
+          </div>
+
+          <div class="show-info">
+            <span class="show-badge" data-i18n="featuredShow">FEATURED SHOW</span>
+            <h3 id="showTitle">Tonight's Show</h3>
+            <p id="showDescription" data-i18n="showDescription">
+              Music, dance and entertainment for an unforgettable evening.
+            </p>
+
+            <div class="show-details">
+              <div class="detail-item">
+                <span data-i18n="timeLabel">TIME</span>
+                <strong id="showTime">21:30</strong>
+              </div>
+              <div class="detail-item">
+                <span data-i18n="placeLabel">PLACE</span>
+                <strong data-i18n="theatre">Theatre</strong>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker" data-i18n="memories">MEMORIES</p>
+            <h2 data-i18n="galleryTitle">Gallery</h2>
+          </div>
+          <p class="section-intro" data-i18n="galleryIntro">
+            Photos, posters and special moments will be added here.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-tile large"><span>01</span></div>
+          <div class="gallery-tile"><span>02</span></div>
+          <div class="gallery-tile"><span>03</span></div>
+          <div class="gallery-tile wide"><span>04</span></div>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="section">
-      <div class="section-heading">
-        <p data-i18n="memories">MEMORIES</p>
-        <h2 data-i18n="galleryTitle">Gallery</h2>
-      </div>
-
-      <div class="gallery-placeholder" data-i18n="galleryPlaceholder">
-        Photos and posters will be added here.
-      </div>
-    </section>
-
     <section id="contact" class="section contact-section">
-      <div class="section-heading">
-        <p data-i18n="help">NEED HELP?</p>
-        <h2 data-i18n="contactTitle">Contact</h2>
-      </div>
+      <div class="shell contact-shell">
+        <div>
+          <p class="section-kicker gold" data-i18n="help">NEED HELP?</p>
+          <h2 data-i18n="contactTitle">Stay connected</h2>
+          <p data-i18n="contactText">
+            Find the hotel, follow our updates or contact the animation team.
+          </p>
+        </div>
 
-      <div class="contact-grid">
-        <a href="#" class="contact-card">WhatsApp</a>
-        <a href="#" class="contact-card">Instagram</a>
-        <a href="#" class="contact-card">Google Maps</a>
+        <div class="contact-grid">
+          <a href="#" class="contact-card">
+            <span class="contact-icon">◎</span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="contact-icon">⌖</span>
+            <span>Google Maps</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="contact-icon">◉</span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Port Side Resort Entertainment</p>
+    <div class="shell footer-content">
+      <img src="logo.png" alt="Port Side Resort Hotel" class="footer-logo" />
+      <p>Port Side Resort Entertainment</p>
+      <p class="footer-note" data-i18n="footerNote">Made for unforgettable holiday moments.</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
