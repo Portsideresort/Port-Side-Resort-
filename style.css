@@ -1518,3 +1518,25 @@ footer {
     min-height: 390px;
   }
 }
+
+
+/* ===== FACE OF AFRICA POSTER ===== */
+
+.tonight-poster {
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+.show-poster-placeholder.has-image {
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+@media (max-width: 700px) {
+  .tonight-poster {
+    aspect-ratio: 16 / 9 !important;
+    min-height: 0 !important;
+  }
+}

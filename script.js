@@ -8,9 +8,9 @@ const content = {
     { time: "20:30", title: "Mini Disco", locationKey: "theatre", icon: "★" }
   ],
   show: {
-    title: "Tonight's Show",
+    title: "Face of Africa",
     time: "21:30",
-    poster: ""
+    poster: "face-of-africa.jpg"
   }
 };
 
