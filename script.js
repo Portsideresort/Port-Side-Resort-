@@ -21,7 +21,7 @@ const translations = {
     navShows: "Shows",
     navGallery: "Gallery",
     eyebrow: "ENTERTAINMENT & ACTIVITIES",
-    entertainmentProgramme: "ENTERTAINMENT\\nPROGRAMME",
+    entertainmentProgramme: "ENTERTAINMENT<br>PROGRAMME",
     heroLine1: "Your holiday.",
     heroLine2: "Your moment.",
     heroText: "Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.",
@@ -67,7 +67,7 @@ const translations = {
     navShows: "Shows",
     navGallery: "Galerie",
     eyebrow: "ANIMATION & AKTIVITÄTEN",
-    entertainmentProgramme: "UNTERHALTUNGS\\nPROGRAMM",
+    entertainmentProgramme: "UNTERHALTUNGS<br>PROGRAMM",
     heroLine1: "Ihr Urlaub.",
     heroLine2: "Ihr Moment.",
     heroText: "Entdecken Sie die heutigen Aktivitäten, die Abendshow und unvergessliche Momente im Port Side Resort.",
@@ -113,7 +113,7 @@ const translations = {
     navShows: "Şovlar",
     navGallery: "Galeri",
     eyebrow: "ANİMASYON & AKTİVİTELER",
-    entertainmentProgramme: "EĞLENCE\\nPROGRAMI",
+    entertainmentProgramme: "EĞLENCE<br>PROGRAMI",
     heroLine1: "Tatiliniz.",
     heroLine2: "Sizin anınız.",
     heroText: "Port Side Resort'taki günlük aktiviteleri, akşam şovunu ve unutulmaz anları keşfedin.",
@@ -226,7 +226,7 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
     const value = translate(key);
-    element.innerHTML = String(value).replace(/\n/g, "<br>");
+    element.innerHTML = String(value);
   });
 
   document.querySelectorAll("[data-lang]").forEach(button => {

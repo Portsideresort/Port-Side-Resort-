@@ -1439,3 +1439,35 @@ footer {
     padding: 20px;
   }
 }
+
+
+/* ===== TITLE LINE BREAK FIX ===== */
+
+.stage-title-wrap h1 {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.stage-title-wrap h1 br {
+  display: block !important;
+}
+
+.stage-title-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+@media (max-width: 700px) {
+  .stage-title-wrap h1 {
+    font-size: clamp(2.1rem, 10vw, 3.6rem) !important;
+    line-height: 0.96 !important;
+  }
+}
