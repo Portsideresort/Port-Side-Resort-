@@ -50,7 +50,13 @@ const translations = {
     help: "NEED HELP?",
     contactTitle: "Stay connected",
     contactText: "Find the hotel, follow our updates or contact the animation team.",
-    footerNote: "Made for unforgettable holiday moments."
+    footerNote: "Made for unforgettable holiday moments.",
+    loadingWeather: "Loading weather…",
+    feelsLike: "Feels like",
+    humidity: "Humidity",
+    wind: "Wind",
+    updatedNow: "Updated now",
+    weatherUnavailable: "Weather information is temporarily unavailable."
   },
   de: {
     navActivities: "Aktivitäten",
@@ -87,7 +93,13 @@ const translations = {
     help: "BRAUCHEN SIE HILFE?",
     contactTitle: "Bleiben Sie verbunden",
     contactText: "Finden Sie das Hotel, folgen Sie unseren Updates oder kontaktieren Sie das Animationsteam.",
-    footerNote: "Für unvergessliche Urlaubsmomente."
+    footerNote: "Für unvergessliche Urlaubsmomente.",
+    loadingWeather: "Wetter wird geladen…",
+    feelsLike: "Gefühlt",
+    humidity: "Luftfeuchtigkeit",
+    wind: "Wind",
+    updatedNow: "Gerade aktualisiert",
+    weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
   tr: {
     navActivities: "Aktiviteler",
@@ -124,7 +136,13 @@ const translations = {
     help: "YARDIMA MI İHTİYACINIZ VAR?",
     contactTitle: "Bağlantıda kalın",
     contactText: "Oteli bulun, güncellemeleri takip edin veya animasyon ekibiyle iletişime geçin.",
-    footerNote: "Unutulmaz tatil anları için hazırlandı."
+    footerNote: "Unutulmaz tatil anları için hazırlandı.",
+    loadingWeather: "Hava durumu yükleniyor…",
+    feelsLike: "Hissedilen",
+    humidity: "Nem",
+    wind: "Rüzgâr",
+    updatedNow: "Şimdi güncellendi",
+    weatherUnavailable: "Hava durumu bilgisi geçici olarak alınamıyor."
   }
 };
 
@@ -191,6 +209,8 @@ function setLanguage(lang) {
 
   localStorage.setItem("portSideLanguage", lang);
   renderActivities();
+  renderWeatherDate();
+  if (window.latestWeatherData) renderWeather(window.latestWeatherData);
 }
 
 document.querySelectorAll("[data-lang]").forEach(button => {
@@ -199,6 +219,113 @@ document.querySelectorAll("[data-lang]").forEach(button => {
 
 setLanguage(currentLanguage);
 renderShow();
+loadWeather();
+setInterval(loadWeather, 30 * 60 * 1000);
+
+
+const WEATHER_COORDINATES = {
+  latitude: 36.812,
+  longitude: 31.350
+};
+
+const weatherText = {
+  en: {
+    0: "Clear sky", 1: "Mainly clear", 2: "Partly cloudy", 3: "Overcast",
+    45: "Fog", 48: "Fog", 51: "Light drizzle", 53: "Drizzle", 55: "Heavy drizzle",
+    61: "Light rain", 63: "Rain", 65: "Heavy rain", 71: "Light snow",
+    73: "Snow", 75: "Heavy snow", 80: "Rain showers", 81: "Rain showers",
+    82: "Heavy showers", 95: "Thunderstorm", 96: "Thunderstorm", 99: "Thunderstorm"
+  },
+  de: {
+    0: "Klar", 1: "Überwiegend klar", 2: "Teilweise bewölkt", 3: "Bewölkt",
+    45: "Nebel", 48: "Nebel", 51: "Leichter Nieselregen", 53: "Nieselregen", 55: "Starker Nieselregen",
+    61: "Leichter Regen", 63: "Regen", 65: "Starker Regen", 71: "Leichter Schnee",
+    73: "Schnee", 75: "Starker Schnee", 80: "Regenschauer", 81: "Regenschauer",
+    82: "Starke Schauer", 95: "Gewitter", 96: "Gewitter", 99: "Gewitter"
+  },
+  tr: {
+    0: "Açık", 1: "Çoğunlukla açık", 2: "Parçalı bulutlu", 3: "Kapalı",
+    45: "Sisli", 48: "Sisli", 51: "Hafif çiseleme", 53: "Çiseleme", 55: "Yoğun çiseleme",
+    61: "Hafif yağmur", 63: "Yağmurlu", 65: "Kuvvetli yağmur", 71: "Hafif kar",
+    73: "Karlı", 75: "Yoğun kar", 80: "Sağanak", 81: "Sağanak",
+    82: "Kuvvetli sağanak", 95: "Gök gürültülü", 96: "Gök gürültülü", 99: "Gök gürültülü"
+  }
+};
+
+function weatherIcon(code, isDay = 1) {
+  if (code === 0) return isDay ? "☀️" : "🌙";
+  if ([1, 2].includes(code)) return isDay ? "🌤️" : "☁️";
+  if (code === 3) return "☁️";
+  if ([45, 48].includes(code)) return "🌫️";
+  if ([51, 53, 55, 61, 63, 80, 81].includes(code)) return "🌦️";
+  if ([65, 82].includes(code)) return "🌧️";
+  if ([71, 73, 75].includes(code)) return "🌨️";
+  if ([95, 96, 99].includes(code)) return "⛈️";
+  return "🌤️";
+}
+
+function localeForLanguage() {
+  return currentLanguage === "de" ? "de-DE" : currentLanguage === "tr" ? "tr-TR" : "en-GB";
+}
+
+function renderWeatherDate() {
+  document.getElementById("weatherDate").textContent = new Intl.DateTimeFormat(
+    localeForLanguage(),
+    { weekday: "long", day: "numeric", month: "long", year: "numeric" }
+  ).format(new Date());
+}
+
+function renderWeather(data) {
+  const current = data.current;
+  const daily = data.daily;
+
+  document.getElementById("currentTemp").textContent = Math.round(current.temperature_2m);
+  document.getElementById("feelsLike").textContent = `${Math.round(current.apparent_temperature)}°C`;
+  document.getElementById("humidity").textContent = `${Math.round(current.relative_humidity_2m)}%`;
+  document.getElementById("windSpeed").textContent = `${Math.round(current.wind_speed_10m)} km/h`;
+  document.getElementById("weatherSymbol").textContent = weatherIcon(current.weather_code, current.is_day);
+  document.getElementById("weatherCondition").textContent =
+    weatherText[currentLanguage][current.weather_code] || weatherText[currentLanguage][2];
+  document.getElementById("weatherUpdated").textContent = translate("updatedNow");
+
+  document.getElementById("weatherForecast").innerHTML = daily.time.map((date, index) => {
+    const day = new Date(`${date}T12:00:00`);
+    const dayName = new Intl.DateTimeFormat(localeForLanguage(), { weekday: "short" }).format(day);
+    return `
+      <div class="forecast-day ${index === 0 ? "today" : ""}">
+        <span class="forecast-name">${dayName}</span>
+        <span class="forecast-icon">${weatherIcon(daily.weather_code[index])}</span>
+        <span class="forecast-temps">${Math.round(daily.temperature_2m_max[index])}° <small>${Math.round(daily.temperature_2m_min[index])}°</small></span>
+      </div>
+    `;
+  }).join("");
+
+  document.getElementById("weatherError").textContent = "";
+}
+
+async function loadWeather() {
+  renderWeatherDate();
+  const params = new URLSearchParams({
+    latitude: WEATHER_COORDINATES.latitude,
+    longitude: WEATHER_COORDINATES.longitude,
+    current: "temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m",
+    daily: "weather_code,temperature_2m_max,temperature_2m_min",
+    timezone: "Europe/Istanbul",
+    forecast_days: "7"
+  });
+
+  try {
+    const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`);
+    if (!response.ok) throw new Error("Weather request failed");
+    const data = await response.json();
+    window.latestWeatherData = data;
+    renderWeather(data);
+  } catch (error) {
+    document.getElementById("weatherUpdated").textContent = "";
+    document.getElementById("weatherError").textContent = translate("weatherUnavailable");
+  }
+}
+
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {

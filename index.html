@@ -71,10 +71,39 @@
         </div>
       </div>
 
-      <div class="hero-card glass-card">
-        <span class="live-pill"><span></span><span data-i18n="todayLive">TODAY AT PORT SIDE</span></span>
-        <h2 data-i18n="heroCardTitle">Your day starts here</h2>
-        <div class="mini-schedule" id="miniSchedule"></div>
+      <div class="hero-side">
+        <section class="weather-card glass-card" aria-live="polite">
+          <div class="weather-topline">
+            <div>
+              <p class="weather-date" id="weatherDate">—</p>
+              <p class="weather-location">Evrenseki · Antalya</p>
+            </div>
+            <span class="weather-updated" id="weatherUpdated" data-i18n="loadingWeather">Loading weather…</span>
+          </div>
+
+          <div class="weather-current">
+            <div class="weather-symbol" id="weatherSymbol">☀️</div>
+            <div>
+              <div class="weather-temperature"><span id="currentTemp">—</span><sup>°C</sup></div>
+              <p class="weather-condition" id="weatherCondition">—</p>
+            </div>
+          </div>
+
+          <div class="weather-metrics">
+            <div><span data-i18n="feelsLike">Feels like</span><strong id="feelsLike">—</strong></div>
+            <div><span data-i18n="humidity">Humidity</span><strong id="humidity">—</strong></div>
+            <div><span data-i18n="wind">Wind</span><strong id="windSpeed">—</strong></div>
+          </div>
+
+          <div class="weather-forecast" id="weatherForecast"></div>
+          <p class="weather-error" id="weatherError"></p>
+        </section>
+
+        <div class="hero-card glass-card">
+          <span class="live-pill"><span></span><span data-i18n="todayLive">TODAY AT PORT SIDE</span></span>
+          <h2 data-i18n="heroCardTitle">Your day starts here</h2>
+          <div class="mini-schedule" id="miniSchedule"></div>
+        </div>
       </div>
     </div>
 
