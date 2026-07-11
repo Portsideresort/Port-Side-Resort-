@@ -8,18 +8,20 @@ const content = {
     { time: "20:30", title: "Mini Disco", locationKey: "theatre", icon: "★" }
   ],
   show: {
-    title: "Tonight's Show",
+    title: "Face of Africa",
     time: "21:30",
-    poster: ""
+    poster: "face-of-africa.jpg"
   }
 };
 
 const translations = {
   en: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Activities",
     navShows: "Shows",
     navGallery: "Gallery",
     eyebrow: "ENTERTAINMENT & ACTIVITIES",
+    entertainmentProgramme: "ENTERTAINMENT<br>PROGRAMME",
     heroLine1: "Your holiday.",
     heroLine2: "Your moment.",
     heroText: "Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.",
@@ -37,8 +39,9 @@ const translations = {
     showsTitle: "Evening Show",
     showsIntro: "Join us at the theatre for a spectacular night.",
     featuredShow: "FEATURED SHOW",
-    posterPlaceholder: "Tonight's poster will appear here",
-    showDescription: "Music, dance and entertainment for an unforgettable evening.",
+    posterPlaceholder: "Tonight\'s poster will appear here",
+    showDetails: "Show details",
+    showDescription: "Every Night Has Its Own Magic",
     timeLabel: "TIME",
     placeLabel: "PLACE",
     theatre: "Theatre",
@@ -55,14 +58,20 @@ const translations = {
     feelsLike: "Feels like",
     humidity: "Humidity",
     wind: "Wind",
+    sunrise: "Sonnenaufgang",
+    sunset: "Sonnenuntergang",
+    sunrise: "Sunrise",
+    sunset: "Sunset",
     updatedNow: "Updated now",
     weatherUnavailable: "Weather information is temporarily unavailable."
   },
   de: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktivitäten",
     navShows: "Shows",
     navGallery: "Galerie",
     eyebrow: "ANIMATION & AKTIVITÄTEN",
+    entertainmentProgramme: "UNTERHALTUNGS<br>PROGRAMM",
     heroLine1: "Ihr Urlaub.",
     heroLine2: "Ihr Moment.",
     heroText: "Entdecken Sie die heutigen Aktivitäten, die Abendshow und unvergessliche Momente im Port Side Resort.",
@@ -81,7 +90,8 @@ const translations = {
     showsIntro: "Erleben Sie mit uns einen spektakulären Abend im Theater.",
     featuredShow: "SHOW DES ABENDS",
     posterPlaceholder: "Das heutige Showplakat erscheint hier",
-    showDescription: "Musik, Tanz und Unterhaltung für einen unvergesslichen Abend.",
+    showDetails: "Show-Details",
+    showDescription: "Jede Nacht hat ihre eigene Magie",
     timeLabel: "ZEIT",
     placeLabel: "ORT",
     theatre: "Theater",
@@ -98,14 +108,20 @@ const translations = {
     feelsLike: "Gefühlt",
     humidity: "Luftfeuchtigkeit",
     wind: "Wind",
+    sunrise: "Sonnenaufgang",
+    sunset: "Sonnenuntergang",
+    sunrise: "Sunrise",
+    sunset: "Sunset",
     updatedNow: "Gerade aktualisiert",
     weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
   tr: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktiviteler",
     navShows: "Şovlar",
     navGallery: "Galeri",
     eyebrow: "ANİMASYON & AKTİVİTELER",
+    entertainmentProgramme: "EĞLENCE<br>PROGRAMI",
     heroLine1: "Tatiliniz.",
     heroLine2: "Sizin anınız.",
     heroText: "Port Side Resort'taki günlük aktiviteleri, akşam şovunu ve unutulmaz anları keşfedin.",
@@ -124,7 +140,8 @@ const translations = {
     showsIntro: "Muhteşem bir gece için tiyatroda bize katılın.",
     featuredShow: "GECENİN ŞOVU",
     posterPlaceholder: "Bu akşamki afiş burada görünecek",
-    showDescription: "Unutulmaz bir akşam için müzik, dans ve eğlence.",
+    showDetails: "Şov detayları",
+    showDescription: "Her gecenin kendine ait bir büyüsü vardır",
     timeLabel: "SAAT",
     placeLabel: "YER",
     theatre: "Tiyatro",
@@ -141,6 +158,8 @@ const translations = {
     feelsLike: "Hissedilen",
     humidity: "Nem",
     wind: "Rüzgâr",
+    sunrise: "Gün doğumu",
+    sunset: "Gün batımı",
     updatedNow: "Şimdi güncellendi",
     weatherUnavailable: "Hava durumu bilgisi geçici olarak alınamıyor."
   }
@@ -169,38 +188,55 @@ function renderActivities() {
     </article>
   `).join("");
 
-  miniSchedule.innerHTML = content.activities.slice(0, 3).map(item => `
-    <div class="mini-item">
-      <span class="mini-time">${item.time}</span>
-      <div>
-        <strong>${item.title}</strong>
-        <small>${translate(item.locationKey)}</small>
+  if (miniSchedule) {
+    miniSchedule.innerHTML = content.activities.slice(0, 3).map(item => `
+      <div class="mini-item">
+        <span class="mini-time">${item.time}</span>
+        <div>
+          <strong>${item.title}</strong>
+          <small>${translate(item.locationKey)}</small>
+        </div>
       </div>
-    </div>
-  `).join("");
-}
-
-function renderShow() {
-  document.getElementById("showTitle").textContent = content.show.title;
-  document.getElementById("showTime").textContent = content.show.time;
-
-  const poster = document.querySelector(".show-poster-placeholder");
-  if (content.show.poster) {
-    poster.classList.add("has-image");
-    poster.style.backgroundImage = `url("${content.show.poster}")`;
-  } else {
-    poster.classList.remove("has-image");
-    poster.style.backgroundImage = "";
+    `).join("");
   }
 }
 
+function renderShow() {
+  const title = content.show.title;
+  const time = content.show.time;
+
+  const mainTitle = document.getElementById("showTitle");
+  const mainTime = document.getElementById("showTime");
+  const heroPoster = document.getElementById("tonightPoster");
+
+  if (mainTitle) mainTitle.textContent = title;
+  if (mainTime) mainTime.textContent = time;
+
+  const mainPoster = document.querySelector(".show-poster-placeholder");
+
+  [mainPoster, heroPoster].forEach(poster => {
+    if (!poster) return;
+
+    if (content.show.poster) {
+      poster.classList.add("has-image");
+      poster.style.backgroundImage = `url("${content.show.poster}")`;
+    } else {
+      poster.classList.remove("has-image");
+      poster.style.backgroundImage = "";
+    }
+  });
+}
+
 function setLanguage(lang) {
+  if (!translations[lang]) return;
+
   currentLanguage = lang;
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
-    element.textContent = translate(key);
+    const value = translate(key);
+    element.innerHTML = String(value);
   });
 
   document.querySelectorAll("[data-lang]").forEach(button => {
@@ -210,7 +246,10 @@ function setLanguage(lang) {
   localStorage.setItem("portSideLanguage", lang);
   renderActivities();
   renderWeatherDate();
-  if (window.latestWeatherData) renderWeather(window.latestWeatherData);
+
+  if (window.latestWeatherData) {
+    renderWeather(window.latestWeatherData);
+  }
 }
 
 document.querySelectorAll("[data-lang]").forEach(button => {
@@ -219,8 +258,6 @@ document.querySelectorAll("[data-lang]").forEach(button => {
 
 setLanguage(currentLanguage);
 renderShow();
-loadWeather();
-setInterval(loadWeather, 30 * 60 * 1000);
 
 
 const WEATHER_COORDINATES = {
@@ -269,7 +306,10 @@ function localeForLanguage() {
 }
 
 function renderWeatherDate() {
-  document.getElementById("weatherDate").textContent = new Intl.DateTimeFormat(
+  const weatherDate = document.getElementById("weatherDate");
+  if (!weatherDate) return;
+
+  weatherDate.textContent = new Intl.DateTimeFormat(
     localeForLanguage(),
     { weekday: "long", day: "numeric", month: "long", year: "numeric" }
   ).format(new Date());
@@ -279,28 +319,40 @@ function renderWeather(data) {
   const current = data.current;
   const daily = data.daily;
 
-  document.getElementById("currentTemp").textContent = Math.round(current.temperature_2m);
-  document.getElementById("feelsLike").textContent = `${Math.round(current.apparent_temperature)}°C`;
-  document.getElementById("humidity").textContent = `${Math.round(current.relative_humidity_2m)}%`;
-  document.getElementById("windSpeed").textContent = `${Math.round(current.wind_speed_10m)} km/h`;
-  document.getElementById("weatherSymbol").textContent = weatherIcon(current.weather_code, current.is_day);
-  document.getElementById("weatherCondition").textContent =
-    weatherText[currentLanguage][current.weather_code] || weatherText[currentLanguage][2];
-  document.getElementById("weatherUpdated").textContent = translate("updatedNow");
+  const navIcon = document.getElementById("navWeatherIcon");
+  const navTemp = document.getElementById("navWeatherTemp");
+  const humidity = document.getElementById("weatherHumidity");
+  const wind = document.getElementById("weatherWind");
+  const sunrise = document.getElementById("weatherSunrise");
+  const sunset = document.getElementById("weatherSunset");
+  const condition = document.getElementById("weatherConditionSmall");
+  const updated = document.getElementById("weatherUpdatedSmall");
 
-  document.getElementById("weatherForecast").innerHTML = daily.time.map((date, index) => {
-    const day = new Date(`${date}T12:00:00`);
-    const dayName = new Intl.DateTimeFormat(localeForLanguage(), { weekday: "short" }).format(day);
-    return `
-      <div class="forecast-day ${index === 0 ? "today" : ""}">
-        <span class="forecast-name">${dayName}</span>
-        <span class="forecast-icon">${weatherIcon(daily.weather_code[index])}</span>
-        <span class="forecast-temps">${Math.round(daily.temperature_2m_max[index])}° <small>${Math.round(daily.temperature_2m_min[index])}°</small></span>
-      </div>
-    `;
-  }).join("");
+  if (navIcon) navIcon.textContent = weatherIcon(current.weather_code, current.is_day);
+  if (navTemp) navTemp.textContent = `${Math.round(current.temperature_2m)}°`;
+  if (humidity) humidity.textContent = `${Math.round(current.relative_humidity_2m)}%`;
+  if (wind) wind.textContent = `${Math.round(current.wind_speed_10m)} km/h`;
+  if (condition) {
+    condition.textContent =
+      weatherText[currentLanguage][current.weather_code] || weatherText[currentLanguage][2];
+  }
+  if (updated) {
+    updated.textContent = translate("updatedNow");
+  }
 
-  document.getElementById("weatherError").textContent = "";
+  const timeFormatter = new Intl.DateTimeFormat(localeForLanguage(), {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  });
+
+  if (sunrise && daily?.sunrise?.[0]) {
+    sunrise.textContent = timeFormatter.format(new Date(daily.sunrise[0]));
+  }
+
+  if (sunset && daily?.sunset?.[0]) {
+    sunset.textContent = timeFormatter.format(new Date(daily.sunset[0]));
+  }
 }
 
 async function loadWeather() {
@@ -309,7 +361,7 @@ async function loadWeather() {
     latitude: WEATHER_COORDINATES.latitude,
     longitude: WEATHER_COORDINATES.longitude,
     current: "temperature_2m,relative_humidity_2m,apparent_temperature,is_day,weather_code,wind_speed_10m",
-    daily: "weather_code,temperature_2m_max,temperature_2m_min",
+    daily: "weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset",
     timezone: "Europe/Istanbul",
     forecast_days: "7"
   });
@@ -321,11 +373,32 @@ async function loadWeather() {
     window.latestWeatherData = data;
     renderWeather(data);
   } catch (error) {
-    document.getElementById("weatherUpdated").textContent = "";
-    document.getElementById("weatherError").textContent = translate("weatherUnavailable");
+    const navTemp = document.getElementById("navWeatherTemp");
+    if (navTemp) navTemp.textContent = "—°";
   }
 }
 
+
+
+const weatherToggle = document.getElementById("weatherToggle");
+const weatherDetails = document.getElementById("weatherDetails");
+
+if (weatherToggle && weatherDetails) {
+  weatherToggle.addEventListener("click", () => {
+    const isOpen = weatherDetails.classList.toggle("open");
+    weatherToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", event => {
+    if (!event.target.closest(".nav-weather-wrap")) {
+      weatherDetails.classList.remove("open");
+      weatherToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+loadWeather();
+setInterval(loadWeather, 30 * 60 * 1000);
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
