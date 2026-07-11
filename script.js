@@ -16,11 +16,13 @@ const content = {
 
 const translations = {
   en: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Activities",
     navShows: "Shows",
     navGallery: "Gallery",
     eyebrow: "ENTERTAINMENT & ACTIVITIES",
-    entertainmentProgramme: "ENTERTAINMENT PROGRAMME",
+    entertainmentProgramme: "ENTERTAINMENT
+PROGRAMME",
     heroLine1: "Your holiday.",
     heroLine2: "Your moment.",
     heroText: "Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.",
@@ -60,11 +62,12 @@ const translations = {
     weatherUnavailable: "Weather information is temporarily unavailable."
   },
   de: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktivitäten",
     navShows: "Shows",
     navGallery: "Galerie",
     eyebrow: "ANIMATION & AKTIVITÄTEN",
-    entertainmentProgramme: "UNTERHALTUNGSPROGRAMM",
+    entertainmentProgramme: "UNTERHALTUNGS\nPROGRAMM",
     heroLine1: "Ihr Urlaub.",
     heroLine2: "Ihr Moment.",
     heroText: "Entdecken Sie die heutigen Aktivitäten, die Abendshow und unvergessliche Momente im Port Side Resort.",
@@ -104,11 +107,12 @@ const translations = {
     weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
   tr: {
+    hotelName: "PORT SIDE RESORT HOTEL",
     navActivities: "Aktiviteler",
     navShows: "Şovlar",
     navGallery: "Galeri",
     eyebrow: "ANİMASYON & AKTİVİTELER",
-    entertainmentProgramme: "EĞLENCE PROGRAMI",
+    entertainmentProgramme: "EĞLENCE\nPROGRAMI",
     heroLine1: "Tatiliniz.",
     heroLine2: "Sizin anınız.",
     heroText: "Port Side Resort'taki günlük aktiviteleri, akşam şovunu ve unutulmaz anları keşfedin.",
@@ -203,7 +207,7 @@ function setLanguage(lang) {
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
-    element.textContent = translate(key);
+    element.innerHTML = translate(key).replace(/\\n/g, "<br>");
   });
 
   document.querySelectorAll("[data-lang]").forEach(button => {

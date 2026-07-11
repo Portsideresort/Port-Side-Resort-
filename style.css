@@ -1027,7 +1027,7 @@ footer {
   background:
     linear-gradient(90deg, rgba(3,8,18,0.20) 0%, rgba(3,8,18,0.08) 58%, rgba(3,8,18,0.40) 100%),
     linear-gradient(180deg, rgba(3,8,18,0.08), rgba(3,8,18,0.30)),
-    url("stage-bg.jpg") center center / cover no-repeat !important;
+    url("stage-bg.png") center center / cover no-repeat !important;
 }
 
 .hero::before,
@@ -1180,5 +1180,100 @@ footer {
 
   .weather-card {
     margin-top: -10px;
+  }
+}
+
+
+/* ===== CENTERED MULTI-LANGUAGE HERO TEXT ===== */
+
+.stage-title-wrap {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.stage-hotel {
+  margin: 0;
+  color: #edc76b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.7vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.88),
+    0 0 18px rgba(224, 173, 52, 0.22);
+}
+
+.stage-stars {
+  margin: 18px 0 22px;
+  color: #e6b947;
+  font-size: clamp(1.15rem, 1.9vw, 1.75rem);
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.82);
+}
+
+.stage-title-wrap h1 {
+  display: block;
+  width: 100%;
+  margin: 0;
+  color: #f2eadc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.65rem, 4.9vw, 5.35rem);
+  line-height: 0.97;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  text-align: center;
+  white-space: normal;
+  overflow: visible;
+  text-shadow:
+    0 5px 22px rgba(0, 0, 0, 0.94),
+    0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+.stage-title-wrap h1 br {
+  display: block;
+  content: "";
+}
+
+.stage-ornament {
+  width: min(430px, 82%);
+  margin: 28px auto 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+  color: #e5b746;
+}
+
+.stage-ornament span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d8a937, transparent);
+}
+
+@media (max-width: 700px) {
+  .stage-title-wrap {
+    padding: 20px 10px;
+  }
+
+  .stage-hotel {
+    font-size: clamp(1.05rem, 5vw, 1.65rem);
+    letter-spacing: 0.07em;
+  }
+
+  .stage-stars {
+    font-size: 1rem;
+    margin: 12px 0 16px;
+  }
+
+  .stage-title-wrap h1 {
+    font-size: clamp(2.15rem, 11vw, 3.7rem);
+    line-height: 0.96;
   }
 }
