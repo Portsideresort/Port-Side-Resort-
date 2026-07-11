@@ -74,3 +74,10 @@ document.querySelectorAll("[data-lang]").forEach((button) => {
 });
 
 setLanguage(localStorage.getItem("portSideLanguage") || "en");
+.site-logo {
+  width: 280px;
+  max-width: 55vw;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+}
