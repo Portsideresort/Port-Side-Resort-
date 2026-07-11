@@ -1018,3 +1018,111 @@ footer {
     grid-template-columns: repeat(7, 58px);
   }
 }
+/* PORT SIDE AÇILIŞ GÖRSELİ */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+
+  background-image:
+    linear-gradient(
+      rgba(2, 10, 20, 0.08),
+      rgba(2, 10, 20, 0.25)
+    ),
+    url("hero.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Görselin içindeki logo ve yazılar kullanılacağı için
+   eski büyük site yazılarını gizler */
+.hero-copy {
+  display: none;
+}
+
+/* Üstteki ikinci logoyu gizler */
+.logo-link {
+  visibility: hidden;
+}
+
+/* Dil butonları sağ üstte kalır */
+.nav {
+  justify-content: flex-end;
+}
+
+/* Hava durumunu sağ tarafa yerleştirir */
+.hero-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: calc(100svh - 110px);
+  padding-top: 30px;
+  padding-bottom: 90px;
+}
+
+/* Hava durumu alanının genişliği */
+.hero-side {
+  width: min(430px, 100%);
+  margin-left: auto;
+}
+
+/* Şeffaf cam hava durumu */
+.weather-card {
+  background: rgba(4, 17, 31, 0.34) !important;
+  border: 1px solid rgba(255, 210, 112, 0.28) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Altındaki günlük aktivite kartını ilk ekrandan kaldırır */
+.hero-card {
+  display: none;
+}
+
+/* Hava durumu içerisindeki küçük kutular */
+.weather-metrics > div,
+.forecast-day {
+  background: rgba(3, 14, 27, 0.30) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* TELEFON GÖRÜNÜMÜ */
+
+@media (max-width: 700px) {
+
+  .hero {
+    background-position: center top;
+  }
+
+  .nav {
+    min-height: 75px;
+    padding-top: 10px;
+  }
+
+  .hero-content {
+    align-items: flex-end;
+    min-height: calc(100svh - 75px);
+    padding: 30px 0 65px;
+  }
+
+  .hero-side {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .weather-card {
+    background: rgba(3, 15, 29, 0.42) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .weather-forecast {
+    overflow-x: auto;
+  }
+}
