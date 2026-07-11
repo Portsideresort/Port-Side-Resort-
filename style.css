@@ -1126,3 +1126,19 @@ footer {
     overflow-x: auto;
   }
 }
+/* Dikey açılış görselini tam göster */
+
+.hero {
+  background-color: #07131f;
+
+  background-image:
+    linear-gradient(
+      rgba(2, 10, 20, 0.10),
+      rgba(2, 10, 20, 0.28)
+    ),
+    url("hero.png");
+
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
