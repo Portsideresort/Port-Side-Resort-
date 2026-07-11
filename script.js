@@ -21,8 +21,7 @@ const translations = {
     navShows: "Shows",
     navGallery: "Gallery",
     eyebrow: "ENTERTAINMENT & ACTIVITIES",
-    entertainmentProgramme: "ENTERTAINMENT
-PROGRAMME",
+    entertainmentProgramme: "ENTERTAINMENT\\nPROGRAMME",
     heroLine1: "Your holiday.",
     heroLine2: "Your moment.",
     heroText: "Discover today's activities, tonight's show and unforgettable moments at Port Side Resort.",
@@ -40,7 +39,8 @@ PROGRAMME",
     showsTitle: "Evening Show",
     showsIntro: "Join us at the theatre for a spectacular night.",
     featuredShow: "FEATURED SHOW",
-    posterPlaceholder: "Tonight's poster will appear here",
+    posterPlaceholder: "Tonight\'s poster will appear here",
+    showDetails: "Show details",
     showDescription: "Music, dance and entertainment for an unforgettable evening.",
     timeLabel: "TIME",
     placeLabel: "PLACE",
@@ -67,7 +67,7 @@ PROGRAMME",
     navShows: "Shows",
     navGallery: "Galerie",
     eyebrow: "ANIMATION & AKTIVITÄTEN",
-    entertainmentProgramme: "UNTERHALTUNGS\nPROGRAMM",
+    entertainmentProgramme: "UNTERHALTUNGS\\nPROGRAMM",
     heroLine1: "Ihr Urlaub.",
     heroLine2: "Ihr Moment.",
     heroText: "Entdecken Sie die heutigen Aktivitäten, die Abendshow und unvergessliche Momente im Port Side Resort.",
@@ -86,6 +86,7 @@ PROGRAMME",
     showsIntro: "Erleben Sie mit uns einen spektakulären Abend im Theater.",
     featuredShow: "SHOW DES ABENDS",
     posterPlaceholder: "Das heutige Showplakat erscheint hier",
+    showDetails: "Show-Details",
     showDescription: "Musik, Tanz und Unterhaltung für einen unvergesslichen Abend.",
     timeLabel: "ZEIT",
     placeLabel: "ORT",
@@ -112,7 +113,7 @@ PROGRAMME",
     navShows: "Şovlar",
     navGallery: "Galeri",
     eyebrow: "ANİMASYON & AKTİVİTELER",
-    entertainmentProgramme: "EĞLENCE\nPROGRAMI",
+    entertainmentProgramme: "EĞLENCE\\nPROGRAMI",
     heroLine1: "Tatiliniz.",
     heroLine2: "Sizin anınız.",
     heroText: "Port Side Resort'taki günlük aktiviteleri, akşam şovunu ve unutulmaz anları keşfedin.",
@@ -131,6 +132,7 @@ PROGRAMME",
     showsIntro: "Muhteşem bir gece için tiyatroda bize katılın.",
     featuredShow: "GECENİN ŞOVU",
     posterPlaceholder: "Bu akşamki afiş burada görünecek",
+    showDetails: "Şov detayları",
     showDescription: "Unutulmaz bir akşam için müzik, dans ve eğlence.",
     timeLabel: "SAAT",
     placeLabel: "YER",
@@ -188,26 +190,43 @@ function renderActivities() {
 }
 
 function renderShow() {
-  document.getElementById("showTitle").textContent = content.show.title;
-  document.getElementById("showTime").textContent = content.show.time;
+  const title = content.show.title;
+  const time = content.show.time;
 
-  const poster = document.querySelector(".show-poster-placeholder");
-  if (content.show.poster) {
-    poster.classList.add("has-image");
-    poster.style.backgroundImage = `url("${content.show.poster}")`;
-  } else {
-    poster.classList.remove("has-image");
-    poster.style.backgroundImage = "";
-  }
+  const mainTitle = document.getElementById("showTitle");
+  const mainTime = document.getElementById("showTime");
+  const heroTitle = document.getElementById("heroShowTitle");
+  const heroPoster = document.getElementById("tonightPoster");
+
+  if (mainTitle) mainTitle.textContent = title;
+  if (mainTime) mainTime.textContent = time;
+  if (heroTitle) heroTitle.textContent = title;
+
+  const mainPoster = document.querySelector(".show-poster-placeholder");
+
+  [mainPoster, heroPoster].forEach(poster => {
+    if (!poster) return;
+
+    if (content.show.poster) {
+      poster.classList.add("has-image");
+      poster.style.backgroundImage = `url("${content.show.poster}")`;
+    } else {
+      poster.classList.remove("has-image");
+      poster.style.backgroundImage = "";
+    }
+  });
 }
 
 function setLanguage(lang) {
+  if (!translations[lang]) return;
+
   currentLanguage = lang;
   document.documentElement.lang = lang;
 
   document.querySelectorAll("[data-i18n]").forEach(element => {
     const key = element.getAttribute("data-i18n");
-    element.innerHTML = translate(key).replace(/\\n/g, "<br>");
+    const value = translate(key);
+    element.innerHTML = String(value).replace(/\n/g, "<br>");
   });
 
   document.querySelectorAll("[data-lang]").forEach(button => {
@@ -217,7 +236,10 @@ function setLanguage(lang) {
   localStorage.setItem("portSideLanguage", lang);
   renderActivities();
   renderWeatherDate();
-  if (window.latestWeatherData) renderWeather(window.latestWeatherData);
+
+  if (window.latestWeatherData) {
+    renderWeather(window.latestWeatherData);
+  }
 }
 
 document.querySelectorAll("[data-lang]").forEach(button => {
@@ -282,30 +304,16 @@ function renderWeatherDate() {
 
 function renderWeather(data) {
   const current = data.current;
-  const daily = data.daily;
+  const navIcon = document.getElementById("navWeatherIcon");
+  const navTemp = document.getElementById("navWeatherTemp");
 
-  document.getElementById("currentTemp").textContent = Math.round(current.temperature_2m);
-  document.getElementById("feelsLike").textContent = `${Math.round(current.apparent_temperature)}°C`;
-  document.getElementById("humidity").textContent = `${Math.round(current.relative_humidity_2m)}%`;
-  document.getElementById("windSpeed").textContent = `${Math.round(current.wind_speed_10m)} km/h`;
-  document.getElementById("weatherSymbol").textContent = weatherIcon(current.weather_code, current.is_day);
-  document.getElementById("weatherCondition").textContent =
-    weatherText[currentLanguage][current.weather_code] || weatherText[currentLanguage][2];
-  document.getElementById("weatherUpdated").textContent = translate("updatedNow");
+  if (navIcon) {
+    navIcon.textContent = weatherIcon(current.weather_code, current.is_day);
+  }
 
-  document.getElementById("weatherForecast").innerHTML = daily.time.map((date, index) => {
-    const day = new Date(`${date}T12:00:00`);
-    const dayName = new Intl.DateTimeFormat(localeForLanguage(), { weekday: "short" }).format(day);
-    return `
-      <div class="forecast-day ${index === 0 ? "today" : ""}">
-        <span class="forecast-name">${dayName}</span>
-        <span class="forecast-icon">${weatherIcon(daily.weather_code[index])}</span>
-        <span class="forecast-temps">${Math.round(daily.temperature_2m_max[index])}° <small>${Math.round(daily.temperature_2m_min[index])}°</small></span>
-      </div>
-    `;
-  }).join("");
-
-  document.getElementById("weatherError").textContent = "";
+  if (navTemp) {
+    navTemp.textContent = `${Math.round(current.temperature_2m)}°`;
+  }
 }
 
 async function loadWeather() {
@@ -326,8 +334,8 @@ async function loadWeather() {
     window.latestWeatherData = data;
     renderWeather(data);
   } catch (error) {
-    document.getElementById("weatherUpdated").textContent = "";
-    document.getElementById("weatherError").textContent = translate("weatherUnavailable");
+    const navTemp = document.getElementById("navWeatherTemp");
+    if (navTemp) navTemp.textContent = "—°";
   }
 }
 
