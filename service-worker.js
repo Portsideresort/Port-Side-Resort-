@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v14";
+const CACHE_NAME = "port-side-v15";
 const FILES = [
   "./",
   "./index.html",
@@ -9,7 +9,7 @@ const FILES = [
   "./face-of-africa.jpg",
   "./activity-radio.jpg",
   "./activity-morning-gym.jpg",
-  "./activity-boccia.svg",
+  "./activity-boccia.jpg",
   "./activity-darts.svg",
   "./activity-sea-gym.svg",
   "./activity-water-gym.svg",
