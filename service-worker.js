@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v12";
+const CACHE_NAME = "port-side-v13";
 const FILES = [
   "./",
   "./index.html",
@@ -8,7 +8,7 @@ const FILES = [
   "./stage-bg.png",
   "./face-of-africa.jpg",
   "./activity-radio.jpg",
-  "./activity-morning-gym.svg",
+  "./activity-morning-gym.jpg",
   "./activity-boccia.svg",
   "./activity-darts.svg",
   "./activity-sea-gym.svg",
@@ -24,5 +24,18 @@ self.addEventListener("install", event => {
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => response || fetch(event.request))
+  );
+});
+
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      )
+    ).then(() => self.clients.claim())
   );
 });
