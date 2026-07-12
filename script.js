@@ -1,14 +1,14 @@
 const content = {
   activities: [
-    { time: "10:00", titleKey: "radioPortSide", locationKey: "poolArea", descriptionKey: "radioDesc", image: "activity-radio.jpg" },
-    { time: "10:15", titleKey: "morningGym", locationKey: "stage", descriptionKey: "morningGymDesc", image: "activity-morning-gym.jpg" },
-    { time: "10:15", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaDesc", image: "activity-boccia.svg" },
-    { time: "11:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsDesc", image: "activity-darts.svg" },
-    { time: "11:15", titleKey: "seaGym", locationKey: "sea", descriptionKey: "seaGymDesc", image: "activity-sea-gym.svg" },
-    { time: "14:30", titleKey: "waterGym", locationKey: "pool", descriptionKey: "waterGymDesc", image: "activity-water-gym.svg" },
-    { time: "15:00", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaAfternoonDesc", image: "activity-boccia.svg" },
-    { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", image: "activity-water-polo.svg" },
-    { time: "16:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsAfternoonDesc", image: "activity-darts.svg" }
+    { time: "10:00", titleKey: "radioPortSide", locationKey: "poolArea", descriptionKey: "radioDesc", benefitsKey: "radioBenefits", musclesKey: "radioMuscles", jointsKey: "radioJoints", mindKey: "radioMind", image: "activity-radio.jpg" },
+    { time: "10:15", titleKey: "morningGym", locationKey: "stage", descriptionKey: "morningGymDesc", benefitsKey: "morningGymBenefits", musclesKey: "morningGymMuscles", jointsKey: "morningGymJoints", mindKey: "morningGymMind", image: "activity-morning-gym.jpg" },
+    { time: "10:15", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaDesc", benefitsKey: "bocciaBenefits", musclesKey: "bocciaMuscles", jointsKey: "bocciaJoints", mindKey: "bocciaMind", image: "activity-boccia.svg" },
+    { time: "11:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsDesc", benefitsKey: "dartsBenefits", musclesKey: "dartsMuscles", jointsKey: "dartsJoints", mindKey: "dartsMind", image: "activity-darts.svg" },
+    { time: "11:15", titleKey: "seaGym", locationKey: "sea", descriptionKey: "seaGymDesc", benefitsKey: "seaGymBenefits", musclesKey: "seaGymMuscles", jointsKey: "seaGymJoints", mindKey: "seaGymMind", image: "activity-sea-gym.svg" },
+    { time: "14:30", titleKey: "waterGym", locationKey: "pool", descriptionKey: "waterGymDesc", benefitsKey: "waterGymBenefits", musclesKey: "waterGymMuscles", jointsKey: "waterGymJoints", mindKey: "waterGymMind", image: "activity-water-gym.svg" },
+    { time: "15:00", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaAfternoonDesc", benefitsKey: "bocciaBenefits", musclesKey: "bocciaMuscles", jointsKey: "bocciaJoints", mindKey: "bocciaMind", image: "activity-boccia.svg" },
+    { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", benefitsKey: "waterPoloBenefits", musclesKey: "waterPoloMuscles", jointsKey: "waterPoloJoints", mindKey: "waterPoloMind", image: "activity-water-polo.svg" },
+    { time: "16:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsAfternoonDesc", benefitsKey: "dartsBenefits", musclesKey: "dartsMuscles", jointsKey: "dartsJoints", mindKey: "dartsMind", image: "activity-darts.svg" }
   ],
   show: {
     title: "Face of Africa",
@@ -19,6 +19,39 @@ const content = {
 
 const translations = {
   en: {
+    benefitsButton: "Health & activity benefits",
+    benefitsTitle: "Main benefits",
+    musclesTitle: "Muscles activated",
+    jointsTitle: "Joints involved",
+    mindTitle: "Mind & focus",
+    radioBenefits: "Creates a positive start to the day, encourages light movement and keeps guests informed about the programme.",
+    radioMuscles: "Light full-body movement while dancing.",
+    radioJoints: "Shoulders, hips, knees and ankles during gentle movement.",
+    radioMind: "Improves mood, social connection and awareness of the day’s activities.",
+    morningGymBenefits: "Supports circulation, flexibility, mobility, posture and daily energy while helping reduce morning stiffness.",
+    morningGymMuscles: "Core, back, shoulders, glutes, thighs and calves.",
+    morningGymJoints: "Shoulders, spine, hips, knees and ankles.",
+    morningGymMind: "Promotes mental freshness, positive mood and stress relief.",
+    bocciaBenefits: "Encourages gentle movement, balance, controlled throwing and functional mobility without high physical impact.",
+    bocciaMuscles: "Shoulders, arms, forearms, core and legs.",
+    bocciaJoints: "Shoulders, elbows, wrists, hips, knees and ankles.",
+    bocciaMind: "Develops concentration, distance judgement, strategy, patience and social interaction.",
+    dartsBenefits: "Improves precision, controlled arm movement and hand–eye coordination.",
+    dartsMuscles: "Shoulders, upper arms, forearms, wrists and fingers.",
+    dartsJoints: "Shoulders, elbows, wrists and finger joints.",
+    dartsMind: "Strengthens focus, patience, calculation, decision-making and emotional control.",
+    seaGymBenefits: "Water resistance provides a low-impact full-body workout that supports circulation, mobility, balance and endurance.",
+    seaGymMuscles: "Core, shoulders, back, arms, glutes and legs.",
+    seaGymJoints: "Shoulders, spine, hips, knees and ankles with reduced impact.",
+    seaGymMind: "The sea environment supports relaxation, confidence and body awareness.",
+    waterGymBenefits: "Supports cardiovascular fitness, muscle endurance, mobility and coordination while reducing pressure on the joints.",
+    waterGymMuscles: "Core, arms, shoulders, back, glutes, thighs and calves.",
+    waterGymJoints: "Shoulders, hips, knees, ankles and spine with low impact.",
+    waterGymMind: "Improves rhythm, motivation, mood and stress relief.",
+    waterPoloBenefits: "A dynamic full-body activity that supports cardiovascular endurance, strength, agility and reaction speed.",
+    waterPoloMuscles: "Shoulders, chest, back, arms, core, glutes and legs.",
+    waterPoloJoints: "Shoulders, elbows, wrists, hips, knees and ankles.",
+    waterPoloMind: "Builds teamwork, quick decision-making, coordination, confidence and concentration.",
     radioPortSide: "Radio Port Side",
     morningGym: "Morning Gym",
     boccia: "Boccia",
@@ -89,6 +122,39 @@ const translations = {
     weatherUnavailable: "Weather information is temporarily unavailable."
   },
   de: {
+    benefitsButton: "Gesundheit & Aktivitätsvorteile",
+    benefitsTitle: "Wichtigste Vorteile",
+    musclesTitle: "Aktivierte Muskeln",
+    jointsTitle: "Beanspruchte Gelenke",
+    mindTitle: "Geist & Konzentration",
+    radioBenefits: "Sorgt für einen positiven Start in den Tag, fördert leichte Bewegung und informiert über das Tagesprogramm.",
+    radioMuscles: "Leichte Ganzkörperbewegung beim Tanzen.",
+    radioJoints: "Schultern, Hüften, Knie und Sprunggelenke bei sanfter Bewegung.",
+    radioMind: "Verbessert Stimmung, soziale Verbindung und Aufmerksamkeit für die Tagesaktivitäten.",
+    morningGymBenefits: "Fördert Durchblutung, Beweglichkeit, Mobilität, Körperhaltung und Tagesenergie und hilft gegen morgendliche Steifheit.",
+    morningGymMuscles: "Rumpf, Rücken, Schultern, Gesäß, Oberschenkel und Waden.",
+    morningGymJoints: "Schultern, Wirbelsäule, Hüften, Knie und Sprunggelenke.",
+    morningGymMind: "Fördert geistige Frische, positive Stimmung und Stressabbau.",
+    bocciaBenefits: "Fördert sanfte Bewegung, Gleichgewicht, kontrolliertes Werfen und funktionelle Mobilität ohne hohe Belastung.",
+    bocciaMuscles: "Schultern, Arme, Unterarme, Rumpf und Beine.",
+    bocciaJoints: "Schultern, Ellenbogen, Handgelenke, Hüften, Knie und Sprunggelenke.",
+    bocciaMind: "Trainiert Konzentration, Distanzgefühl, Strategie, Geduld und soziale Interaktion.",
+    dartsBenefits: "Verbessert Präzision, kontrollierte Armbewegung und Hand-Auge-Koordination.",
+    dartsMuscles: "Schultern, Oberarme, Unterarme, Handgelenke und Finger.",
+    dartsJoints: "Schultern, Ellenbogen, Handgelenke und Fingergelenke.",
+    dartsMind: "Stärkt Fokus, Geduld, Rechnen, Entscheidungsfähigkeit und emotionale Kontrolle.",
+    seaGymBenefits: "Wasserwiderstand ermöglicht ein gelenkschonendes Ganzkörpertraining für Durchblutung, Mobilität, Gleichgewicht und Ausdauer.",
+    seaGymMuscles: "Rumpf, Schultern, Rücken, Arme, Gesäß und Beine.",
+    seaGymJoints: "Schultern, Wirbelsäule, Hüften, Knie und Sprunggelenke mit geringer Belastung.",
+    seaGymMind: "Die Meeresumgebung unterstützt Entspannung, Selbstvertrauen und Körperwahrnehmung.",
+    waterGymBenefits: "Fördert Herz-Kreislauf-Fitness, Muskelausdauer, Mobilität und Koordination bei geringer Gelenkbelastung.",
+    waterGymMuscles: "Rumpf, Arme, Schultern, Rücken, Gesäß, Oberschenkel und Waden.",
+    waterGymJoints: "Schultern, Hüften, Knie, Sprunggelenke und Wirbelsäule gelenkschonend.",
+    waterGymMind: "Verbessert Rhythmusgefühl, Motivation, Stimmung und Stressabbau.",
+    waterPoloBenefits: "Eine dynamische Ganzkörperaktivität für Ausdauer, Kraft, Beweglichkeit und Reaktionsgeschwindigkeit.",
+    waterPoloMuscles: "Schultern, Brust, Rücken, Arme, Rumpf, Gesäß und Beine.",
+    waterPoloJoints: "Schultern, Ellenbogen, Handgelenke, Hüften, Knie und Sprunggelenke.",
+    waterPoloMind: "Fördert Teamarbeit, schnelle Entscheidungen, Koordination, Selbstvertrauen und Konzentration.",
     radioPortSide: "Radio Port Side",
     morningGym: "Morgengymnastik",
     boccia: "Boccia",
@@ -159,6 +225,39 @@ const translations = {
     weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
   tr: {
+    benefitsButton: "Sağlık ve aktivite faydaları",
+    benefitsTitle: "Temel faydalar",
+    musclesTitle: "Çalışan kaslar",
+    jointsTitle: "Aktif eklemler",
+    mindTitle: "Zihin ve odak",
+    radioBenefits: "Güne pozitif başlamayı sağlar, hafif hareketi teşvik eder ve misafirleri günlük program hakkında bilgilendirir.",
+    radioMuscles: "Dans sırasında hafif tüm vücut hareketi.",
+    radioJoints: "Hafif hareketlerde omuz, kalça, diz ve ayak bilekleri.",
+    radioMind: "Ruh hâlini, sosyalleşmeyi ve günlük aktivitelere yönelik farkındalığı destekler.",
+    morningGymBenefits: "Kan dolaşımını, esnekliği, hareket kabiliyetini, duruşu ve günlük enerjiyi destekler; sabah tutukluğunu azaltmaya yardımcı olur.",
+    morningGymMuscles: "Karın ve merkez bölgesi, sırt, omuz, kalça, üst bacak ve baldırlar.",
+    morningGymJoints: "Omuzlar, omurga, kalçalar, dizler ve ayak bilekleri.",
+    morningGymMind: "Zihinsel tazelik, pozitif ruh hâli ve stresin azalmasını destekler.",
+    bocciaBenefits: "Yüksek fiziksel yük oluşturmadan hafif hareketi, dengeyi, kontrollü atışı ve günlük hareket kabiliyetini destekler.",
+    bocciaMuscles: "Omuzlar, kollar, ön kollar, merkez bölgesi ve bacaklar.",
+    bocciaJoints: "Omuz, dirsek, el bileği, kalça, diz ve ayak bilekleri.",
+    bocciaMind: "Konsantrasyon, mesafe tahmini, strateji, sabır ve sosyal etkileşimi geliştirir.",
+    dartsBenefits: "Hassasiyeti, kontrollü kol hareketini ve el-göz koordinasyonunu geliştirir.",
+    dartsMuscles: "Omuz, üst kol, ön kol, el bileği ve parmak kasları.",
+    dartsJoints: "Omuz, dirsek, el bileği ve parmak eklemleri.",
+    dartsMind: "Odaklanma, sabır, hesaplama, karar verme ve duygu kontrolünü güçlendirir.",
+    seaGymBenefits: "Suyun direnci, eklemlere düşük yük bindiren tüm vücut egzersizi sağlar; dolaşımı, hareketliliği, dengeyi ve dayanıklılığı destekler.",
+    seaGymMuscles: "Merkez bölgesi, omuz, sırt, kol, kalça ve bacaklar.",
+    seaGymJoints: "Düşük darbeyle omuzlar, omurga, kalçalar, dizler ve ayak bilekleri.",
+    seaGymMind: "Deniz ortamı rahatlamayı, özgüveni ve beden farkındalığını destekler.",
+    waterGymBenefits: "Eklemlere binen baskıyı azaltırken kalp-damar dayanıklılığını, kas direncini, hareketliliği ve koordinasyonu destekler.",
+    waterGymMuscles: "Merkez bölgesi, kollar, omuzlar, sırt, kalça, üst bacak ve baldırlar.",
+    waterGymJoints: "Düşük darbeyle omuz, kalça, diz, ayak bileği ve omurga.",
+    waterGymMind: "Ritim duygusunu, motivasyonu, ruh hâlini ve stresin azalmasını destekler.",
+    waterPoloBenefits: "Kalp-damar dayanıklılığını, gücü, çevikliği ve reaksiyon hızını destekleyen dinamik bir tüm vücut aktivitesidir.",
+    waterPoloMuscles: "Omuz, göğüs, sırt, kollar, merkez bölgesi, kalça ve bacaklar.",
+    waterPoloJoints: "Omuz, dirsek, el bileği, kalça, diz ve ayak bilekleri.",
+    waterPoloMind: "Takım çalışması, hızlı karar verme, koordinasyon, özgüven ve konsantrasyonu geliştirir.",
     radioPortSide: "Radio Port Side",
     morningGym: "Sabah Gym",
     boccia: "Boccia",
@@ -247,9 +346,32 @@ function renderActivities() {
             <span class="activity-time">${item.time}</span>
             <span class="activity-frequency">${translate("exceptSunday")}</span>
           </div>
+
           <h3>${translate(item.titleKey)}</h3>
           <p class="activity-location">${translate(item.locationKey)}</p>
           <p class="activity-description">${translate(item.descriptionKey)}</p>
+
+          <details class="activity-benefits">
+            <summary>${translate("benefitsButton")}</summary>
+            <div class="benefit-list">
+              <div class="benefit-row">
+                <span class="benefit-icon">♥</span>
+                <div><strong>${translate("benefitsTitle")}</strong><p>${translate(item.benefitsKey)}</p></div>
+              </div>
+              <div class="benefit-row">
+                <span class="benefit-icon">●</span>
+                <div><strong>${translate("musclesTitle")}</strong><p>${translate(item.musclesKey)}</p></div>
+              </div>
+              <div class="benefit-row">
+                <span class="benefit-icon">◆</span>
+                <div><strong>${translate("jointsTitle")}</strong><p>${translate(item.jointsKey)}</p></div>
+              </div>
+              <div class="benefit-row">
+                <span class="benefit-icon">✦</span>
+                <div><strong>${translate("mindTitle")}</strong><p>${translate(item.mindKey)}</p></div>
+              </div>
+            </div>
+          </details>
         </div>
       </article>
     `).join("");
