@@ -7,7 +7,7 @@ const content = {
     { time: "11:15", titleKey: "seaGym", locationKey: "sea", descriptionKey: "seaGymDesc", benefitsKey: "seaGymBenefits", musclesKey: "seaGymMuscles", jointsKey: "seaGymJoints", mindKey: "seaGymMind", image: "activity-sea-gym.jpg" },
     { time: "14:30", titleKey: "waterGym", locationKey: "pool", descriptionKey: "waterGymDesc", benefitsKey: "waterGymBenefits", musclesKey: "waterGymMuscles", jointsKey: "waterGymJoints", mindKey: "waterGymMind", image: "activity-water-gym.jpg" },
     { time: "15:00", titleKey: "boccia", locationKey: "beach", descriptionKey: "bocciaAfternoonDesc", benefitsKey: "bocciaBenefits", musclesKey: "bocciaMuscles", jointsKey: "bocciaJoints", mindKey: "bocciaMind", image: "activity-boccia.jpg" },
-    { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", benefitsKey: "waterPoloBenefits", musclesKey: "waterPoloMuscles", jointsKey: "waterPoloJoints", mindKey: "waterPoloMind", image: "activity-water-polo.svg" },
+    { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", benefitsKey: "waterPoloBenefits", musclesKey: "waterPoloMuscles", jointsKey: "waterPoloJoints", mindKey: "waterPoloMind", image: "activity-water-polo.jpg" },
     { time: "16:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsAfternoonDesc", benefitsKey: "dartsBenefits", musclesKey: "dartsMuscles", jointsKey: "dartsJoints", mindKey: "dartsMind", image: "activity-darts.jpg" }
   ],
   show: {
