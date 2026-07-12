@@ -554,7 +554,8 @@ function getIstanbulDate() {
 function getCurrentShowPosition() {
   const today = getIstanbulDate();
   const dayDifference = Math.floor((today.getTime() - SHOW_CYCLE_START_UTC) / 86400000);
-  const week = dayDifference < 0 ? 0 : Math.floor(dayDifference / 7) % 2;
+  const weekOffset = Math.floor(dayDifference / 7);
+  const week = ((weekOffset % 2) + 2) % 2;
   const jsDay = today.getUTCDay();
   const day = jsDay === 0 ? 6 : jsDay - 1;
   return { week, day };
