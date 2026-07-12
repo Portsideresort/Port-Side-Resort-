@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07131f" />
+  <meta name="description" content="Port Side Resort entertainment, daily activities and evening shows." />
+  <title>Port Side Resort Entertainment</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="hero" id="home">
+    <nav class="nav shell">
+      <div class="nav-spacer" aria-hidden="true"></div>
+
+      <div class="nav-actions">
+        <a href="#activities" class="nav-link" data-i18n="navActivities">Activities</a>
+        <a href="#shows" class="nav-link" data-i18n="navShows">Shows</a>
+        <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
+
+        <div class="nav-weather-wrap">
+          <button class="nav-weather" id="weatherToggle" type="button" aria-expanded="false" aria-controls="weatherDetails">
+            <span class="nav-weather-icon" id="navWeatherIcon">☀️</span>
+            <span class="nav-weather-temp" id="navWeatherTemp">—°</span>
+            <span class="nav-weather-place">Evrenseki</span>
+            <span class="nav-weather-arrow">⌄</span>
+          </button>
+
+          <div class="weather-details" id="weatherDetails" aria-live="polite">
+            <div class="weather-details-head">
+              <div>
+                <strong>Evrenseki · Antalya</strong>
+                <span id="weatherConditionSmall">—</span>
+              </div>
+              <span id="weatherUpdatedSmall">—</span>
+            </div>
+
+            <div class="weather-detail-grid">
+              <div>
+                <span data-i18n="humidity">Humidity</span>
+                <strong id="weatherHumidity">—</strong>
+              </div>
+              <div>
+                <span data-i18n="wind">Wind</span>
+                <strong id="weatherWind">—</strong>
+              </div>
+              <div>
+                <span data-i18n="sunrise">Sunrise</span>
+                <strong id="weatherSunrise">—</strong>
+              </div>
+              <div>
+                <span data-i18n="sunset">Sunset</span>
+                <strong id="weatherSunset">—</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lang-switcher" aria-label="Language selector">
+          <button type="button" data-lang="en" class="lang-btn active">EN</button>
+          <button type="button" data-lang="de" class="lang-btn">DE</button>
+          <button type="button" data-lang="tr" class="lang-btn">TR</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-orb orb-one"></div>
+    <div class="hero-orb orb-two"></div>
+
+    <div class="hero-content shell">
+      <div class="hero-copy stage-copy">
+        <div class="stage-title-wrap">
+          <p class="stage-hotel" data-i18n="hotelName">PORT SIDE RESORT HOTEL</p>
+
+          <div class="stage-stars" aria-label="5 stars">★ ★ ★ ★ ★</div>
+
+          <h1 data-i18n="entertainmentProgramme">
+            ENTERTAINMENT<br>PROGRAMME
+          </h1>
+
+          <div class="stage-ornament">
+            <span></span><b>✦</b><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <article class="tonight-card glass-card">
+          <div class="tonight-poster" id="tonightPoster">
+            <span class="tonight-poster-text" data-i18n="posterPlaceholder">Tonight's poster will appear here</span>
+          </div>
+
+          <div class="tonight-info">
+            <span class="show-badge" data-i18n="tonight">TONIGHT</span>
+            <h2>Tonight's Show</h2>
+            <div class="tonight-meta">
+              <span>21:30</span>
+              <span data-i18n="theatre">Theatre</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <a class="scroll-indicator" href="#activities" aria-label="Scroll to activities">
+      <span></span>
+    </a>
+  </header>
+
+  <main>
+    <section id="activities" class="section light-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker" data-i18n="today">TODAY</p>
+            <h2 data-i18n="activitiesTitle">Daily Activities</h2>
+          </div>
+          <p class="section-intro" data-i18n="activitiesIntro">
+            Stay active, have fun and enjoy every moment of your holiday.
+          </p>
+        </div>
+
+        <div class="activity-grid" id="activityGrid"></div>
+      </div>
+    </section>
+
+    <section id="shows" class="section dark-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker gold" data-i18n="tonight">TONIGHT</p>
+            <h2 data-i18n="showsTitle">Evening Show</h2>
+          </div>
+          <p class="section-intro muted" data-i18n="showsIntro">
+            Join us at the theatre for a spectacular night.
+          </p>
+        </div>
+
+        <article class="show-card">
+          <div class="show-visual">
+            <div class="show-poster-placeholder">
+              <span data-i18n="posterPlaceholder">Tonight's poster will appear here</span>
+            </div>
+          </div>
+
+          <div class="show-info">
+            <span class="show-badge" data-i18n="featuredShow">FEATURED SHOW</span>
+            <h3 id="showTitle">Tonight's Show</h3>
+            <p id="showDescription" data-i18n="showDescription">
+              Music, dance and entertainment for an unforgettable evening.
+            </p>
+
+            <div class="show-details">
+              <div class="detail-item">
+                <span data-i18n="timeLabel">TIME</span>
+                <strong id="showTime">21:30</strong>
+              </div>
+              <div class="detail-item">
+                <span data-i18n="placeLabel">PLACE</span>
+                <strong data-i18n="theatre">Theatre</strong>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker" data-i18n="memories">MEMORIES</p>
+            <h2 data-i18n="galleryTitle">Gallery</h2>
+          </div>
+          <p class="section-intro" data-i18n="galleryIntro">
+            Photos, posters and special moments will be added here.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-tile large"><span>01</span></div>
+          <div class="gallery-tile"><span>02</span></div>
+          <div class="gallery-tile"><span>03</span></div>
+          <div class="gallery-tile wide"><span>04</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="shell contact-shell">
+        <div>
+          <p class="section-kicker gold" data-i18n="help">NEED HELP?</p>
+          <h2 data-i18n="contactTitle">Stay connected</h2>
+          <p data-i18n="contactText">
+            Find the hotel, follow our updates or contact the animation team.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <a href="#" class="contact-card">
+            <span class="contact-icon">◎</span>
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="contact-icon">⌖</span>
+            <span>Google Maps</span>
+          </a>
+          <a href="#" class="contact-card">
+            <span class="contact-icon">◉</span>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-content">
+      <img src="logo.png" alt="Port Side Resort Hotel" class="footer-logo" />
+      <p>Port Side Resort Entertainment</p>
+      <p class="footer-note" data-i18n="footerNote">Made for unforgettable holiday moments.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

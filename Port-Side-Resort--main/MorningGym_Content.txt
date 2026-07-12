@@ -1,0 +1,71 @@
+# MORNING GYM
+
+TIME
+10:15
+
+LOCATION
+EN: Stage
+DE: Bühne
+TR: Sahne
+
+AVAILABLE
+EN: Every day except Sunday
+DE: Täglich außer sonntags
+TR: Pazar hariç her gün
+
+====================
+ENGLISH
+====================
+Title: Morning Gym
+
+Description:
+Start your morning with an energising workout led by our entertainment team. Wake up your body, improve your flexibility and enjoy a healthy start to another wonderful holiday at Port Side Resort.
+
+Health Benefits:
+• Activates muscles and joints
+• Improves flexibility
+• Boosts blood circulation
+• Increases daily energy
+• Reduces stress
+• Supports better posture
+
+Motto:
+Move Better. Feel Better. Live Better.
+
+====================
+DEUTSCH
+====================
+Titel: Morning Gym
+
+Beschreibung:
+Beginnen Sie den Tag mit einem belebenden Workout gemeinsam mit unserem Animationsteam. Aktivieren Sie Ihren Körper, verbessern Sie Ihre Beweglichkeit und starten Sie voller Energie in den Urlaubstag.
+
+Gesundheitliche Vorteile:
+• Aktiviert Muskeln und Gelenke
+• Verbessert die Beweglichkeit
+• Fördert die Durchblutung
+• Mehr Energie für den Tag
+• Reduziert Stress
+• Unterstützt eine gesunde Körperhaltung
+
+Motto:
+Mehr Bewegung. Mehr Energie. Mehr Urlaub.
+
+====================
+TÜRKÇE
+====================
+Başlık: Sabah Gym
+
+Açıklama:
+Animasyon ekibimiz eşliğinde güne enerjik bir başlangıç yapın. Kaslarınızı harekete geçirin, esnekliğinizi artırın ve harika bir tatil günü için zinde hissedin.
+
+Sağlık Faydaları:
+• Kas ve eklemleri aktif hale getirir
+• Esnekliği artırır
+• Kan dolaşımını hızlandırır
+• Gün boyu enerji sağlar
+• Stresi azaltır
+• Duruşu destekler
+
+Motto:
+Hareket Et. Enerjini Hisset. Tatilin Tadını Çıkar.
