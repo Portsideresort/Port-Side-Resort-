@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v22-two-week-posters";
+const CACHE_NAME = "port-side-v23-special-events";
 const FILES = [
   "./",
   "./index.html",
@@ -20,6 +20,8 @@ const FILES = [
   "./show-week2-gala.jpg",
   "./show-week2-echoes-mongolia.jpg",
   "./show-week2-dj-port-side.jpg",
+  "./event-happy-hour.jpg",
+  "./event-mini-disco.jpg",
   "./activity-radio.jpg",
   "./activity-morning-gym.jpg",
   "./activity-boccia.jpg",
