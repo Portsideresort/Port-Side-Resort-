@@ -21,13 +21,13 @@ const content = {
       { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week1-dj-port-side.jpg" }
     ],
     [
-      { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "" },
-      { dayKey: "tuesday", title: "Dark Side", descriptionKey: "darkSideDesc", poster: "" },
-      { dayKey: "wednesday", title: "Michael Jackson", descriptionKey: "michaelJacksonDesc", poster: "" },
-      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "" },
-      { dayKey: "friday", title: "Gala The Blush", descriptionKey: "galaTheBlushDesc", poster: "" },
-      { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "" },
-      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "" }
+      { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "show-week2-tropicana.jpg" },
+      { dayKey: "tuesday", title: "Dark Side", descriptionKey: "darkSideDesc", poster: "show-week2-dark-side.jpg" },
+      { dayKey: "wednesday", title: "Michael Jackson", descriptionKey: "michaelJacksonDesc", poster: "show-week2-michael-jackson.jpg" },
+      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week2-bingo.png" },
+      { dayKey: "friday", title: "Gala The Blush", descriptionKey: "galaTheBlushDesc", poster: "show-week2-gala.jpg" },
+      { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "show-week2-echoes-mongolia.jpg" },
+      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week2-dj-port-side.jpg" }
     ]
   ]
 };
