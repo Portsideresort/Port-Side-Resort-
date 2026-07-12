@@ -12,13 +12,13 @@ const content = {
   ],
   showWeeks: [
     [
-      { dayKey: "monday", title: "Face of Africa", descriptionKey: "faceOfAfricaDesc", poster: "face-of-africa.jpg" },
-      { dayKey: "tuesday", title: "Bonnles", descriptionKey: "bonnlesDesc", poster: "" },
-      { dayKey: "wednesday", title: "Raza Urbana", descriptionKey: "razaUrbanaDesc", poster: "" },
-      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "" },
-      { dayKey: "friday", title: "Diva Nova", descriptionKey: "divaNovaDesc", poster: "" },
-      { dayKey: "saturday", title: "Mexico Show", descriptionKey: "mexicoShowDesc", poster: "" },
-      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "" }
+      { dayKey: "monday", title: "Face of Africa", descriptionKey: "faceOfAfricaDesc", poster: "show-week1-face-africa.jpg" },
+      { dayKey: "tuesday", title: "Bonnles", descriptionKey: "bonnlesDesc", poster: "show-week1-bonnles.jpg" },
+      { dayKey: "wednesday", title: "Raza Urbana", descriptionKey: "razaUrbanaDesc", poster: "show-week1-raza-urbana.jpg" },
+      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week1-bingo.png" },
+      { dayKey: "friday", title: "Diva Nova", descriptionKey: "divaNovaDesc", poster: "show-week1-diva-nova.jpg" },
+      { dayKey: "saturday", title: "Mexico Show", descriptionKey: "mexicoShowDesc", poster: "show-week1-mexico.jpg" },
+      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week1-dj-port-side.jpg" }
     ],
     [
       { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "" },

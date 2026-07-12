@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v20-show-programme";
+const CACHE_NAME = "port-side-v21-week-one-posters";
 const FILES = [
   "./",
   "./index.html",
@@ -6,7 +6,13 @@ const FILES = [
   "./script.js",
   "./logo.png",
   "./stage-bg.png",
-  "./face-of-africa.jpg",
+  "./show-week1-face-africa.jpg",
+  "./show-week1-bonnles.jpg",
+  "./show-week1-raza-urbana.jpg",
+  "./show-week1-bingo.png",
+  "./show-week1-diva-nova.jpg",
+  "./show-week1-mexico.jpg",
+  "./show-week1-dj-port-side.jpg",
   "./activity-radio.jpg",
   "./activity-morning-gym.jpg",
   "./activity-boccia.jpg",
