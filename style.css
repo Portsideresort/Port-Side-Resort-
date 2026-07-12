@@ -648,6 +648,33 @@ a {
   letter-spacing: 0.18em;
 }
 
+.gallery-coming-soon {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(212, 167, 60, 0.26), transparent 34%),
+    linear-gradient(145deg, #0a2134, #07131f);
+  border: 1px solid rgba(212, 167, 60, 0.22);
+  box-shadow: 0 28px 75px rgba(7, 19, 31, 0.18);
+}
+
+.gallery-coming-icon {
+  color: #e3b94e;
+  font-size: 2rem;
+}
+
+.gallery-coming-soon strong {
+  color: #f0d27c;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  letter-spacing: 0.12em;
+}
+
 .contact-section {
   background: #0b1b2b;
   color: white;
