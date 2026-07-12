@@ -10,12 +10,30 @@ const content = {
     { time: "15:30", titleKey: "waterPolo", locationKey: "pool", descriptionKey: "waterPoloDesc", benefitsKey: "waterPoloBenefits", musclesKey: "waterPoloMuscles", jointsKey: "waterPoloJoints", mindKey: "waterPoloMind", image: "activity-water-polo.jpg" },
     { time: "16:00", titleKey: "darts", locationKey: "stage", descriptionKey: "dartsAfternoonDesc", benefitsKey: "dartsBenefits", musclesKey: "dartsMuscles", jointsKey: "dartsJoints", mindKey: "dartsMind", image: "activity-darts.jpg" }
   ],
-  show: {
-    title: "Face of Africa",
-    time: "21:30",
-    poster: "face-of-africa.jpg"
-  }
+  showWeeks: [
+    [
+      { dayKey: "monday", title: "Face of Africa", descriptionKey: "faceOfAfricaDesc", poster: "face-of-africa.jpg" },
+      { dayKey: "tuesday", title: "Bonnles", descriptionKey: "bonnlesDesc", poster: "" },
+      { dayKey: "wednesday", title: "Raza Urbana", descriptionKey: "razaUrbanaDesc", poster: "" },
+      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "" },
+      { dayKey: "friday", title: "Diva Nova", descriptionKey: "divaNovaDesc", poster: "" },
+      { dayKey: "saturday", title: "Mexico Show", descriptionKey: "mexicoShowDesc", poster: "" },
+      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "" }
+    ],
+    [
+      { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "" },
+      { dayKey: "tuesday", title: "Dark Side", descriptionKey: "darkSideDesc", poster: "" },
+      { dayKey: "wednesday", title: "Michael Jackson", descriptionKey: "michaelJacksonDesc", poster: "" },
+      { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "" },
+      { dayKey: "friday", title: "Gala The Blush", descriptionKey: "galaTheBlushDesc", poster: "" },
+      { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "" },
+      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "" }
+    ]
+  ]
 };
+
+const SHOW_TIME = "21:30";
+const SHOW_CYCLE_START_UTC = Date.UTC(2026, 6, 13);
 
 const translations = {
   en: {
@@ -92,8 +110,32 @@ const translations = {
     activitiesTitle: "Daily Activities",
     activitiesIntro: "Stay active, have fun and enjoy every moment of your holiday.",
     tonight: "TONIGHT",
-    showsTitle: "Evening Show",
-    showsIntro: "Join us at the theatre for a spectacular night.",
+    showProgrammeKicker: "TWO-WEEK PROGRAMME",
+    showsTitle: "14-Day Show Programme",
+    showsIntro: "Choose a week and tap a show to see its poster and details.",
+    weekOne: "WEEK 1",
+    weekTwo: "WEEK 2",
+    monday: "Monday",
+    tuesday: "Tuesday",
+    wednesday: "Wednesday",
+    thursday: "Thursday",
+    friday: "Friday",
+    saturday: "Saturday",
+    sunday: "Sunday",
+    tonightLabel: "TONIGHT",
+    posterComingSoon: "Poster coming soon",
+    faceOfAfricaDesc: "A spectacular acrobatics show filled with strength, balance and rhythm.",
+    bonnlesDesc: "An energetic evening performance with stage entertainment and surprises.",
+    razaUrbanaDesc: "Urban rhythm, powerful dance and vibrant stage energy come together.",
+    bingoDesc: "Join us for a fun bingo evening full of excitement and surprises.",
+    divaNovaDesc: "Enjoy a stylish live music evening with Diva Nova.",
+    mexicoShowDesc: "A colourful show inspired by the music, dance and spirit of Mexico.",
+    djPortSideDesc: "Dance, celebrate and enjoy the night with DJ Port Side.",
+    tropicanaShowDesc: "Tropical rhythms, colourful costumes and energetic dance take the stage.",
+    darkSideDesc: "A striking stage experience combining music, atmosphere and performance.",
+    michaelJacksonDesc: "An exciting tribute celebrating the music and iconic moves of Michael Jackson.",
+    galaTheBlushDesc: "A special gala evening together with the live music group The Blush.",
+    echoesMongoliaDesc: "Discover the sound, culture and captivating performance traditions of Mongolia.",
     featuredShow: "FEATURED SHOW",
     posterPlaceholder: "Tonight\'s poster will appear here",
     showDetails: "Show details",
@@ -195,8 +237,32 @@ const translations = {
     activitiesTitle: "Tägliche Aktivitäten",
     activitiesIntro: "Bleiben Sie aktiv, haben Sie Spaß und genießen Sie jeden Moment Ihres Urlaubs.",
     tonight: "HEUTE ABEND",
-    showsTitle: "Abendshow",
-    showsIntro: "Erleben Sie mit uns einen spektakulären Abend im Theater.",
+    showProgrammeKicker: "ZWEI-WOCHEN-PROGRAMM",
+    showsTitle: "14-Tage-Showprogramm",
+    showsIntro: "Wählen Sie eine Woche und tippen Sie auf eine Show, um Plakat und Details zu sehen.",
+    weekOne: "WOCHE 1",
+    weekTwo: "WOCHE 2",
+    monday: "Montag",
+    tuesday: "Dienstag",
+    wednesday: "Mittwoch",
+    thursday: "Donnerstag",
+    friday: "Freitag",
+    saturday: "Samstag",
+    sunday: "Sonntag",
+    tonightLabel: "HEUTE ABEND",
+    posterComingSoon: "Plakat folgt in Kürze",
+    faceOfAfricaDesc: "Eine spektakuläre Akrobatikshow voller Kraft, Balance und Rhythmus.",
+    bonnlesDesc: "Eine energiegeladene Abendshow mit Bühnenunterhaltung und Überraschungen.",
+    razaUrbanaDesc: "Urbaner Rhythmus, kraftvoller Tanz und lebendige Bühnenenergie treffen aufeinander.",
+    bingoDesc: "Freuen Sie sich auf einen unterhaltsamen Bingoabend voller Spannung und Überraschungen.",
+    divaNovaDesc: "Genießen Sie einen stilvollen Live-Musik-Abend mit Diva Nova.",
+    mexicoShowDesc: "Eine farbenfrohe Show, inspiriert von Musik, Tanz und Lebensfreude Mexikos.",
+    djPortSideDesc: "Tanzen, feiern und genießen Sie den Abend mit DJ Port Side.",
+    tropicanaShowDesc: "Tropische Rhythmen, farbenfrohe Kostüme und energiegeladener Tanz erobern die Bühne.",
+    darkSideDesc: "Ein eindrucksvolles Bühnenerlebnis aus Musik, Atmosphäre und Performance.",
+    michaelJacksonDesc: "Eine mitreißende Hommage an die Musik und legendären Moves von Michael Jackson.",
+    galaTheBlushDesc: "Ein besonderer Galaabend gemeinsam mit der Live-Musik-Gruppe The Blush.",
+    echoesMongoliaDesc: "Entdecken Sie Klang, Kultur und faszinierende Aufführungstraditionen der Mongolei.",
     featuredShow: "SHOW DES ABENDS",
     posterPlaceholder: "Das heutige Showplakat erscheint hier",
     showDetails: "Show-Details",
@@ -298,8 +364,32 @@ const translations = {
     activitiesTitle: "Günlük Aktiviteler",
     activitiesIntro: "Aktif kalın, eğlenin ve tatilinizin her anının keyfini çıkarın.",
     tonight: "BU AKŞAM",
-    showsTitle: "Akşam Şovu",
-    showsIntro: "Muhteşem bir gece için tiyatroda bize katılın.",
+    showProgrammeKicker: "İKİ HAFTALIK PROGRAM",
+    showsTitle: "14 Günlük Şov Programı",
+    showsIntro: "Haftayı seçin; afişi ve ayrıntıları görmek için şova dokunun.",
+    weekOne: "1. HAFTA",
+    weekTwo: "2. HAFTA",
+    monday: "Pazartesi",
+    tuesday: "Salı",
+    wednesday: "Çarşamba",
+    thursday: "Perşembe",
+    friday: "Cuma",
+    saturday: "Cumartesi",
+    sunday: "Pazar",
+    tonightLabel: "BU AKŞAM",
+    posterComingSoon: "Afiş yakında eklenecek",
+    faceOfAfricaDesc: "Güç, denge ve ritimle dolu etkileyici bir akrobasi gösterisi.",
+    bonnlesDesc: "Sahne eğlencesi ve sürprizlerle dolu, yüksek enerjili bir akşam gösterisi.",
+    razaUrbanaDesc: "Şehir ritimleri, güçlü danslar ve yüksek sahne enerjisi bir araya geliyor.",
+    bingoDesc: "Heyecan ve sürprizlerle dolu eğlenceli bingo gecemize katılın.",
+    divaNovaDesc: "Diva Nova ile şık ve keyifli bir canlı müzik akşamının tadını çıkarın.",
+    mexicoShowDesc: "Meksika'nın müziğinden, dansından ve ruhundan ilham alan renkli bir gösteri.",
+    djPortSideDesc: "DJ Port Side ile dans edin, eğlenin ve gecenin tadını çıkarın.",
+    tropicanaShowDesc: "Tropikal ritimler, renkli kostümler ve enerjik danslar sahnede buluşuyor.",
+    darkSideDesc: "Müzik, atmosfer ve performansı birleştiren etkileyici bir sahne deneyimi.",
+    michaelJacksonDesc: "Michael Jackson'ın müziğini ve ikonik danslarını kutlayan heyecan verici bir gösteri.",
+    galaTheBlushDesc: "The Blush canlı müzik grubuyla birlikte özel bir gala gecesi.",
+    echoesMongoliaDesc: "Moğolistan'ın sesini, kültürünü ve büyüleyici gösteri geleneklerini keşfedin.",
     featuredShow: "GECENİN ŞOVU",
     posterPlaceholder: "Bu akşamki afiş burada görünecek",
     showDetails: "Şov detayları",
@@ -390,30 +480,115 @@ function renderActivities() {
   }
 }
 
-function renderShow() {
-  const title = content.show.title;
-  const time = content.show.time;
+function getIstanbulDate() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Istanbul",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric"
+  }).formatToParts(new Date());
 
-  const mainTitle = document.getElementById("showTitle");
-  const mainTime = document.getElementById("showTime");
+  const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return new Date(Date.UTC(Number(values.year), Number(values.month) - 1, Number(values.day)));
+}
+
+function getCurrentShowPosition() {
+  const today = getIstanbulDate();
+  const dayDifference = Math.floor((today.getTime() - SHOW_CYCLE_START_UTC) / 86400000);
+  const week = dayDifference < 0 ? 0 : Math.floor(dayDifference / 7) % 2;
+  const jsDay = today.getUTCDay();
+  const day = jsDay === 0 ? 6 : jsDay - 1;
+  return { week, day };
+}
+
+let activeProgrammeWeek = getCurrentShowPosition().week;
+let selectedShow = null;
+
+function setPoster(element, posterPath) {
+  if (!element) return;
+  const placeholder = element.querySelector("span");
+
+  if (posterPath) {
+    element.classList.add("has-image");
+    element.style.backgroundImage = `url("${posterPath}")`;
+    if (placeholder) placeholder.hidden = true;
+  } else {
+    element.classList.remove("has-image");
+    element.style.backgroundImage = "";
+    if (placeholder) {
+      placeholder.hidden = false;
+      placeholder.textContent = translate("posterComingSoon");
+    }
+  }
+}
+
+function renderShow() {
+  const position = getCurrentShowPosition();
+  const tonightShow = content.showWeeks[position.week][position.day];
+  const heroTitle = document.getElementById("tonightShowTitle");
   const heroPoster = document.getElementById("tonightPoster");
 
-  if (mainTitle) mainTitle.textContent = title;
-  if (mainTime) mainTime.textContent = time;
+  if (heroTitle) heroTitle.textContent = tonightShow.title;
+  setPoster(heroPoster, tonightShow.poster);
+}
 
-  const mainPoster = document.querySelector(".show-poster-placeholder");
+function renderShowSchedule() {
+  const grid = document.getElementById("showProgrammeGrid");
+  if (!grid) return;
 
-  [mainPoster, heroPoster].forEach(poster => {
-    if (!poster) return;
+  const current = getCurrentShowPosition();
+  const shows = content.showWeeks[activeProgrammeWeek];
 
-    if (content.show.poster) {
-      poster.classList.add("has-image");
-      poster.style.backgroundImage = `url("${content.show.poster}")`;
-    } else {
-      poster.classList.remove("has-image");
-      poster.style.backgroundImage = "";
-    }
+  grid.innerHTML = shows.map((show, index) => {
+    const isTonight = activeProgrammeWeek === current.week && index === current.day;
+    const posterStyle = show.poster ? ` style="background-image:url('${show.poster}')"` : "";
+    return `
+      <button class="show-programme-card${isTonight ? " is-tonight" : ""}" type="button" data-show-index="${index}">
+        <span class="programme-poster${show.poster ? " has-image" : ""}"${posterStyle}>
+          ${show.poster ? "" : `<span>${translate("posterComingSoon")}</span>`}
+        </span>
+        <span class="programme-card-body">
+          <span class="programme-day-row">
+            <span class="programme-day">${translate(show.dayKey)}</span>
+            ${isTonight ? `<span class="programme-tonight">${translate("tonightLabel")}</span>` : ""}
+          </span>
+          <strong>${show.title}</strong>
+          <span class="programme-time">${SHOW_TIME}</span>
+        </span>
+      </button>
+    `;
+  }).join("");
+
+  document.querySelectorAll(".programme-tab").forEach(tab => {
+    const isActive = Number(tab.dataset.week) === activeProgrammeWeek;
+    tab.classList.toggle("active", isActive);
+    tab.setAttribute("aria-selected", String(isActive));
   });
+
+  grid.querySelectorAll("[data-show-index]").forEach(card => {
+    card.addEventListener("click", () => openShowModal(activeProgrammeWeek, Number(card.dataset.showIndex)));
+  });
+}
+
+function openShowModal(weekIndex, showIndex) {
+  const modal = document.getElementById("showModal");
+  const show = content.showWeeks[weekIndex][showIndex];
+  if (!modal || !show) return;
+
+  selectedShow = { weekIndex, showIndex };
+  document.getElementById("showModalDay").textContent = translate(show.dayKey);
+  document.getElementById("showModalTitle").textContent = show.title;
+  document.getElementById("showModalDescription").textContent = translate(show.descriptionKey);
+  setPoster(document.getElementById("showModalPoster"), show.poster);
+
+  if (!modal.open && typeof modal.showModal === "function") modal.showModal();
+  else if (!modal.open) modal.setAttribute("open", "");
+}
+
+function refreshOpenShowModal() {
+  const modal = document.getElementById("showModal");
+  if (!selectedShow || !modal?.open) return;
+  openShowModal(selectedShow.weekIndex, selectedShow.showIndex);
 }
 
 function setLanguage(lang) {
@@ -434,6 +609,9 @@ function setLanguage(lang) {
 
   localStorage.setItem("portSideLanguage", lang);
   renderActivities();
+  renderShow();
+  renderShowSchedule();
+  refreshOpenShowModal();
   renderWeatherDate();
 
   if (window.latestWeatherData) {
@@ -445,8 +623,22 @@ document.querySelectorAll("[data-lang]").forEach(button => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
+document.querySelectorAll(".programme-tab").forEach(tab => {
+  tab.addEventListener("click", () => {
+    activeProgrammeWeek = Number(tab.dataset.week);
+    renderShowSchedule();
+  });
+});
+
+const showModal = document.getElementById("showModal");
+const showModalClose = document.getElementById("showModalClose");
+
+showModalClose?.addEventListener("click", () => showModal.close());
+showModal?.addEventListener("click", event => {
+  if (event.target === showModal) showModal.close();
+});
+
 setLanguage(currentLanguage);
-renderShow();
 
 
 const WEATHER_COORDINATES = {

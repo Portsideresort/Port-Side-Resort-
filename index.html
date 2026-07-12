@@ -99,7 +99,7 @@
 
           <div class="tonight-info">
             <span class="show-badge" data-i18n="tonight">TONIGHT</span>
-            <h2>Tonight's Show</h2>
+            <h2 id="tonightShowTitle">Tonight's Show</h2>
             <div class="tonight-meta">
               <span>21:30</span>
               <span data-i18n="theatre">Theatre</span>
@@ -135,42 +135,38 @@
       <div class="shell">
         <div class="section-heading split-heading">
           <div>
-            <p class="section-kicker gold" data-i18n="tonight">TONIGHT</p>
-            <h2 data-i18n="showsTitle">Evening Show</h2>
+            <p class="section-kicker gold" data-i18n="showProgrammeKicker">TWO-WEEK PROGRAMME</p>
+            <h2 data-i18n="showsTitle">14-Day Show Programme</h2>
           </div>
           <p class="section-intro muted" data-i18n="showsIntro">
-            Join us at the theatre for a spectacular night.
+            Choose a week and tap a show to see its poster and details.
           </p>
         </div>
 
-        <article class="show-card">
-          <div class="show-visual">
-            <div class="show-poster-placeholder">
-              <span data-i18n="posterPlaceholder">Tonight's poster will appear here</span>
-            </div>
-          </div>
+        <div class="programme-tabs" role="tablist" aria-label="Show programme weeks">
+          <button class="programme-tab active" id="week1Tab" type="button" role="tab" data-week="0" aria-selected="true" data-i18n="weekOne">WEEK 1</button>
+          <button class="programme-tab" id="week2Tab" type="button" role="tab" data-week="1" aria-selected="false" data-i18n="weekTwo">WEEK 2</button>
+        </div>
 
-          <div class="show-info">
-            <span class="show-badge" data-i18n="featuredShow">FEATURED SHOW</span>
-            <h3 id="showTitle">Tonight's Show</h3>
-            <p id="showDescription" data-i18n="showDescription">
-              Music, dance and entertainment for an unforgettable evening.
-            </p>
-
-            <div class="show-details">
-              <div class="detail-item">
-                <span data-i18n="timeLabel">TIME</span>
-                <strong id="showTime">21:30</strong>
-              </div>
-              <div class="detail-item">
-                <span data-i18n="placeLabel">PLACE</span>
-                <strong data-i18n="theatre">Theatre</strong>
-              </div>
-            </div>
-          </div>
-        </article>
+        <div class="show-programme-grid" id="showProgrammeGrid" role="tabpanel" aria-live="polite"></div>
       </div>
     </section>
+
+    <dialog class="show-modal" id="showModal" aria-labelledby="showModalTitle">
+      <button class="show-modal-close" id="showModalClose" type="button" aria-label="Close">×</button>
+      <div class="show-modal-poster" id="showModalPoster">
+        <span data-i18n="posterComingSoon">Poster coming soon</span>
+      </div>
+      <div class="show-modal-content">
+        <span class="show-badge" id="showModalDay">MONDAY</span>
+        <h3 id="showModalTitle">Show</h3>
+        <p id="showModalDescription"></p>
+        <div class="show-modal-time">
+          <span data-i18n="timeLabel">TIME</span>
+          <strong>21:30</strong>
+        </div>
+      </div>
+    </dialog>
 
     <section id="gallery" class="section gallery-section">
       <div class="shell">
