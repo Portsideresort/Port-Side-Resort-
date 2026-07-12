@@ -1,3 +1,14 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
+  window.scrollTo(0, 0);
+});
+
 const content = {
   activities: [
     { time: "10:00", titleKey: "radioPortSide", locationKey: "poolArea", descriptionKey: "radioDesc", benefitsKey: "radioBenefits", musclesKey: "radioMuscles", jointsKey: "radioJoints", mindKey: "radioMind", image: "activity-radio.jpg" },

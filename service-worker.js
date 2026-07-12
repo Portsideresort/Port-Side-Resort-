@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v26-sunday-dj-poster";
+const CACHE_NAME = "port-side-v27-start-at-top";
 const FILES = [
   "./",
   "./index.html",
