@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v29-german-default";
+const CACHE_NAME = "port-side-v30-cloudflare-analytics";
 const FILES = [
   "./",
   "./index.html",
