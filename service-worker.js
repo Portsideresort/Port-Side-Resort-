@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v36-weather-menu-stacking";
+const CACHE_NAME = "port-side-v37-star-catch-game";
 const FILES = [
   "./",
   "./index.html",
@@ -24,6 +24,7 @@ const FILES = [
   "./event-mini-disco.jpg",
   "./event-the-blush.jpg",
   "./hotel-logo-gold.png",
+  "./game-hotel-background.jpg",
   "./activity-radio.jpg",
   "./activity-morning-gym.jpg",
   "./activity-boccia.jpg",

@@ -2938,6 +2938,316 @@ footer {
   background-color: #050d16 !important;
 }
 
+/* ===== PORT SIDE STAR CATCH ===== */
+
+.game-invite-section {
+  position: relative;
+  padding: 84px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(54, 150, 165, .16), transparent 28%),
+    radial-gradient(circle at 88% 76%, rgba(218, 167, 67, .14), transparent 30%),
+    #071725;
+}
+
+.game-invite-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(330px, .92fr);
+  overflow: hidden;
+  border: 1px solid rgba(238, 201, 116, .28);
+  border-radius: 38px;
+  background:
+    linear-gradient(90deg, rgba(4, 20, 33, .98) 0%, rgba(4, 20, 33, .92) 45%, rgba(4, 20, 33, .38) 74%, rgba(4, 20, 33, .22) 100%),
+    url("game-hotel-background.jpg") center 48% / cover no-repeat;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.game-invite-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .2;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,.8) .65px, transparent .65px);
+  background-size: 11px 11px;
+  mask-image: linear-gradient(110deg, black, transparent 65%);
+}
+
+.game-invite-copy {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  padding: 68px 30px 68px 66px;
+}
+
+.game-invite-copy h2 {
+  max-width: 630px;
+  margin: 0;
+  color: #fffaf0;
+  font: 400 clamp(3.2rem, 6.2vw, 6.25rem)/.88 Georgia, "Times New Roman", serif;
+  letter-spacing: -.06em;
+  text-shadow: 0 10px 35px rgba(0,0,0,.35);
+}
+
+.game-invite-intro {
+  max-width: 580px;
+  margin: 24px 0 0;
+  color: rgba(255,255,255,.68);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.game-rule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 26px 0 30px;
+}
+
+.game-rule-list > span {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 999px;
+  color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(9px);
+}
+
+.game-rule-list b {
+  color: #efcc78;
+  font-size: .76rem;
+}
+
+.game-rule-list strong {
+  font-size: .63rem;
+  font-weight: 850;
+  letter-spacing: .045em;
+}
+
+.game-launch-button {
+  min-width: 224px;
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 10px 0 24px;
+  border-radius: 999px;
+  color: #fffaf0;
+  background: linear-gradient(135deg, #b97b31, #dda94b);
+  box-shadow: 0 16px 35px rgba(154, 97, 33, .34);
+  font-size: .71rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.game-launch-button > span:last-child {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #bd8138;
+  background: #fff3d2;
+  font-size: 1rem;
+}
+
+.game-launch-button:hover,
+.game-launch-button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 21px 42px rgba(154, 97, 33, .44);
+  outline: none;
+}
+
+.game-deadline {
+  display: block;
+  margin-top: 13px;
+  color: rgba(255,255,255,.43);
+  font-size: .62rem;
+  font-weight: 750;
+  letter-spacing: .06em;
+}
+
+.game-invite-visual {
+  position: relative;
+  z-index: 2;
+  min-height: 500px;
+}
+
+.game-preview-halo {
+  position: absolute;
+  border: 1px solid rgba(242, 208, 128, .25);
+  border-radius: 50%;
+  box-shadow: 0 0 55px rgba(230, 185, 90, .12);
+}
+
+.game-preview-halo.halo-a {
+  width: 360px;
+  height: 360px;
+  right: 10%;
+  top: 14%;
+}
+
+.game-preview-halo.halo-b {
+  width: 265px;
+  height: 265px;
+  right: 19%;
+  top: 23%;
+  border-style: dashed;
+}
+
+.game-preview-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 190px;
+  min-height: 152px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  border: 1px solid rgba(242, 207, 127, .34);
+  border-radius: 34px;
+  transform: translate(-50%, -50%);
+  background: rgba(4, 20, 32, .78);
+  box-shadow: 0 24px 65px rgba(0,0,0,.42), inset 0 1px 0 rgba(255,255,255,.09);
+  backdrop-filter: blur(16px);
+}
+
+.game-preview-logo img {
+  width: 145px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.game-preview-logo strong {
+  color: #f1cf80;
+  font: 700 .68rem/1 Georgia, serif;
+  letter-spacing: .2em;
+}
+
+.game-preview-item {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #fff6dc, #e8bc64);
+  box-shadow: 0 15px 30px rgba(0,0,0,.35);
+  font-size: 1.65rem;
+}
+
+.game-preview-item.rainbow { left: 7%; top: 14%; }
+.game-preview-item.sun { right: 9%; top: 10%; }
+.game-preview-item.cocktail { right: 4%; bottom: 17%; }
+.game-preview-item.star { left: 12%; bottom: 11%; color: #946426; }
+.game-preview-item.storm {
+  right: 22%;
+  top: 38%;
+  width: 53px;
+  height: 53px;
+  border-color: rgba(255,255,255,.2);
+  background: radial-gradient(circle at 30% 25%, #5b7180, #172a38);
+  font-size: 1.35rem;
+}
+
+@media (max-width: 900px) {
+  .game-invite-card {
+    grid-template-columns: 1fr;
+    background:
+      linear-gradient(180deg, rgba(4,20,33,.95) 0%, rgba(4,20,33,.82) 58%, rgba(4,20,33,.45) 100%),
+      url("game-hotel-background.jpg") center top / cover no-repeat;
+  }
+
+  .game-invite-copy {
+    padding: 54px 46px 22px;
+  }
+
+  .game-invite-visual {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .game-invite-section {
+    padding: 58px 0;
+  }
+
+  .game-invite-card {
+    border-radius: 27px;
+  }
+
+  .game-invite-copy {
+    padding: 39px 24px 14px;
+  }
+
+  .game-invite-copy h2 {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  .game-invite-intro {
+    margin-top: 18px;
+    font-size: .87rem;
+  }
+
+  .game-rule-list {
+    align-items: stretch;
+    flex-direction: column;
+    margin: 22px 0 25px;
+  }
+
+  .game-rule-list > span {
+    width: fit-content;
+  }
+
+  .game-launch-button {
+    width: 100%;
+  }
+
+  .game-invite-visual {
+    min-height: 310px;
+  }
+
+  .game-preview-halo.halo-a {
+    width: 260px;
+    height: 260px;
+    right: 8%;
+  }
+
+  .game-preview-halo.halo-b {
+    width: 195px;
+    height: 195px;
+    right: 17%;
+  }
+
+  .game-preview-logo {
+    width: 160px;
+    min-height: 132px;
+  }
+
+  .game-preview-logo img {
+    width: 125px;
+    height: 75px;
+  }
+
+  .game-preview-item {
+    width: 49px;
+    height: 49px;
+    font-size: 1.28rem;
+  }
+}
+
 /* ===== TOP SECTION SHORTCUTS ===== */
 
 .section-shortcuts {
@@ -2956,7 +3266,7 @@ footer {
 
 .section-shortcuts-track {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 13px;
   padding: 5px;
 }
@@ -3002,6 +3312,10 @@ footer {
 }
 
 .section-shortcut:nth-child(5) {
+  --bubble-glow: rgba(209, 158, 65, .36);
+}
+
+.section-shortcut:nth-child(6) {
   --bubble-glow: rgba(62, 148, 134, .32);
 }
 
@@ -3073,6 +3387,7 @@ footer {
 #special-events,
 #shows,
 #music,
+#game,
 #contact {
   scroll-margin-top: 18px;
 }
@@ -3126,8 +3441,8 @@ footer {
 
   .section-shortcuts-track {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 4px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 3px;
     padding: 3px;
     overflow: visible;
     scroll-snap-type: none;
@@ -3148,15 +3463,15 @@ footer {
   }
 
   .section-shortcut-icon {
-    width: 26px;
-    height: 26px;
-    font-size: .76rem;
+    width: 24px;
+    height: 24px;
+    font-size: .7rem;
     box-shadow: 0 5px 12px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.55);
   }
 
   .section-shortcut strong {
     max-width: none;
-    font-size: .44rem;
+    font-size: .42rem;
     line-height: 1;
     letter-spacing: .02em;
     white-space: nowrap;
