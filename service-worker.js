@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v31-music-collection";
+const CACHE_NAME = "port-side-v32-main-page-music";
 const FILES = [
   "./",
   "./index.html",
@@ -35,11 +35,16 @@ const FILES = [
   "./music/index.html",
   "./music/style.css",
   "./music/player.js",
+  "./music/main-player.js",
   "./manifest.json"
 ];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(FILES)));
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(FILES))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("fetch", event => {

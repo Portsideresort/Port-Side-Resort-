@@ -23,7 +23,7 @@
       <div class="nav-actions">
         <a href="#activities" class="nav-link" data-i18n="navActivities">Activities</a>
         <a href="#shows" class="nav-link" data-i18n="navShows">Shows</a>
-        <a href="music/" class="nav-link" data-i18n="navMusic">Music</a>
+        <a href="#music" class="nav-link" data-i18n="navMusic">Music</a>
         <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
 
         <div class="nav-weather-wrap">
@@ -265,30 +265,122 @@
       </div>
     </dialog>
 
-    <section id="music" class="music-portal-section">
-      <div class="shell music-portal-card">
-        <div class="music-portal-copy">
-          <p class="section-kicker gold" data-i18n="musicKicker">PORT SIDE SOUNDS</p>
-          <h2 data-i18n="musicTitle">Listen to the rhythm of your holiday</h2>
-          <p data-i18n="musicIntro">Discover ten original Port Side tracks, from the morning welcome to sunset sounds.</p>
-          <div class="music-portal-meta">
-            <span data-i18n="musicTrackCount">10 EXCLUSIVE TRACKS</span>
-            <span aria-hidden="true">✦</span>
-            <span data-i18n="musicListenOnly">LISTEN ONLINE</span>
+    <section id="music" class="music-library-section">
+      <div class="shell">
+        <div class="music-library-hero">
+          <div class="music-library-copy">
+            <p class="section-kicker gold" data-i18n="musicKicker">PORT SIDE SOUNDS</p>
+            <h2 data-i18n="musicTitle">Listen to the rhythm of your holiday</h2>
+            <p data-i18n="musicIntro">Discover ten original Port Side tracks, from the morning welcome to sunset sounds.</p>
+            <div class="music-library-meta">
+              <span data-i18n="musicTrackCount">10 EXCLUSIVE TRACKS</span>
+              <span aria-hidden="true">✦</span>
+              <span data-i18n="musicListenOnly">LISTEN ONLINE</span>
+            </div>
           </div>
-          <a class="music-portal-button" href="music/">
-            <span data-i18n="musicButton">LISTEN NOW</span>
-            <b aria-hidden="true">♪</b>
-          </a>
+
+          <div class="music-library-disc" aria-hidden="true">
+            <div class="music-library-rings"></div>
+            <div class="music-library-label">
+              <small>PORT SIDE</small>
+              <strong>PS</strong>
+              <span>SOUNDS</span>
+            </div>
+          </div>
         </div>
 
-        <div class="music-portal-disc" aria-hidden="true">
-          <div class="music-portal-rings"></div>
-          <div class="music-portal-label">
-            <small>PORT SIDE</small>
-            <strong>PS</strong>
-            <span>SOUNDS</span>
+        <div class="music-library-toolbar">
+          <p data-i18n="musicCollectionHint">Choose a track and start listening.</p>
+          <div class="music-filter-row" aria-label="Music categories">
+            <button class="active" type="button" data-music-filter="all" data-i18n="musicFilterAll">ALL</button>
+            <button type="button" data-music-filter="signature" data-i18n="musicFilterSignature">HOTEL SIGNATURES</button>
+            <button type="button" data-music-filter="hook" data-i18n="musicFilterHook">HOOK SOUNDS</button>
+            <button type="button" data-music-filter="sunset" data-i18n="musicFilterSunset">SUNSET &amp; SOUL</button>
           </div>
+        </div>
+
+        <div class="music-track-grid">
+          <button class="music-track-card active" type="button" data-main-track="0" data-music-category="signature" aria-pressed="true">
+            <span class="music-track-number">01</span>
+            <span class="music-track-copy"><small data-i18n="musicMorningType">MORNING OPENING</small><strong>Günaydın</strong><em>02:20</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="1" data-music-category="signature" aria-pressed="false">
+            <span class="music-track-number">02</span>
+            <span class="music-track-copy"><small data-i18n="musicClubType">CLUB DANCE 2026</small><strong>Merhaba</strong><em>01:57</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="2" data-music-category="signature" aria-pressed="false">
+            <span class="music-track-number">03</span>
+            <span class="music-track-copy"><small data-i18n="musicAnonsType">ANNOUNCEMENT JINGLE</small><strong>Hey! Hey!</strong><em>02:19</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="3" data-music-category="hook" aria-pressed="false">
+            <span class="music-track-number">04</span>
+            <span class="music-track-copy"><small data-i18n="musicMoonlightType">HOOK SOUND</small><strong>Moonlight</strong><em>02:19</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="4" data-music-category="hook" aria-pressed="false">
+            <span class="music-track-number">05</span>
+            <span class="music-track-copy"><small data-i18n="musicRunType">HOOK SOUND</small><strong>Run Run</strong><em>03:05</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="5" data-music-category="hook" aria-pressed="false">
+            <span class="music-track-number">06</span>
+            <span class="music-track-copy"><small data-i18n="musicViolinType">HOOK SOUND</small><strong>Violin</strong><em>02:37</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="6" data-music-category="sunset" aria-pressed="false">
+            <span class="music-track-number">07</span>
+            <span class="music-track-copy"><small data-i18n="musicHomeType">JAZZ · POP · RETRO SOUL</small><strong>Feels Like Home</strong><em>02:55</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="7" data-music-category="sunset" aria-pressed="false">
+            <span class="music-track-number">08</span>
+            <span class="music-track-copy"><small data-i18n="musicLeavingType">JAZZ · POP · RETRO SOUL</small><strong>I'm Not Leaving</strong><em>03:03</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="8" data-music-category="sunset" aria-pressed="false">
+            <span class="music-track-number">09</span>
+            <span class="music-track-copy"><small data-i18n="musicFeelType">SUNSET SOUND</small><strong>Port Side Feel</strong><em>01:35</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+          <button class="music-track-card" type="button" data-main-track="9" data-music-category="sunset" aria-pressed="false">
+            <span class="music-track-number">10</span>
+            <span class="music-track-copy"><small data-i18n="musicLightsType">SUNSET SOUND</small><strong>Lights Are Low</strong><em>02:48</em></span>
+            <span class="music-track-play" aria-hidden="true">▶</span>
+          </button>
+        </div>
+
+        <div class="music-player-panel" id="mainMusicPlayer" aria-label="Music player" oncontextmenu="return false">
+          <div class="music-now-playing">
+            <span class="music-player-number" id="mainMusicNumber">01</span>
+            <span class="music-player-copy">
+              <small data-i18n="musicNowPlaying">NOW PLAYING</small>
+              <strong id="mainMusicTitle">Günaydın</strong>
+              <em id="mainMusicSubtitle">Morning Opening</em>
+            </span>
+          </div>
+
+          <div class="music-player-center">
+            <div class="music-player-controls">
+              <button type="button" id="mainMusicPrevious" aria-label="Previous track">‹</button>
+              <button class="music-main-play" type="button" id="mainMusicPlay" aria-label="Play"><span aria-hidden="true">▶</span></button>
+              <button type="button" id="mainMusicNext" aria-label="Next track">›</button>
+            </div>
+            <div class="music-progress-wrap">
+              <span id="mainMusicCurrent">0:00</span>
+              <input id="mainMusicProgress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Track progress" />
+              <span id="mainMusicDuration">2:20</span>
+            </div>
+          </div>
+
+          <div class="music-volume-control">
+            <button type="button" id="mainMusicMute" aria-label="Mute"><span id="mainMusicVolumeIcon" aria-hidden="true">🔊</span></button>
+            <input id="mainMusicVolume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume" />
+          </div>
+
+          <audio id="mainMusicAudio" preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
         </div>
       </div>
     </section>
@@ -345,6 +437,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="music/main-player.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b261336548f84659b75d9956d52f6413"}'></script>
   <!-- End Cloudflare Web Analytics -->
