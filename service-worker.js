@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v30-cloudflare-analytics";
+const CACHE_NAME = "port-side-v31-music-collection";
 const FILES = [
   "./",
   "./index.html",
@@ -31,6 +31,10 @@ const FILES = [
   "./activity-sea-gym.jpg",
   "./activity-water-gym.jpg",
   "./activity-water-polo.jpg",
+  "./music/",
+  "./music/index.html",
+  "./music/style.css",
+  "./music/player.js",
   "./manifest.json"
 ];
 

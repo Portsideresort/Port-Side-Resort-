@@ -13,6 +13,242 @@
   --radius: 28px;
 }
 
+/* ===== PORT SIDE SOUNDS PORTAL ===== */
+
+.music-portal-section {
+  position: relative;
+  padding: 92px 0;
+  overflow: hidden;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 82% 25%, rgba(230, 185, 94, 0.17), transparent 27%),
+    linear-gradient(135deg, #071521 0%, #102f43 65%, #0a1d2c 100%);
+}
+
+.music-portal-card {
+  position: relative;
+  min-height: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  padding: 58px 70px;
+  overflow: hidden;
+  border: 1px solid rgba(239, 205, 126, 0.22);
+  border-radius: 34px;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.055), transparent 60%),
+    rgba(4, 17, 29, .46);
+  box-shadow: 0 32px 90px rgba(1, 11, 20, .34), inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+.music-portal-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .12;
+  background-image: radial-gradient(rgba(255,255,255,.7) .65px, transparent .65px);
+  background-size: 9px 9px;
+  mask-image: linear-gradient(90deg, black, transparent 70%);
+}
+
+.music-portal-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.music-portal-copy h2 {
+  max-width: 630px;
+  margin: 12px 0 20px;
+  color: #fffaf0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: .98;
+  letter-spacing: -.05em;
+}
+
+.music-portal-copy > p:not(.section-kicker) {
+  max-width: 560px;
+  color: rgba(246, 241, 232, .66);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.music-portal-meta {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 25px 0 28px;
+  color: rgba(246, 241, 232, .53);
+  font-size: .67rem;
+  font-weight: 850;
+  letter-spacing: .15em;
+}
+
+.music-portal-meta span:nth-child(2) {
+  color: #e7bf67;
+}
+
+.music-portal-button {
+  width: min(100%, 260px);
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 13px 0 24px;
+  border-radius: 999px;
+  color: #0a2232;
+  background: #f3d58d;
+  box-shadow: 0 14px 32px rgba(0,0,0,.25);
+  text-decoration: none;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.music-portal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(0,0,0,.32);
+}
+
+.music-portal-button b {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #f5d78e;
+  background: #0b2638;
+  font: 400 19px/1 Georgia, serif;
+}
+
+.music-portal-disc {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 310px;
+  width: 310px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle, rgba(255,255,255,.04) 0 1px, transparent 1px 7px),
+    radial-gradient(circle at 38% 31%, #2a526a, #10293b 52%, #06131f 100%);
+  box-shadow: 0 42px 75px rgba(0,0,0,.38), inset 0 0 0 1px rgba(255,255,255,.07);
+  animation: musicPortalSpin 24s linear infinite;
+}
+
+.music-portal-rings {
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(242, 205, 124, .13);
+  border-radius: 50%;
+}
+
+.music-portal-rings::before,
+.music-portal-rings::after {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border: 1px solid rgba(242, 205, 124, .1);
+  border-radius: 50%;
+}
+
+.music-portal-rings::after {
+  inset: 29%;
+}
+
+.music-portal-label {
+  position: absolute;
+  inset: 35%;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  border: 3px solid rgba(255,255,255,.28);
+  border-radius: 50%;
+  color: #102638;
+  background: radial-gradient(circle at 30% 30%, #f6db9a, #c58d45);
+  line-height: 1;
+}
+
+.music-portal-label small,
+.music-portal-label span {
+  font-size: .35rem;
+  font-weight: 900;
+  letter-spacing: .17em;
+}
+
+.music-portal-label strong {
+  margin: 5px 0;
+  font: 700 1.7rem/1 Georgia, serif;
+}
+
+@keyframes musicPortalSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 900px) {
+  .music-portal-card {
+    gap: 35px;
+    padding: 48px;
+  }
+
+  .music-portal-disc {
+    flex-basis: 240px;
+    width: 240px;
+  }
+}
+
+@media (max-width: 700px) {
+  .music-portal-section {
+    padding: 58px 0;
+  }
+
+  .music-portal-card {
+    min-height: 455px;
+    padding: 38px 28px;
+    border-radius: 27px;
+  }
+
+  .music-portal-copy h2 {
+    max-width: 330px;
+    font-size: clamp(2.55rem, 12vw, 4rem);
+  }
+
+  .music-portal-copy > p:not(.section-kicker) {
+    max-width: 300px;
+    font-size: .9rem;
+  }
+
+  .music-portal-meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .music-portal-meta span:nth-child(2) {
+    display: none;
+  }
+
+  .music-portal-disc {
+    position: absolute;
+    width: 230px;
+    right: -95px;
+    bottom: -68px;
+    opacity: .22;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-portal-disc {
+    animation: none;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
