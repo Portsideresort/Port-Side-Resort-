@@ -2943,66 +2943,122 @@ footer {
 .section-shortcuts {
   position: relative;
   z-index: 8;
+  padding-block: 8px;
 }
 
 .section-shortcuts-track {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
-  padding: 8px;
-  border: 1px solid rgba(255, 255, 255, .13);
-  border-radius: 22px;
-  background: rgba(4, 17, 31, .56);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255,255,255,.05);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  gap: 13px;
+  padding: 5px;
 }
 
 .section-shortcut {
-  min-height: 68px;
+  --bubble-glow: rgba(51, 139, 158, .32);
+  position: relative;
+  min-height: 116px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 11px;
-  padding: 12px 14px;
-  border: 1px solid transparent;
-  border-radius: 16px;
-  color: rgba(255,255,255,.78);
-  background: rgba(255,255,255,.035);
+  justify-content: center;
+  gap: 9px;
+  padding: 17px 12px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 199, 112, .28);
+  border-radius: 999px;
+  color: rgba(255,255,255,.9);
+  background:
+    radial-gradient(circle at 24% 18%, var(--bubble-glow), transparent 42%),
+    linear-gradient(145deg, rgba(18, 58, 78, .92), rgba(4, 19, 32, .9));
+  box-shadow:
+    0 18px 38px rgba(0, 0, 0, .3),
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 -12px 28px rgba(0,0,0,.16);
   text-decoration: none;
-  transition: transform .2s ease, color .2s ease, border-color .2s ease, background .2s ease;
+  isolation: isolate;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.section-shortcut:nth-child(2) {
+  --bubble-glow: rgba(189, 119, 68, .34);
+}
+
+.section-shortcut:nth-child(3) {
+  --bubble-glow: rgba(91, 111, 177, .36);
+}
+
+.section-shortcut:nth-child(4) {
+  --bubble-glow: rgba(208, 160, 67, .36);
+}
+
+.section-shortcut:nth-child(5) {
+  --bubble-glow: rgba(62, 148, 134, .32);
+}
+
+.section-shortcut::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 54%;
+  height: 30%;
+  top: 7px;
+  left: 15%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,.18), transparent);
+  filter: blur(1px);
+  transform: rotate(-8deg);
+}
+
+.section-shortcut::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 5px;
+  border: 1px solid rgba(255,255,255,.055);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .section-shortcut:hover,
 .section-shortcut:focus-visible {
-  transform: translateY(-2px);
-  border-color: rgba(237, 202, 119, .5);
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(237, 202, 119, .7);
   color: #fffaf0;
-  background: rgba(224, 181, 88, .13);
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, .4),
+    0 0 28px rgba(222, 177, 79, .11),
+    inset 0 1px 0 rgba(255,255,255,.18);
   outline: none;
 }
 
-.section-shortcut span {
-  flex: 0 0 31px;
-  width: 31px;
-  height: 31px;
+.section-shortcut-icon {
+  width: 43px;
+  height: 43px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(236, 199, 112, .35);
+  border: 1px solid rgba(248, 216, 143, .52);
   border-radius: 50%;
-  color: #efce80;
-  font: 700 .7rem/1 Georgia, "Times New Roman", serif;
+  color: #102638;
+  background: radial-gradient(circle at 32% 28%, #fff1c5, #d3a54f 72%);
+  box-shadow: 0 8px 20px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.55);
+  font: 700 1.12rem/1 Georgia, "Times New Roman", serif;
 }
 
 .section-shortcut strong {
-  font-size: .68rem;
-  line-height: 1.28;
-  letter-spacing: .065em;
+  max-width: 150px;
+  font-size: .64rem;
+  line-height: 1.25;
+  letter-spacing: .075em;
+  text-align: center;
   text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0,0,0,.32);
 }
 
 .hero-content {
-  min-height: calc(100svh - 202px);
-  padding-top: 48px;
+  min-height: calc(100svh - 250px);
+  padding-top: 42px;
 }
 
 #activities,
@@ -3021,11 +3077,9 @@ footer {
 
   .section-shortcuts-track {
     display: flex;
-    gap: 7px;
-    padding: 7px 14px 7px 7px;
+    gap: 11px;
+    padding: 7px 18px 12px 5px;
     overflow-x: auto;
-    border-right: 0;
-    border-radius: 20px 0 0 20px;
     scroll-snap-type: x proximity;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
@@ -3036,38 +3090,41 @@ footer {
   }
 
   .section-shortcut {
-    flex: 0 0 190px;
-    min-height: 62px;
+    flex: 0 0 154px;
+    min-height: 118px;
     scroll-snap-align: start;
   }
 
   .hero-content {
-    min-height: calc(100svh - 190px);
-    padding-top: 38px;
+    min-height: calc(100svh - 240px);
+    padding-top: 34px;
   }
 }
 
 @media (max-width: 700px) {
   .section-shortcut {
-    flex-basis: 158px;
-    min-height: 58px;
-    gap: 9px;
-    padding: 10px;
+    flex-basis: 126px;
+    min-height: 126px;
+    aspect-ratio: 1;
+    gap: 8px;
+    padding: 14px 10px;
+    border-radius: 50%;
   }
 
-  .section-shortcut span {
-    flex-basis: 28px;
-    width: 28px;
-    height: 28px;
-    font-size: .64rem;
+  .section-shortcut-icon {
+    width: 39px;
+    height: 39px;
+    font-size: 1rem;
   }
 
   .section-shortcut strong {
-    font-size: .61rem;
+    max-width: 92px;
+    font-size: .57rem;
+    line-height: 1.2;
   }
 
   .hero-content {
-    min-height: calc(100svh - 176px);
-    padding-top: 32px;
+    min-height: calc(100svh - 238px);
+    padding-top: 28px;
   }
 }

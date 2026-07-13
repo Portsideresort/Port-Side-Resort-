@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v33-quick-section-menu";
+const CACHE_NAME = "port-side-v34-bubble-section-menu";
 const FILES = [
   "./",
   "./index.html",
