@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v28-week-cycle-fix";
+const CACHE_NAME = "port-side-v29-german-default";
 const FILES = [
   "./",
   "./index.html",

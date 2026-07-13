@@ -476,7 +476,7 @@ const translations = {
   }
 };
 
-let currentLanguage = localStorage.getItem("portSideLanguage") || "en";
+let currentLanguage = "de";
 
 function translate(key) {
   return translations[currentLanguage][key] || key;
