@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v37-star-catch-game";
+const CACHE_NAME = "port-side-v38-hotel-links";
 const FILES = [
   "./",
   "./index.html",
