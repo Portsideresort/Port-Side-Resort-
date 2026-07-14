@@ -874,6 +874,10 @@ function setLanguage(lang) {
   });
 
   localStorage.setItem("portSideLanguage", lang);
+  const wheelPromoButton = document.getElementById("wheelPromoButton");
+  if (wheelPromoButton) {
+    wheelPromoButton.href = `${GAME_SITE_URL}/wheel/?lang=${encodeURIComponent(lang)}`;
+  }
   renderActivities();
   renderShow();
   renderShowSchedule();
