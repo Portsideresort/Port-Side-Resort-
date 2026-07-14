@@ -113,6 +113,16 @@ const translations = {
     quickMusic: "Music",
     quickGame: "Game",
     quickContact: "Contact",
+    leaderboardKicker: "LIVE RANKING",
+    leaderboardTitle: "This week's Top 3",
+    leaderboardLoading: "Loading ranking…",
+    leaderboardEmpty: "No scores yet — take first place!",
+    leaderboardUnavailable: "The ranking will be back shortly.",
+    leaderboardButton: "PLAY STAR CATCH",
+    wheelKicker: "YOUR LUCKY MOMENT",
+    wheelTitle: "Diamond Wheel",
+    wheelIntro: "Try your luck and claim your free gift.",
+    wheelButton: "SPIN NOW",
     gameKicker: "WEEKLY GUEST CHALLENGE",
     gameTitle: "Port Side Star Catch",
     gameIntro: "Catch the holiday icons, protect your three lives and enter the weekly Top 10.",
@@ -295,6 +305,16 @@ const translations = {
     quickMusic: "Musik",
     quickGame: "Spiel",
     quickContact: "Kontakt",
+    leaderboardKicker: "LIVE-RANGLISTE",
+    leaderboardTitle: "Top 3 dieser Woche",
+    leaderboardLoading: "Rangliste wird geladen…",
+    leaderboardEmpty: "Noch keine Punkte — hol dir Platz 1!",
+    leaderboardUnavailable: "Die Rangliste ist gleich wieder da.",
+    leaderboardButton: "STAR CATCH SPIELEN",
+    wheelKicker: "DEIN GLÜCKSMOMENT",
+    wheelTitle: "Glücksrad",
+    wheelIntro: "Versuche dein Glück und sichere dir dein kostenloses Geschenk.",
+    wheelButton: "JETZT DREHEN",
     gameKicker: "WÖCHENTLICHE GÄSTE-CHALLENGE",
     gameTitle: "Port Side Star Catch",
     gameIntro: "Fange die Urlaubssymbole, schütze deine drei Leben und erreiche die wöchentlichen Top 10.",
@@ -477,6 +497,16 @@ const translations = {
     quickMusic: "Müzik",
     quickGame: "Oyun",
     quickContact: "İletişim",
+    leaderboardKicker: "CANLI SIRALAMA",
+    leaderboardTitle: "Bu haftanın ilk 3'ü",
+    leaderboardLoading: "Sıralama yükleniyor…",
+    leaderboardEmpty: "Henüz skor yok — ilk sırayı sen al!",
+    leaderboardUnavailable: "Sıralama kısa süre sonra yeniden gösterilecek.",
+    leaderboardButton: "STAR CATCH OYNA",
+    wheelKicker: "ŞANS ANI",
+    wheelTitle: "Şans Çarkı",
+    wheelIntro: "Şansınızı deneyin, ücretsiz hediyenizi alın.",
+    wheelButton: "ÇARKI ÇEVİR",
     gameKicker: "HAFTALIK MİSAFİR YARIŞMASI",
     gameTitle: "Port Side Star Catch",
     gameIntro: "Tatil ikonlarını yakala, üç canını koru ve haftalık İlk 10'a gir.",
@@ -594,9 +624,68 @@ const translations = {
 };
 
 let currentLanguage = "de";
+const GAME_SITE_URL = "https://port-side-star-catch.cream-melon-9853.chatgpt.site";
+let leaderboardPreviewEntries = [];
+let leaderboardPreviewStatus = "leaderboardLoading";
 
 function translate(key) {
   return translations[currentLanguage][key] || key;
+}
+
+function renderLeaderboardPreview() {
+  const list = document.getElementById("leaderboardPreviewList");
+  if (!list) return;
+
+  list.replaceChildren();
+
+  if (!leaderboardPreviewEntries.length) {
+    const status = document.createElement("li");
+    status.className = "leaderboard-preview-status";
+    status.textContent = translate(leaderboardPreviewStatus);
+    list.appendChild(status);
+    return;
+  }
+
+  leaderboardPreviewEntries.forEach((entry, index) => {
+    const item = document.createElement("li");
+    const rank = document.createElement("span");
+    const name = document.createElement("strong");
+    const score = document.createElement("b");
+
+    rank.className = "leaderboard-preview-rank";
+    name.className = "leaderboard-preview-name";
+    score.className = "leaderboard-preview-score";
+    rank.textContent = String(index + 1);
+    name.textContent = entry.name;
+    score.textContent = new Intl.NumberFormat(currentLanguage).format(entry.score);
+
+    item.append(rank, name, score);
+    list.appendChild(item);
+  });
+}
+
+async function loadLeaderboardPreview() {
+  try {
+    const response = await fetch(`${GAME_SITE_URL}/api/leaderboard`, {
+      cache: "no-store",
+      credentials: "omit"
+    });
+    if (!response.ok) throw new Error("Leaderboard unavailable");
+
+    const data = await response.json();
+    leaderboardPreviewEntries = Array.isArray(data.entries)
+      ? data.entries
+          .filter(entry => typeof entry?.name === "string" && Number.isFinite(Number(entry?.score)))
+          .slice(0, 3)
+          .map(entry => ({ name: entry.name, score: Number(entry.score) }))
+      : [];
+    leaderboardPreviewStatus = "leaderboardEmpty";
+  } catch {
+    leaderboardPreviewEntries = [];
+    leaderboardPreviewStatus = "leaderboardUnavailable";
+  }
+
+  renderLeaderboardPreview();
 }
 
 function renderActivities() {
@@ -789,6 +878,7 @@ function setLanguage(lang) {
   renderShow();
   renderShowSchedule();
   refreshOpenShowModal();
+  renderLeaderboardPreview();
   renderWeatherDate();
 
   if (window.latestWeatherData) {
@@ -818,6 +908,8 @@ showModal?.addEventListener("click", event => {
 });
 
 setLanguage(currentLanguage);
+loadLeaderboardPreview();
+window.setInterval(loadLeaderboardPreview, 60_000);
 
 
 const WEATHER_COORDINATES = {

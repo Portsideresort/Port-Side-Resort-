@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v38-hotel-links";
+const CACHE_NAME = "port-side-v39-live-dashboard";
 const FILES = [
   "./",
   "./index.html",

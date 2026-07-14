@@ -73,33 +73,69 @@
       </div>
     </nav>
 
-    <div class="section-shortcuts shell">
-      <nav class="section-shortcuts-track" aria-label="Site sections">
-        <a href="#activities" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">☀</span>
-          <strong data-i18n="quickActivities">Activities</strong>
+    <div class="hero-tools shell">
+      <aside class="leaderboard-preview" aria-labelledby="leaderboardPreviewTitle">
+        <div class="leaderboard-preview-head">
+          <div>
+            <span class="leaderboard-live-dot" aria-hidden="true"></span>
+            <span data-i18n="leaderboardKicker">LIVE RANKING</span>
+          </div>
+          <strong id="leaderboardPreviewTitle" data-i18n="leaderboardTitle">This week's Top 3</strong>
+        </div>
+
+        <ol class="leaderboard-preview-list" id="leaderboardPreviewList" aria-live="polite">
+          <li class="leaderboard-preview-status" data-i18n="leaderboardLoading">Loading ranking…</li>
+        </ol>
+
+        <a class="leaderboard-preview-link" href="https://port-side-star-catch.cream-melon-9853.chatgpt.site/game/">
+          <span data-i18n="leaderboardButton">PLAY STAR CATCH</span>
+          <span aria-hidden="true">→</span>
         </a>
-        <a href="#special-events" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">✦</span>
-          <strong data-i18n="quickEvents">Events</strong>
-        </a>
-        <a href="#shows" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">▦</span>
-          <strong data-i18n="quickProgramme">Shows</strong>
-        </a>
-        <a href="#music" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">♪</span>
-          <strong data-i18n="quickMusic">Music</strong>
-        </a>
-        <a href="#game" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">★</span>
-          <strong data-i18n="quickGame">Game</strong>
-        </a>
-        <a href="#contact" class="section-shortcut">
-          <span class="section-shortcut-icon" aria-hidden="true">✉</span>
-          <strong data-i18n="quickContact">Contact</strong>
-        </a>
-      </nav>
+      </aside>
+
+      <div class="hero-quick-area">
+        <nav class="section-shortcuts section-shortcuts-compact" aria-label="Site sections">
+          <div class="section-shortcuts-track">
+            <a href="#activities" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">☀</span>
+              <strong data-i18n="quickActivities">Activities</strong>
+            </a>
+            <a href="#special-events" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">✦</span>
+              <strong data-i18n="quickEvents">Events</strong>
+            </a>
+            <a href="#shows" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">▦</span>
+              <strong data-i18n="quickProgramme">Shows</strong>
+            </a>
+            <a href="#music" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">♪</span>
+              <strong data-i18n="quickMusic">Music</strong>
+            </a>
+            <a href="#game" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">★</span>
+              <strong data-i18n="quickGame">Game</strong>
+            </a>
+            <a href="#contact" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">✉</span>
+              <strong data-i18n="quickContact">Contact</strong>
+            </a>
+          </div>
+        </nav>
+
+        <article class="wheel-promo">
+          <div class="wheel-promo-icon" aria-hidden="true">✦</div>
+          <div class="wheel-promo-copy">
+            <span data-i18n="wheelKicker">YOUR LUCKY MOMENT</span>
+            <strong data-i18n="wheelTitle">Diamond Wheel</strong>
+            <p data-i18n="wheelIntro">Try your luck and claim your free gift.</p>
+          </div>
+          <a class="wheel-promo-button" href="https://port-side-star-catch.cream-melon-9853.chatgpt.site/wheel/">
+            <span data-i18n="wheelButton">SPIN NOW</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </article>
+      </div>
     </div>
 
     <div class="hero-orb orb-one"></div>
