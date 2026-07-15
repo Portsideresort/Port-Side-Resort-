@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v41-russian-auto-language";
+const CACHE_NAME = "port-side-v42-goatcounter-analytics";
 const FILES = [
   "./",
   "./index.html",
