@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v40-wheel-languages";
+const CACHE_NAME = "port-side-v41-russian-auto-language";
 const FILES = [
   "./",
   "./index.html",

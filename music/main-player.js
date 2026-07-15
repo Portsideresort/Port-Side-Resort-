@@ -16,6 +16,7 @@
     en: { play: "Play", pause: "Pause", previous: "Previous track", next: "Next track", mute: "Mute", unmute: "Unmute", progress: "Track progress", volume: "Volume", player: "Music player" },
     de: { play: "Abspielen", pause: "Pause", previous: "Vorheriger Song", next: "Nächster Song", mute: "Ton aus", unmute: "Ton an", progress: "Song-Fortschritt", volume: "Lautstärke", player: "Musikplayer" },
     tr: { play: "Oynat", pause: "Duraklat", previous: "Önceki parça", next: "Sonraki parça", mute: "Sesi kapat", unmute: "Sesi aç", progress: "Parça ilerlemesi", volume: "Ses seviyesi", player: "Müzik oynatıcı" },
+    ru: { play: "Воспроизвести", pause: "Пауза", previous: "Предыдущий трек", next: "Следующий трек", mute: "Выключить звук", unmute: "Включить звук", progress: "Ход воспроизведения", volume: "Громкость", player: "Музыкальный плеер" },
   };
 
   const audio = document.getElementById("mainMusicAudio");

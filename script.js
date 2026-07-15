@@ -232,8 +232,6 @@ const translations = {
     feelsLike: "Feels like",
     humidity: "Humidity",
     wind: "Wind",
-    sunrise: "Sonnenaufgang",
-    sunset: "Sonnenuntergang",
     sunrise: "Sunrise",
     sunset: "Sunset",
     updatedNow: "Updated now",
@@ -426,8 +424,6 @@ const translations = {
     wind: "Wind",
     sunrise: "Sonnenaufgang",
     sunset: "Sonnenuntergang",
-    sunrise: "Sunrise",
-    sunset: "Sunset",
     updatedNow: "Gerade aktualisiert",
     weatherUnavailable: "Die Wetterdaten sind vorübergehend nicht verfügbar."
   },
@@ -620,10 +616,237 @@ const translations = {
     sunset: "Gün batımı",
     updatedNow: "Şimdi güncellendi",
     weatherUnavailable: "Hava durumu bilgisi geçici olarak alınamıyor."
+  },
+  ru: {
+    benefitsButton: "Польза для здоровья и активности",
+    benefitsTitle: "Основные преимущества",
+    musclesTitle: "Задействованные мышцы",
+    jointsTitle: "Задействованные суставы",
+    mindTitle: "Внимание и концентрация",
+    radioBenefits: "Помогает позитивно начать день, способствует лёгкой физической активности и знакомит гостей с программой дня.",
+    radioMuscles: "Лёгкая нагрузка на всё тело во время танцев.",
+    radioJoints: "Плечи, тазобедренные суставы, колени и голеностопы при плавных движениях.",
+    radioMind: "Улучшает настроение, способствует общению и помогает узнать о мероприятиях дня.",
+    morningGymBenefits: "Поддерживает кровообращение, гибкость, подвижность, правильную осанку и заряжает энергией, помогая снять утреннюю скованность.",
+    morningGymMuscles: "Мышцы корпуса, спины, плеч, ягодиц, бёдер и икр.",
+    morningGymJoints: "Плечи, позвоночник, тазобедренные суставы, колени и голеностопы.",
+    morningGymMind: "Дарит бодрость, улучшает настроение и помогает снять стресс.",
+    bocciaBenefits: "Способствует мягкой физической активности, развитию равновесия, точности броска и общей подвижности без высокой нагрузки.",
+    bocciaMuscles: "Плечи, руки, предплечья, мышцы корпуса и ног.",
+    bocciaJoints: "Плечи, локти, запястья, тазобедренные суставы, колени и голеностопы.",
+    bocciaMind: "Развивает концентрацию, оценку расстояния, стратегическое мышление, терпение и навыки общения.",
+    dartsBenefits: "Улучшает точность, контроль движений руки и зрительно-моторную координацию.",
+    dartsMuscles: "Плечи, верхняя часть рук, предплечья, запястья и пальцы.",
+    dartsJoints: "Плечи, локти, запястья и суставы пальцев.",
+    dartsMind: "Развивает концентрацию, терпение, счёт, принятие решений и эмоциональный контроль.",
+    seaGymBenefits: "Сопротивление воды обеспечивает щадящую тренировку всего тела, поддерживая кровообращение, подвижность, равновесие и выносливость.",
+    seaGymMuscles: "Мышцы корпуса, плеч, спины, рук, ягодиц и ног.",
+    seaGymJoints: "Плечи, позвоночник, тазобедренные суставы, колени и голеностопы с минимальной ударной нагрузкой.",
+    seaGymMind: "Морская атмосфера помогает расслабиться, почувствовать уверенность и лучше ощущать своё тело.",
+    waterGymBenefits: "Поддерживает работу сердечно-сосудистой системы, мышечную выносливость, подвижность и координацию, снижая нагрузку на суставы.",
+    waterGymMuscles: "Мышцы корпуса, рук, плеч, спины, ягодиц, бёдер и икр.",
+    waterGymJoints: "Плечи, тазобедренные суставы, колени, голеностопы и позвоночник с минимальной ударной нагрузкой.",
+    waterGymMind: "Развивает чувство ритма, повышает мотивацию, улучшает настроение и помогает снять стресс.",
+    waterPoloBenefits: "Динамичная тренировка всего тела, развивающая выносливость, силу, ловкость и скорость реакции.",
+    waterPoloMuscles: "Плечи, грудь, спина, руки, мышцы корпуса, ягодиц и ног.",
+    waterPoloJoints: "Плечи, локти, запястья, тазобедренные суставы, колени и голеностопы.",
+    waterPoloMind: "Развивает командную работу, быстроту принятия решений, координацию, уверенность и концентрацию.",
+    radioPortSide: "Радио Port Side",
+    morningGym: "Утренняя гимнастика",
+    boccia: "Бочча",
+    darts: "Дартс",
+    seaGym: "Гимнастика в море",
+    waterGym: "Аквааэробика",
+    waterPolo: "Водное поло",
+    stage: "Сцена",
+    sea: "Море",
+    pool: "Бассейн",
+    exceptSunday: "Ежедневно, кроме воскресенья",
+    radioDesc: "Начните день с утреннего радио Port Side. Наслаждайтесь отличной музыкой, знакомьтесь с нашей командой анимации и первыми узнавайте о мероприятиях, играх и сюрпризах дня.",
+    morningGymDesc: "Начните утро с бодрящей тренировки под руководством нашей команды анимации. Она активизирует мышцы и суставы, улучшает гибкость и осанку, поддерживает кровообращение, снимает скованность и помогает чувствовать себя энергичнее в течение дня.",
+    bocciaDesc: "Присоединяйтесь к дружеской и спокойной игре в боччу на пляже.",
+    dartsDesc: "Проверьте свою меткость в весёлом и дружеском турнире по дартсу.",
+    seaGymDesc: "Освежающие упражнения в море, движение и позитивная энергия.",
+    waterGymDesc: "Освежающие упражнения в бассейне под музыку и с отличным настроением.",
+    bocciaAfternoonDesc: "Присоединяйтесь к дневной игре в боччу и насладитесь дружеским соревнованием у моря.",
+    waterPoloDesc: "Командный дух, движение и веселье встречаются в бассейне.",
+    dartsAfternoonDesc: "Ещё одна возможность посоревноваться, повеселиться и попасть точно в цель.",
+    hotelName: "PORT SIDE RESORT HOTEL",
+    navActivities: "Активности",
+    navShows: "Шоу",
+    navMusic: "Музыка",
+    navGame: "Игра",
+    navGallery: "Галерея",
+    quickActivities: "Активности",
+    quickEvents: "События",
+    quickProgramme: "Шоу",
+    quickMusic: "Музыка",
+    quickGame: "Игра",
+    quickContact: "Контакты",
+    leaderboardKicker: "ТЕКУЩИЙ РЕЙТИНГ",
+    leaderboardTitle: "Топ-3 этой недели",
+    leaderboardLoading: "Рейтинг загружается…",
+    leaderboardEmpty: "Результатов пока нет — займите первое место!",
+    leaderboardUnavailable: "Рейтинг скоро снова будет доступен.",
+    leaderboardButton: "ИГРАТЬ В STAR CATCH",
+    wheelKicker: "ВАШ СЧАСТЛИВЫЙ МОМЕНТ",
+    wheelTitle: "Колесо удачи",
+    wheelIntro: "Испытайте удачу и получите бесплатный подарок.",
+    wheelButton: "КРУТИТЬ СЕЙЧАС",
+    gameKicker: "ЕЖЕНЕДЕЛЬНОЕ ИСПЫТАНИЕ ДЛЯ ГОСТЕЙ",
+    gameTitle: "Port Side Star Catch",
+    gameIntro: "Ловите символы отдыха, берегите три жизни и войдите в еженедельный топ-10.",
+    gameRuleLives: "3 жизни · Без ограничения времени",
+    gameRuleWeekly: "Общий еженедельный топ-10",
+    gameRulePrize: "Вручение приза на сцене каждый четверг",
+    gameButton: "ИГРАТЬ СЕЙЧАС",
+    gameClose: "Приём результатов завершается в четверг в 21:00",
+    eyebrow: "АНИМАЦИЯ И АКТИВНЫЙ ОТДЫХ",
+    entertainmentProgramme: "АНИМАЦИОННАЯ<br>ПРОГРАММА",
+    heroLine1: "Ваш отдых.",
+    heroLine2: "Ваш момент.",
+    heroText: "Откройте для себя сегодняшние активности, вечернее шоу и незабываемые моменты в Port Side Resort.",
+    explore: "Открыть программу дня",
+    tonightButton: "Шоу сегодня",
+    locationLabel: "МЕСТО",
+    experienceLabel: "ВПЕЧАТЛЕНИЯ",
+    experienceValue: "Активности • Шоу • Воспоминания",
+    todayLive: "СЕГОДНЯ В PORT SIDE",
+    heroCardTitle: "Ваш день начинается здесь",
+    today: "СЕГОДНЯ",
+    activitiesTitle: "Ежедневные активности",
+    activitiesIntro: "Будьте активны, веселитесь и наслаждайтесь каждым моментом отдыха.",
+    specialEventsKicker: "ЕЩЁ БОЛЬШЕ ВПЕЧАТЛЕНИЙ",
+    specialEventsTitle: "Особые мероприятия",
+    specialEventsIntro: "Живая музыка и незабываемые вечера у бассейна.",
+    happyHourTitle: "Счастливый час",
+    happyHourDesc: "Наслаждайтесь музыкой у бассейна с диджеем, живой перкуссией и саксофоном в яркой атмосфере отдыха.",
+    miniDiscoTitle: "Мини-диско",
+    miniDiscoDesc: "Красочная танцевальная вечеринка с музыкой, простыми движениями и весельем для наших маленьких гостей.",
+    everyThursday: "Каждый четверг",
+    weatherPermitting: "При благоприятной погоде",
+    weekOneFriday: "1-я неделя · Пятница",
+    weekTwoFriday: "2-я неделя · Пятница",
+    galaTitle: "Гала-вечер",
+    galaDesc: "Особый гала-вечер у бассейна, после которого выступит кавер-группа The Blush.",
+    theBlushTitle: "The Blush",
+    theBlushDesc: "Любимые композиции и неподвластные времени хиты в живом исполнении кавер-группы The Blush.",
+    tonight: "СЕГОДНЯ ВЕЧЕРОМ",
+    showProgrammeKicker: "ДВУХНЕДЕЛЬНАЯ ПРОГРАММА",
+    showsTitle: "Программа шоу на 14 дней",
+    showsIntro: "Выберите неделю и нажмите на шоу, чтобы посмотреть афишу и подробности.",
+    weekOne: "1-Я НЕДЕЛЯ",
+    weekTwo: "2-Я НЕДЕЛЯ",
+    monday: "Понедельник",
+    tuesday: "Вторник",
+    wednesday: "Среда",
+    thursday: "Четверг",
+    friday: "Пятница",
+    saturday: "Суббота",
+    sunday: "Воскресенье",
+    tonightLabel: "СЕГОДНЯ ВЕЧЕРОМ",
+    posterComingSoon: "Афиша скоро появится",
+    faceOfAfricaDesc: "Захватывающее акробатическое шоу, наполненное силой, равновесием и ритмом.",
+    bonnlesDesc: "Энергичное вечернее представление со сценическими номерами и сюрпризами.",
+    razaUrbanaDesc: "Городские ритмы, мощные танцы и яркая сценическая энергия объединяются в одном шоу.",
+    bingoDesc: "Присоединяйтесь к весёлому вечеру бинго, полному азарта и сюрпризов.",
+    divaNovaDesc: "Насладитесь стильным вечером живой музыки с Diva Nova.",
+    mexicoShowDesc: "Красочное шоу, вдохновлённое музыкой, танцами и духом Мексики.",
+    djPortSideDesc: "Танцуйте, празднуйте и наслаждайтесь вечером вместе с DJ Port Side.",
+    tropicanaShowDesc: "Тропические ритмы, яркие костюмы и энергичные танцы выходят на сцену.",
+    darkSideDesc: "Яркое сценическое представление, объединяющее музыку, атмосферу и мастерство артистов.",
+    michaelJacksonDesc: "Захватывающий трибьют музыке и легендарным движениям Майкла Джексона.",
+    galaTheBlushDesc: "Особый гала-вечер вместе с кавер-группой The Blush.",
+    echoesMongoliaDesc: "Захватывающее акробатическое шоу от начала до конца, вдохновлённое силой и духом Монголии.",
+    featuredShow: "ГЛАВНОЕ ШОУ",
+    posterPlaceholder: "Здесь появится афиша сегодняшнего шоу",
+    showDetails: "Подробности шоу",
+    showDescription: "У каждой ночи своя магия",
+    timeLabel: "ВРЕМЯ",
+    placeLabel: "МЕСТО",
+    theatre: "Театр",
+    poolArea: "Зона бассейна",
+    beach: "Пляж",
+    memories: "ВОСПОМИНАНИЯ",
+    galleryTitle: "Галерея",
+    galleryIntro: "Здесь будут размещены фотографии, афиши и особые моменты.",
+    galleryComingSoon: "СКОРО",
+    musicKicker: "PORT SIDE SOUNDS",
+    musicTitle: "Слушайте ритм своего отдыха",
+    musicIntro: "Откройте для себя десять оригинальных треков Port Side — от утреннего приветствия до музыки заката.",
+    musicTrackCount: "10 ЭКСКЛЮЗИВНЫХ ТРЕКОВ",
+    musicListenOnly: "СЛУШАТЬ ОНЛАЙН",
+    musicButton: "СЛУШАТЬ СЕЙЧАС",
+    musicCollectionHint: "Выберите трек и начните прослушивание.",
+    musicFilterAll: "ВСЕ",
+    musicFilterSignature: "ФИРМЕННЫЕ ТРЕКИ ОТЕЛЯ",
+    musicFilterHook: "МУЗЫКАЛЬНЫЕ ЗАСТАВКИ",
+    musicFilterSunset: "ЗАКАТ И СОУЛ",
+    musicMorningType: "УТРЕННЕЕ ОТКРЫТИЕ",
+    musicClubType: "КЛУБНЫЙ ТАНЕЦ 2026",
+    musicAnonsType: "ДЖИНГЛ ДЛЯ ОБЪЯВЛЕНИЙ",
+    musicMoonlightType: "МУЗЫКАЛЬНАЯ ЗАСТАВКА",
+    musicRunType: "МУЗЫКАЛЬНАЯ ЗАСТАВКА",
+    musicViolinType: "МУЗЫКАЛЬНАЯ ЗАСТАВКА",
+    musicHomeType: "ДЖАЗ · ПОП · РЕТРО-СОУЛ",
+    musicLeavingType: "ДЖАЗ · ПОП · РЕТРО-СОУЛ",
+    musicFeelType: "МУЗЫКА ЗАКАТА",
+    musicLightsType: "МУЗЫКА ЗАКАТА",
+    musicNowPlaying: "СЕЙЧАС ИГРАЕТ",
+    help: "НУЖНА ПОМОЩЬ?",
+    contactTitle: "Оставайтесь на связи",
+    contactText: "Найдите отель, следите за нашими обновлениями или свяжитесь с командой анимации.",
+    hotelWebsite: "Сайт отеля",
+    footerNote: "Создано для незабываемых моментов вашего отдыха.",
+    loadingWeather: "Загрузка погоды…",
+    feelsLike: "Ощущается как",
+    humidity: "Влажность",
+    wind: "Ветер",
+    sunrise: "Восход",
+    sunset: "Закат",
+    updatedNow: "Обновлено только что",
+    weatherUnavailable: "Информация о погоде временно недоступна."
   }
 };
 
-let currentLanguage = "de";
+const SUPPORTED_LANGUAGES = Object.freeze(["en", "de", "tr", "ru"]);
+const LANGUAGE_PREFERENCE_KEY = "portSideLanguagePreferenceV2";
+
+function normalizeSupportedLanguage(value) {
+  const primaryLanguage = String(value || "")
+    .trim()
+    .toLowerCase()
+    .split(/[-_]/)[0];
+
+  return SUPPORTED_LANGUAGES.includes(primaryLanguage) ? primaryLanguage : null;
+}
+
+function detectBrowserLanguage() {
+  const browserLanguages = typeof navigator !== "undefined" && Array.isArray(navigator.languages)
+    ? navigator.languages
+    : [];
+  const fallbackLanguage = typeof navigator !== "undefined" ? navigator.language : "";
+
+  for (const candidate of [...browserLanguages, fallbackLanguage]) {
+    const supportedLanguage = normalizeSupportedLanguage(candidate);
+    if (supportedLanguage) return supportedLanguage;
+  }
+
+  return "de";
+}
+
+function getInitialLanguage() {
+  try {
+    const savedPreference = normalizeSupportedLanguage(localStorage.getItem(LANGUAGE_PREFERENCE_KEY));
+    if (savedPreference) return savedPreference;
+  } catch {
+    // Browser storage may be unavailable in privacy mode; device language still works.
+  }
+
+  return detectBrowserLanguage();
+}
+
+let currentLanguage = getInitialLanguage();
 const GAME_SITE_URL = "https://port-side-star-catch.cream-melon-9853.chatgpt.site";
 let leaderboardPreviewEntries = [];
 let leaderboardPreviewStatus = "leaderboardLoading";
@@ -857,7 +1080,7 @@ function refreshOpenShowModal() {
   openShowModal(selectedShow.weekIndex, selectedShow.showIndex);
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, { rememberPreference = false } = {}) {
   if (!translations[lang]) return;
 
   currentLanguage = lang;
@@ -873,7 +1096,12 @@ function setLanguage(lang) {
     button.classList.toggle("active", button.dataset.lang === lang);
   });
 
-  localStorage.setItem("portSideLanguage", lang);
+  try {
+    localStorage.setItem("portSideLanguage", lang);
+    if (rememberPreference) localStorage.setItem(LANGUAGE_PREFERENCE_KEY, lang);
+  } catch {
+    // The page remains fully usable when browser storage is disabled.
+  }
   const wheelPromoButton = document.getElementById("wheelPromoButton");
   if (wheelPromoButton) {
     wheelPromoButton.href = `${GAME_SITE_URL}/wheel/?lang=${encodeURIComponent(lang)}`;
@@ -893,7 +1121,7 @@ function setLanguage(lang) {
 }
 
 document.querySelectorAll("[data-lang]").forEach(button => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+  button.addEventListener("click", () => setLanguage(button.dataset.lang, { rememberPreference: true }));
 });
 
 document.querySelectorAll(".programme-tab").forEach(tab => {
@@ -942,6 +1170,13 @@ const weatherText = {
     61: "Hafif yağmur", 63: "Yağmurlu", 65: "Kuvvetli yağmur", 71: "Hafif kar",
     73: "Karlı", 75: "Yoğun kar", 80: "Sağanak", 81: "Sağanak",
     82: "Kuvvetli sağanak", 95: "Gök gürültülü", 96: "Gök gürültülü", 99: "Gök gürültülü"
+  },
+  ru: {
+    0: "Ясно", 1: "Преимущественно ясно", 2: "Переменная облачность", 3: "Облачно",
+    45: "Туман", 48: "Туман", 51: "Небольшая морось", 53: "Морось", 55: "Сильная морось",
+    61: "Небольшой дождь", 63: "Дождь", 65: "Сильный дождь", 71: "Небольшой снег",
+    73: "Снег", 75: "Сильный снег", 80: "Ливневый дождь", 81: "Ливневый дождь",
+    82: "Сильный ливень", 95: "Гроза", 96: "Гроза", 99: "Гроза"
   }
 };
 
@@ -958,7 +1193,8 @@ function weatherIcon(code, isDay = 1) {
 }
 
 function localeForLanguage() {
-  return currentLanguage === "de" ? "de-DE" : currentLanguage === "tr" ? "tr-TR" : "en-GB";
+  const locales = { de: "de-DE", tr: "tr-TR", ru: "ru-RU", en: "en-GB" };
+  return locales[currentLanguage] || locales.de;
 }
 
 function renderWeatherDate() {
