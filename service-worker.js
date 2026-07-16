@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v42-goatcounter-analytics";
+const CACHE_NAME = "port-side-v43-world-cup-final";
 const FILES = [
   "./",
   "./index.html",
@@ -13,6 +13,7 @@ const FILES = [
   "./show-week1-diva-nova.jpg",
   "./show-week1-mexico.jpg",
   "./show-week1-dj-port-side.jpg",
+  "./show-week1-world-cup-final.jpg",
   "./show-week2-tropicana.jpg",
   "./show-week2-dark-side.jpg",
   "./show-week2-michael-jackson.jpg",

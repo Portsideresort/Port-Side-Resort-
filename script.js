@@ -45,6 +45,23 @@ const content = {
 
 const SHOW_TIME = "21:30";
 const SHOW_CYCLE_START_UTC = Date.UTC(2026, 6, 13);
+const SPECIAL_SHOW_OVERRIDES = Object.freeze([
+  {
+    visibleFrom: "2026-07-13",
+    eventDate: "2026-07-19",
+    weekIndex: 0,
+    dayIndex: 6,
+    show: {
+      dayKey: "sunday",
+      title: "World Cup Final 2026",
+      titleKey: "worldCupFinalTitle",
+      descriptionKey: "worldCupFinalDesc",
+      poster: "show-week1-world-cup-final.jpg",
+      time: "22:00",
+      locationKey: "theatre"
+    }
+  }
+]);
 
 const translations = {
   en: {
@@ -183,6 +200,8 @@ const translations = {
     divaNovaDesc: "Enjoy a stylish live music evening with Diva Nova.",
     mexicoShowDesc: "A colourful show inspired by the music, dance and spirit of Mexico.",
     djPortSideDesc: "Dance, celebrate and enjoy the night with DJ Port Side.",
+    worldCupFinalTitle: "World Cup Final 2026",
+    worldCupFinalDesc: "Argentina vs Spain — watch the 2026 FIFA World Cup Final live on the big screen in the Theatre.",
     tropicanaShowDesc: "Tropical rhythms, colourful costumes and energetic dance take the stage.",
     darkSideDesc: "A striking stage experience combining music, atmosphere and performance.",
     michaelJacksonDesc: "An exciting tribute celebrating the music and iconic moves of Michael Jackson.",
@@ -373,6 +392,8 @@ const translations = {
     divaNovaDesc: "Genießen Sie einen stilvollen Live-Musik-Abend mit Diva Nova.",
     mexicoShowDesc: "Eine farbenfrohe Show, inspiriert von Musik, Tanz und Lebensfreude Mexikos.",
     djPortSideDesc: "Tanzen, feiern und genießen Sie den Abend mit DJ Port Side.",
+    worldCupFinalTitle: "FIFA-WM-Finale 2026",
+    worldCupFinalDesc: "Argentinien gegen Spanien — erleben Sie das Finale der FIFA Fußball-Weltmeisterschaft 2026 live auf der großen Leinwand im Theater.",
     tropicanaShowDesc: "Tropische Rhythmen, farbenfrohe Kostüme und energiegeladener Tanz erobern die Bühne.",
     darkSideDesc: "Ein eindrucksvolles Bühnenerlebnis aus Musik, Atmosphäre und Performance.",
     michaelJacksonDesc: "Eine mitreißende Hommage an die Musik und legendären Moves von Michael Jackson.",
@@ -563,6 +584,8 @@ const translations = {
     divaNovaDesc: "Diva Nova ile şık ve keyifli bir canlı müzik akşamının tadını çıkarın.",
     mexicoShowDesc: "Meksika'nın müziğinden, dansından ve ruhundan ilham alan renkli bir gösteri.",
     djPortSideDesc: "DJ Port Side ile dans edin, eğlenin ve gecenin tadını çıkarın.",
+    worldCupFinalTitle: "2026 Dünya Kupası Finali",
+    worldCupFinalDesc: "Arjantin - İspanya: 2026 FIFA Dünya Kupası Finali’ni tiyatrodaki büyük ekranda canlı izleyin.",
     tropicanaShowDesc: "Tropikal ritimler, renkli kostümler ve enerjik danslar sahnede buluşuyor.",
     darkSideDesc: "Müzik, atmosfer ve performansı birleştiren etkileyici bir sahne deneyimi.",
     michaelJacksonDesc: "Michael Jackson'ın müziğini ve ikonik danslarını kutlayan heyecan verici bir gösteri.",
@@ -753,6 +776,8 @@ const translations = {
     divaNovaDesc: "Насладитесь стильным вечером живой музыки с Diva Nova.",
     mexicoShowDesc: "Красочное шоу, вдохновлённое музыкой, танцами и духом Мексики.",
     djPortSideDesc: "Танцуйте, празднуйте и наслаждайтесь вечером вместе с DJ Port Side.",
+    worldCupFinalTitle: "Финал чемпионата мира 2026",
+    worldCupFinalDesc: "Аргентина — Испания: смотрите финал чемпионата мира FIFA 2026 в прямом эфире на большом экране в театре.",
     tropicanaShowDesc: "Тропические ритмы, яркие костюмы и энергичные танцы выходят на сцену.",
     darkSideDesc: "Яркое сценическое представление, объединяющее музыку, атмосферу и мастерство артистов.",
     michaelJacksonDesc: "Захватывающий трибьют музыке и легендарным движениям Майкла Джексона.",
@@ -980,6 +1005,34 @@ function getIstanbulDate() {
   return new Date(Date.UTC(Number(values.year), Number(values.month) - 1, Number(values.day)));
 }
 
+function getIstanbulDateKey() {
+  return getIstanbulDate().toISOString().slice(0, 10);
+}
+
+function getProgrammeShow(weekIndex, dayIndex) {
+  const todayKey = getIstanbulDateKey();
+  const override = SPECIAL_SHOW_OVERRIDES.find(item =>
+    item.weekIndex === weekIndex &&
+    item.dayIndex === dayIndex &&
+    todayKey >= item.visibleFrom &&
+    todayKey <= item.eventDate
+  );
+
+  return override?.show || content.showWeeks[weekIndex][dayIndex];
+}
+
+function getShowTitle(show) {
+  return show.titleKey ? translate(show.titleKey) : show.title;
+}
+
+function getShowTime(show) {
+  return show.time || SHOW_TIME;
+}
+
+function getShowLocationKey(show) {
+  return show.locationKey || "theatre";
+}
+
 function getCurrentShowPosition() {
   const today = getIstanbulDate();
   const dayDifference = Math.floor((today.getTime() - SHOW_CYCLE_START_UTC) / 86400000);
@@ -1013,11 +1066,15 @@ function setPoster(element, posterPath) {
 
 function renderShow() {
   const position = getCurrentShowPosition();
-  const tonightShow = content.showWeeks[position.week][position.day];
+  const tonightShow = getProgrammeShow(position.week, position.day);
   const heroTitle = document.getElementById("tonightShowTitle");
   const heroPoster = document.getElementById("tonightPoster");
+  const heroTime = document.getElementById("tonightShowTime");
+  const heroLocation = document.getElementById("tonightShowLocation");
 
-  if (heroTitle) heroTitle.textContent = tonightShow.title;
+  if (heroTitle) heroTitle.textContent = getShowTitle(tonightShow);
+  if (heroTime) heroTime.textContent = getShowTime(tonightShow);
+  if (heroLocation) heroLocation.textContent = translate(getShowLocationKey(tonightShow));
   setPoster(heroPoster, tonightShow.poster);
 }
 
@@ -1026,7 +1083,8 @@ function renderShowSchedule() {
   if (!grid) return;
 
   const current = getCurrentShowPosition();
-  const shows = content.showWeeks[activeProgrammeWeek];
+  const shows = content.showWeeks[activeProgrammeWeek]
+    .map((show, index) => getProgrammeShow(activeProgrammeWeek, index));
 
   grid.innerHTML = shows.map((show, index) => {
     const isTonight = activeProgrammeWeek === current.week && index === current.day;
@@ -1041,8 +1099,8 @@ function renderShowSchedule() {
             <span class="programme-day">${translate(show.dayKey)}</span>
             ${isTonight ? `<span class="programme-tonight">${translate("tonightLabel")}</span>` : ""}
           </span>
-          <strong>${show.title}</strong>
-          <span class="programme-time">${SHOW_TIME}</span>
+          <strong>${getShowTitle(show)}</strong>
+          <span class="programme-time">${getShowTime(show)}</span>
         </span>
       </button>
     `;
@@ -1061,13 +1119,14 @@ function renderShowSchedule() {
 
 function openShowModal(weekIndex, showIndex) {
   const modal = document.getElementById("showModal");
-  const show = content.showWeeks[weekIndex][showIndex];
+  const show = getProgrammeShow(weekIndex, showIndex);
   if (!modal || !show) return;
 
   selectedShow = { weekIndex, showIndex };
   document.getElementById("showModalDay").textContent = translate(show.dayKey);
-  document.getElementById("showModalTitle").textContent = show.title;
+  document.getElementById("showModalTitle").textContent = getShowTitle(show);
   document.getElementById("showModalDescription").textContent = translate(show.descriptionKey);
+  document.getElementById("showModalTime").textContent = getShowTime(show);
   setPoster(document.getElementById("showModalPoster"), show.poster);
 
   if (!modal.open && typeof modal.showModal === "function") modal.showModal();
