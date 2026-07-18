@@ -202,6 +202,11 @@ const translations = {
     djPortSideDesc: "Dance, celebrate and enjoy the night with DJ Port Side.",
     worldCupFinalTitle: "World Cup Final 2026",
     worldCupFinalDesc: "Argentina vs Spain — watch the 2026 FIFA World Cup Final live on the big screen in the Theatre.",
+    dayOffKicker: "SUNDAY NOTICE",
+    dayOffTitle: "Animation Day Off",
+    dayOffDescription: "Our animation team is enjoying its weekly day off today. Daily animation activities will continue tomorrow with the same energy.",
+    dayOffNote: "Thank you for your understanding. We wish you a relaxing and wonderful Sunday.",
+    dayOffContinue: "VIEW THE PROGRAMME",
     tropicanaShowDesc: "Tropical rhythms, colourful costumes and energetic dance take the stage.",
     darkSideDesc: "A striking stage experience combining music, atmosphere and performance.",
     michaelJacksonDesc: "An exciting tribute celebrating the music and iconic moves of Michael Jackson.",
@@ -394,6 +399,11 @@ const translations = {
     djPortSideDesc: "Tanzen, feiern und genießen Sie den Abend mit DJ Port Side.",
     worldCupFinalTitle: "FIFA-WM-Finale 2026",
     worldCupFinalDesc: "Argentinien gegen Spanien — erleben Sie das Finale der FIFA Fußball-Weltmeisterschaft 2026 live auf der großen Leinwand im Theater.",
+    dayOffKicker: "SONNTAGSHINWEIS",
+    dayOffTitle: "Ruhetag des Animationsteams",
+    dayOffDescription: "Unser Animationsteam hat heute seinen wöchentlichen Ruhetag. Die täglichen Animationsaktivitäten gehen morgen mit derselben Energie weiter.",
+    dayOffNote: "Vielen Dank für Ihr Verständnis. Wir wünschen Ihnen einen erholsamen und schönen Sonntag.",
+    dayOffContinue: "PROGRAMM ANSEHEN",
     tropicanaShowDesc: "Tropische Rhythmen, farbenfrohe Kostüme und energiegeladener Tanz erobern die Bühne.",
     darkSideDesc: "Ein eindrucksvolles Bühnenerlebnis aus Musik, Atmosphäre und Performance.",
     michaelJacksonDesc: "Eine mitreißende Hommage an die Musik und legendären Moves von Michael Jackson.",
@@ -586,6 +596,11 @@ const translations = {
     djPortSideDesc: "DJ Port Side ile dans edin, eğlenin ve gecenin tadını çıkarın.",
     worldCupFinalTitle: "2026 Dünya Kupası Finali",
     worldCupFinalDesc: "Arjantin - İspanya: 2026 FIFA Dünya Kupası Finali’ni tiyatrodaki büyük ekranda canlı izleyin.",
+    dayOffKicker: "PAZAR GÜNÜ DUYURUSU",
+    dayOffTitle: "Animasyon Ekibi İzin Günü",
+    dayOffDescription: "Animasyon ekibimiz bugün haftalık iznini kullanmaktadır. Günlük animasyon aktivitelerimiz yarın aynı enerjiyle devam edecektir.",
+    dayOffNote: "Anlayışınız için teşekkür eder, huzurlu ve güzel bir pazar günü dileriz.",
+    dayOffContinue: "PROGRAMI GÖRÜNTÜLE",
     tropicanaShowDesc: "Tropikal ritimler, renkli kostümler ve enerjik danslar sahnede buluşuyor.",
     darkSideDesc: "Müzik, atmosfer ve performansı birleştiren etkileyici bir sahne deneyimi.",
     michaelJacksonDesc: "Michael Jackson'ın müziğini ve ikonik danslarını kutlayan heyecan verici bir gösteri.",
@@ -778,6 +793,11 @@ const translations = {
     djPortSideDesc: "Танцуйте, празднуйте и наслаждайтесь вечером вместе с DJ Port Side.",
     worldCupFinalTitle: "Финал чемпионата мира 2026",
     worldCupFinalDesc: "Аргентина — Испания: смотрите финал чемпионата мира FIFA 2026 в прямом эфире на большом экране в театре.",
+    dayOffKicker: "ВОСКРЕСНОЕ ОБЪЯВЛЕНИЕ",
+    dayOffTitle: "Выходной команды анимации",
+    dayOffDescription: "Сегодня у нашей команды анимации еженедельный выходной. Ежедневные анимационные мероприятия продолжатся завтра с прежней энергией.",
+    dayOffNote: "Благодарим за понимание и желаем вам приятного и спокойного воскресенья.",
+    dayOffContinue: "СМОТРЕТЬ ПРОГРАММУ",
     tropicanaShowDesc: "Тропические ритмы, яркие костюмы и энергичные танцы выходят на сцену.",
     darkSideDesc: "Яркое сценическое представление, объединяющее музыку, атмосферу и мастерство артистов.",
     michaelJacksonDesc: "Захватывающий трибьют музыке и легендарным движениям Майкла Джексона.",
@@ -1009,6 +1029,10 @@ function getIstanbulDateKey() {
   return getIstanbulDate().toISOString().slice(0, 10);
 }
 
+function isIstanbulSunday() {
+  return getIstanbulDate().getUTCDay() === 0;
+}
+
 function getProgrammeShow(weekIndex, dayIndex) {
   const todayKey = getIstanbulDateKey();
   const override = SPECIAL_SHOW_OVERRIDES.find(item =>
@@ -1192,13 +1216,40 @@ document.querySelectorAll(".programme-tab").forEach(tab => {
 
 const showModal = document.getElementById("showModal");
 const showModalClose = document.getElementById("showModalClose");
+const sundayDayOffModal = document.getElementById("sundayDayOffModal");
+const sundayDayOffClose = document.getElementById("sundayDayOffClose");
+const sundayDayOffContinue = document.getElementById("sundayDayOffContinue");
 
 showModalClose?.addEventListener("click", () => showModal.close());
 showModal?.addEventListener("click", event => {
   if (event.target === showModal) showModal.close();
 });
 
+function closeSundayDayOffNotice() {
+  if (!sundayDayOffModal) return;
+
+  if (sundayDayOffModal.open && typeof sundayDayOffModal.close === "function") {
+    sundayDayOffModal.close();
+  } else {
+    sundayDayOffModal.removeAttribute("open");
+  }
+}
+
+function openSundayDayOffNotice() {
+  if (!isIstanbulSunday() || !sundayDayOffModal || sundayDayOffModal.open) return;
+
+  if (typeof sundayDayOffModal.showModal === "function") sundayDayOffModal.showModal();
+  else sundayDayOffModal.setAttribute("open", "");
+}
+
+sundayDayOffClose?.addEventListener("click", closeSundayDayOffNotice);
+sundayDayOffContinue?.addEventListener("click", closeSundayDayOffNotice);
+sundayDayOffModal?.addEventListener("click", event => {
+  if (event.target === sundayDayOffModal) closeSundayDayOffNotice();
+});
+
 setLanguage(currentLanguage);
+openSundayDayOffNotice();
 loadLeaderboardPreview();
 window.setInterval(loadLeaderboardPreview, 60_000);
 

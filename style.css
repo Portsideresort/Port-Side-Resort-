@@ -3345,6 +3345,176 @@ footer {
   font-size: 1.25rem;
 }
 
+/* ===== SUNDAY ANIMATION DAY-OFF NOTICE ===== */
+
+.sunday-dayoff-modal {
+  width: min(980px, calc(100% - 28px));
+  max-height: 92dvh;
+  overflow: auto;
+  padding: 0;
+  border: 1px solid rgba(255, 205, 91, 0.42);
+  border-radius: 30px;
+  color: white;
+  background: #061522;
+  box-shadow: 0 42px 130px rgba(0, 0, 0, 0.78);
+}
+
+.sunday-dayoff-modal[open] {
+  display: block;
+}
+
+.sunday-dayoff-modal::backdrop {
+  background: rgba(1, 7, 13, 0.84);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sunday-dayoff-close {
+  position: absolute;
+  z-index: 3;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  color: white;
+  background: rgba(2, 12, 22, 0.78);
+  font-size: 1.55rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.sunday-dayoff-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(360px, 1.18fr);
+  min-height: min(780px, 88dvh);
+}
+
+.sunday-dayoff-poster {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(27, 188, 216, 0.30), transparent 42%),
+    linear-gradient(160deg, #071d2d, #020a11);
+}
+
+.sunday-dayoff-poster img {
+  width: 100%;
+  height: 100%;
+  max-height: 88dvh;
+  display: block;
+  object-fit: contain;
+}
+
+.sunday-dayoff-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(38px, 6vw, 74px);
+  background:
+    radial-gradient(circle at 80% 15%, rgba(24, 185, 208, 0.16), transparent 34%),
+    radial-gradient(circle at 18% 84%, rgba(255, 184, 46, 0.14), transparent 38%),
+    #071725;
+}
+
+.sunday-dayoff-kicker {
+  width: fit-content;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 203, 87, 0.34);
+  border-radius: 999px;
+  color: #f7ce69;
+  background: rgba(255, 190, 44, 0.08);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.sunday-dayoff-content h2 {
+  margin: 24px 0 20px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.45rem, 5vw, 4.9rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.sunday-dayoff-content > p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.sunday-dayoff-content .sunday-dayoff-note {
+  margin-top: 14px;
+  color: #f0ce7a;
+}
+
+.sunday-dayoff-button {
+  width: fit-content;
+  min-height: 48px;
+  margin-top: 30px;
+  padding: 0 22px;
+  border: 1px solid rgba(255, 207, 92, 0.46);
+  border-radius: 999px;
+  color: #07131f;
+  background: linear-gradient(135deg, #f8d876, #eab243);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .sunday-dayoff-modal {
+    width: min(100% - 18px, 620px);
+    max-height: 95dvh;
+    border-radius: 22px;
+  }
+
+  .sunday-dayoff-layout {
+    display: block;
+    min-height: 0;
+  }
+
+  .sunday-dayoff-poster {
+    position: relative;
+    height: min(48dvh, 440px);
+  }
+
+  .sunday-dayoff-poster img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sunday-dayoff-content {
+    padding: 26px 24px 30px;
+  }
+
+  .sunday-dayoff-content h2 {
+    margin: 18px 0 14px;
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .sunday-dayoff-content > p {
+    font-size: 0.93rem;
+    line-height: 1.62;
+  }
+
+  .sunday-dayoff-button {
+    width: 100%;
+    margin-top: 22px;
+  }
+}
+
 @media (max-width: 700px) {
   .programme-tabs {
     width: 100%;
