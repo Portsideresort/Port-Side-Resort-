@@ -1,4 +1,4 @@
-const CACHE_NAME = "port-side-v46-happy-hour-beach-bar";
+const CACHE_NAME = "port-side-v45-inline-day-off";
 const FILES = [
   "./",
   "./index.html",
