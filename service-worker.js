@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v47-happy-hour-poster";
+const CACHE_NAME = "port-side-v49-yoga-wellness-presentation";
 const FILES = [
   "./",
   "./index.html",
-  "./style.css",
-  "./script.js",
+  "./style.css?v=49",
+  "./script.js?v=49",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -34,6 +34,8 @@ const FILES = [
   "./activity-sea-gym.jpg",
   "./activity-water-gym.jpg",
   "./activity-water-polo.jpg",
+  "./activity-aqua-yoga.jpg",
+  "./activity-sunrise-yoga.jpg",
   "./music/",
   "./music/index.html",
   "./music/style.css",

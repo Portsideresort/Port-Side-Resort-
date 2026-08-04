@@ -43,6 +43,111 @@ const content = {
   ]
 };
 
+const wellnessActivities = [
+  {
+    id: "aqua-yoga",
+    time: "08:00",
+    image: "activity-aqua-yoga.jpg",
+    title: { en: "Aqua Yoga", de: "Aqua-Yoga", tr: "Aqua Yoga", ru: "Аква-йога" },
+    location: { en: "Indoor Pool", de: "Hallenbad", tr: "Kapalı Havuz", ru: "Крытый бассейн" },
+    description: {
+      en: "Start the morning with gentle yoga movements supported by the water. Aqua Yoga improves mobility, balance and relaxation while placing minimal stress on the joints.",
+      de: "Beginnen Sie den Morgen mit sanften, vom Wasser getragenen Yogaübungen. Aqua-Yoga fördert Beweglichkeit, Gleichgewicht und Entspannung und schont dabei die Gelenke.",
+      tr: "Güne suyun desteğiyle yapılan nazik yoga hareketleriyle başlayın. Aqua Yoga hareketliliği, dengeyi ve rahatlamayı desteklerken eklemlere minimum yük bindirir.",
+      ru: "Начните утро с мягких йога-упражнений при поддержке воды. Аква-йога развивает подвижность и равновесие, помогает расслабиться и минимально нагружает суставы."
+    },
+    benefits: {
+      en: "Supports flexibility, posture, balance, circulation and gentle full-body activation.",
+      de: "Fördert Beweglichkeit, Haltung, Gleichgewicht, Durchblutung und eine sanfte Aktivierung des ganzen Körpers.",
+      tr: "Esnekliği, duruşu, dengeyi, dolaşımı ve tüm vücudun nazikçe çalışmasını destekler.",
+      ru: "Поддерживает гибкость, осанку, равновесие и кровообращение, мягко активируя всё тело."
+    },
+    muscles: {
+      en: "Core, shoulders, back, hips, glutes and legs.",
+      de: "Rumpf, Schultern, Rücken, Hüfte, Gesäß und Beine.",
+      tr: "Karın ve merkez bölgesi, omuzlar, sırt, kalça ve bacaklar.",
+      ru: "Мышцы корпуса, плеч, спины, бёдер, ягодиц и ног."
+    },
+    joints: {
+      en: "Shoulders, spine, hips, knees and ankles.",
+      de: "Schultern, Wirbelsäule, Hüfte, Knie und Sprunggelenke.",
+      tr: "Omuzlar, omurga, kalça, diz ve ayak bilekleri.",
+      ru: "Плечи, позвоночник, тазобедренные, коленные и голеностопные суставы."
+    },
+    mind: {
+      en: "Encourages calm breathing, body awareness, focus and stress relief.",
+      de: "Unterstützt ruhige Atmung, Körperwahrnehmung, Konzentration und Stressabbau.",
+      tr: "Sakin nefesi, beden farkındalığını, odaklanmayı ve stresin azalmasını destekler.",
+      ru: "Способствует спокойному дыханию, осознанности тела, концентрации и снижению стресса."
+    }
+  },
+  {
+    id: "sunrise-yoga",
+    time: "06:00",
+    image: "activity-sunrise-yoga.jpg",
+    title: { en: "Sunrise Yoga", de: "Sunrise Yoga", tr: "Sunrise Yoga", ru: "Йога на рассвете" },
+    location: { en: "Beach", de: "Strand", tr: "Sahil", ru: "Пляж" },
+    instructor: { en: "With Animator Olga", de: "Mit Animateurin Olga", tr: "Animatör Olga ile", ru: "С аниматором Ольгой" },
+    description: {
+      en: "Welcome the first light of the day with mindful movement and calm breathing by the sea. Sunrise Yoga gently awakens the body, improves flexibility and creates a peaceful start to your holiday.",
+      de: "Begrüßen Sie das erste Licht des Tages mit achtsamer Bewegung und ruhiger Atmung am Meer. Sunrise Yoga weckt den Körper sanft, verbessert die Beweglichkeit und schenkt einen entspannten Start in den Urlaubstag.",
+      tr: "Deniz kenarında bilinçli hareketler ve sakin nefesle günün ilk ışıklarını karşılayın. Sunrise Yoga vücudu nazikçe uyandırır, esnekliği destekler ve tatil gününe huzurlu bir başlangıç sağlar.",
+      ru: "Встретьте первые лучи дня у моря осознанными движениями и спокойным дыханием. Йога на рассвете мягко пробуждает тело, развивает гибкость и дарит спокойное начало дня."
+    },
+    benefits: {
+      en: "Supports flexibility, posture, balance, mobility and healthy morning circulation.",
+      de: "Fördert Beweglichkeit, Haltung, Gleichgewicht, Mobilität und die morgendliche Durchblutung.",
+      tr: "Esnekliği, duruşu, dengeyi, hareketliliği ve sabah dolaşımını destekler.",
+      ru: "Поддерживает гибкость, осанку, равновесие, подвижность и утреннее кровообращение."
+    },
+    muscles: {
+      en: "Core, back, shoulders, hips, glutes and legs.",
+      de: "Rumpf, Rücken, Schultern, Hüfte, Gesäß und Beine.",
+      tr: "Karın ve merkez bölgesi, sırt, omuzlar, kalça ve bacaklar.",
+      ru: "Мышцы корпуса, спины, плеч, бёдер, ягодиц и ног."
+    },
+    joints: {
+      en: "Spine, shoulders, hips, knees and ankles.",
+      de: "Wirbelsäule, Schultern, Hüfte, Knie und Sprunggelenke.",
+      tr: "Omurga, omuzlar, kalça, diz ve ayak bilekleri.",
+      ru: "Позвоночник, плечи, тазобедренные, коленные и голеностопные суставы."
+    },
+    mind: {
+      en: "Promotes calm, focus, mindful breathing and a positive mood for the day.",
+      de: "Fördert Ruhe, Konzentration, bewusste Atmung und eine positive Stimmung für den Tag.",
+      tr: "Sakinliği, odaklanmayı, bilinçli nefesi ve gün boyu pozitif ruh halini destekler.",
+      ru: "Способствует спокойствию, концентрации, осознанному дыханию и позитивному настрою на весь день."
+    }
+  }
+];
+
+const wellnessLabels = {
+  en: {
+    kicker: "RESERVATION-ONLY WELLNESS",
+    title: "Begin the Day in Balance",
+    intro: "Two peaceful early-morning experiences designed for body and mind.",
+    reservation: "Reservation required · Please contact Animator Olga"
+  },
+  de: {
+    kicker: "WELLNESS MIT RESERVIERUNG",
+    title: "Beginnen Sie den Tag in Balance",
+    intro: "Zwei ruhige Erlebnisse am frühen Morgen für Körper und Geist.",
+    reservation: "Reservierung erforderlich · Bitte wenden Sie sich an Animateurin Olga"
+  },
+  tr: {
+    kicker: "REZERVASYONLU WELLNESS",
+    title: "Güne Dengeyle Başlayın",
+    intro: "Beden ve zihin için hazırlanmış iki huzurlu sabah deneyimi.",
+    reservation: "Rezervasyon gereklidir · Lütfen Animatör Olga ile iletişime geçin"
+  },
+  ru: {
+    kicker: "WELLNESS ПО ЗАПИСИ",
+    title: "Начните день в гармонии",
+    intro: "Два спокойных утренних занятия для тела и душевного равновесия.",
+    reservation: "Требуется запись · Пожалуйста, обратитесь к аниматору Ольге"
+  }
+};
+
 const SHOW_TIME = "21:30";
 const SHOW_CYCLE_START_UTC = Date.UTC(2026, 6, 13);
 const SPECIAL_SHOW_OVERRIDES = Object.freeze([
@@ -956,9 +1061,88 @@ async function loadLeaderboardPreview() {
   renderLeaderboardPreview();
 }
 
+function localizedWellness(value) {
+  if (!value || typeof value !== "object") return value || "";
+  return value[currentLanguage] || value.de || value.en || "";
+}
+
+function renderWellnessActivities() {
+  const feature = document.getElementById("wellnessFeature");
+  if (!feature) return;
+
+  const labels = wellnessLabels[currentLanguage] || wellnessLabels.de;
+  feature.innerHTML = `
+    <div class="wellness-feature-heading">
+      <div class="wellness-heading-main">
+        <span class="wellness-emblem" aria-hidden="true">☼</span>
+        <div>
+          <span class="wellness-kicker">${labels.kicker}</span>
+          <h3>${labels.title}</h3>
+        </div>
+      </div>
+      <p>${labels.intro}</p>
+    </div>
+
+    <div class="wellness-card-grid">
+      ${[...wellnessActivities].sort((first, second) => first.time.localeCompare(second.time)).map(item => `
+        <article class="wellness-card wellness-card-${item.id}">
+          <div class="wellness-card-image">
+            <img src="${item.image}" alt="${localizedWellness(item.title)}" />
+            <div class="wellness-image-shade"></div>
+            <div class="wellness-card-badges">
+              <span class="wellness-time">${item.time}</span>
+              <span class="wellness-frequency">${translate("exceptSunday")}</span>
+            </div>
+            <div class="wellness-poster-copy">
+              <div class="wellness-meta">
+                <span>⌖ ${localizedWellness(item.location)}</span>
+                ${item.instructor ? `<span>✦ ${localizedWellness(item.instructor)}</span>` : ""}
+              </div>
+              <h4>${localizedWellness(item.title)}</h4>
+            </div>
+          </div>
+
+          <div class="wellness-card-body">
+            <p class="wellness-description">${localizedWellness(item.description)}</p>
+
+            <div class="wellness-reservation">
+              <span aria-hidden="true">◆</span>
+              <strong>${labels.reservation}</strong>
+            </div>
+
+            <details class="activity-benefits wellness-benefits">
+              <summary>${translate("benefitsButton")}</summary>
+              <div class="benefit-list">
+                <div class="benefit-row">
+                  <span class="benefit-icon">♥</span>
+                  <div><strong>${translate("benefitsTitle")}</strong><p>${localizedWellness(item.benefits)}</p></div>
+                </div>
+                <div class="benefit-row">
+                  <span class="benefit-icon">●</span>
+                  <div><strong>${translate("musclesTitle")}</strong><p>${localizedWellness(item.muscles)}</p></div>
+                </div>
+                <div class="benefit-row">
+                  <span class="benefit-icon">◆</span>
+                  <div><strong>${translate("jointsTitle")}</strong><p>${localizedWellness(item.joints)}</p></div>
+                </div>
+                <div class="benefit-row">
+                  <span class="benefit-icon">✦</span>
+                  <div><strong>${translate("mindTitle")}</strong><p>${localizedWellness(item.mind)}</p></div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
 function renderActivities() {
   const activityGrid = document.getElementById("activityGrid");
   const miniSchedule = document.getElementById("miniSchedule");
+
+  renderWellnessActivities();
 
   if (activityGrid) {
     activityGrid.innerHTML = content.activities.map(item => `
