@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v51-card-only-music";
+const CACHE_NAME = "port-side-v52-card-seek";
 const FILES = [
   "./",
   "./index.html",
-  "./style.css?v=50",
-  "./script.js?v=51",
+  "./style.css?v=52",
+  "./script.js?v=52",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -40,7 +40,7 @@ const FILES = [
   "./music/index.html",
   "./music/style.css",
   "./music/player.js",
-  "./music/main-player.js?v=51",
+  "./music/main-player.js?v=52",
   "./spotify-midnight-tides.jpg",
   "./spotify-golden-nights.jpg",
   "./manifest.json"

@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
-  <link rel="stylesheet" href="style.css?v=50" />
+  <link rel="stylesheet" href="style.css?v=52" />
 </head>
 <body>
   <div class="page-glow glow-one"></div>
@@ -418,21 +418,42 @@
         </div>
 
         <div class="music-track-grid">
-          <button class="music-track-card active" type="button" data-main-track="0" data-music-category="signature" aria-pressed="true">
-            <span class="music-track-number">01</span>
-            <span class="music-track-copy"><small data-i18n="musicMorningType">MORNING OPENING</small><strong>Günaydın</strong><em>02:20</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="1" data-music-category="signature" aria-pressed="false">
-            <span class="music-track-number">02</span>
-            <span class="music-track-copy"><small data-i18n="musicClubType">CLUB DANCE 2026</small><strong>Merhaba</strong><em>01:57</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="2" data-music-category="signature" aria-pressed="false">
-            <span class="music-track-number">03</span>
-            <span class="music-track-copy"><small data-i18n="musicAnonsType">ANNOUNCEMENT JINGLE</small><strong>Hey! Hey!</strong><em>02:19</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
+          <article class="music-track-card active" data-main-track="0" data-music-category="signature">
+            <button class="music-track-toggle" type="button" data-track-toggle="0" aria-pressed="false">
+              <span class="music-track-number">01</span>
+              <span class="music-track-copy"><small data-i18n="musicMorningType">MORNING OPENING</small><strong>Günaydın</strong><em>02:20</em></span>
+              <span class="music-track-play" aria-hidden="true">▶</span>
+            </button>
+            <div class="music-track-seek-wrap">
+              <span data-track-current="0">0:00</span>
+              <input class="music-track-seek" data-main-seek="0" type="range" min="0" max="100" step="0.1" value="0" aria-label="Günaydın track position" />
+              <span>2:20</span>
+            </div>
+          </article>
+          <article class="music-track-card" data-main-track="1" data-music-category="signature">
+            <button class="music-track-toggle" type="button" data-track-toggle="1" aria-pressed="false">
+              <span class="music-track-number">02</span>
+              <span class="music-track-copy"><small data-i18n="musicClubType">CLUB DANCE 2026</small><strong>Merhaba</strong><em>01:57</em></span>
+              <span class="music-track-play" aria-hidden="true">▶</span>
+            </button>
+            <div class="music-track-seek-wrap">
+              <span data-track-current="1">0:00</span>
+              <input class="music-track-seek" data-main-seek="1" type="range" min="0" max="100" step="0.1" value="0" aria-label="Merhaba track position" />
+              <span>1:57</span>
+            </div>
+          </article>
+          <article class="music-track-card" data-main-track="2" data-music-category="signature">
+            <button class="music-track-toggle" type="button" data-track-toggle="2" aria-pressed="false">
+              <span class="music-track-number">03</span>
+              <span class="music-track-copy"><small data-i18n="musicAnonsType">ANNOUNCEMENT JINGLE</small><strong>Hey! Hey!</strong><em>02:19</em></span>
+              <span class="music-track-play" aria-hidden="true">▶</span>
+            </button>
+            <div class="music-track-seek-wrap">
+              <span data-track-current="2">0:00</span>
+              <input class="music-track-seek" data-main-seek="2" type="range" min="0" max="100" step="0.1" value="0" aria-label="Hey! Hey! track position" />
+              <span>2:19</span>
+            </div>
+          </article>
         </div>
 
         <audio id="mainMusicAudio" preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
@@ -524,8 +545,8 @@
     </div>
   </footer>
 
-  <script src="script.js?v=51"></script>
-  <script src="music/main-player.js?v=51"></script>
+  <script src="script.js?v=52"></script>
+  <script src="music/main-player.js?v=52"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b261336548f84659b75d9956d52f6413"}'></script>
   <!-- End Cloudflare Web Analytics -->
