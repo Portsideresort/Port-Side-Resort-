@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v50-spotify-albums";
+const CACHE_NAME = "port-side-v51-card-only-music";
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=50",
-  "./script.js?v=50",
+  "./script.js?v=51",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -40,7 +40,7 @@ const FILES = [
   "./music/index.html",
   "./music/style.css",
   "./music/player.js",
-  "./music/main-player.js?v=50",
+  "./music/main-player.js?v=51",
   "./spotify-midnight-tides.jpg",
   "./spotify-golden-nights.jpg",
   "./manifest.json"

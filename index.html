@@ -435,36 +435,7 @@
           </button>
         </div>
 
-        <div class="music-player-panel" id="mainMusicPlayer" aria-label="Music player" oncontextmenu="return false">
-          <div class="music-now-playing">
-            <span class="music-player-number" id="mainMusicNumber">01</span>
-            <span class="music-player-copy">
-              <small data-i18n="musicNowPlaying">NOW PLAYING</small>
-              <strong id="mainMusicTitle">Günaydın</strong>
-              <em id="mainMusicSubtitle">Morning Opening</em>
-            </span>
-          </div>
-
-          <div class="music-player-center">
-            <div class="music-player-controls">
-              <button type="button" id="mainMusicPrevious" aria-label="Previous track">‹</button>
-              <button class="music-main-play" type="button" id="mainMusicPlay" aria-label="Play"><span aria-hidden="true">▶</span></button>
-              <button type="button" id="mainMusicNext" aria-label="Next track">›</button>
-            </div>
-            <div class="music-progress-wrap">
-              <span id="mainMusicCurrent">0:00</span>
-              <input id="mainMusicProgress" type="range" min="0" max="100" step="0.1" value="0" aria-label="Track progress" />
-              <span id="mainMusicDuration">2:20</span>
-            </div>
-          </div>
-
-          <div class="music-volume-control">
-            <button type="button" id="mainMusicMute" aria-label="Mute"><span id="mainMusicVolumeIcon" aria-hidden="true">🔊</span></button>
-            <input id="mainMusicVolume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume" />
-          </div>
-
-          <audio id="mainMusicAudio" preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
-        </div>
+        <audio id="mainMusicAudio" preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
 
         <section class="spotify-collection" aria-labelledby="spotifyCollectionTitle">
           <div class="spotify-collection-heading">
@@ -553,8 +524,8 @@
     </div>
   </footer>
 
-  <script src="script.js?v=50"></script>
-  <script src="music/main-player.js?v=50"></script>
+  <script src="script.js?v=51"></script>
+  <script src="music/main-player.js?v=51"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b261336548f84659b75d9956d52f6413"}'></script>
   <!-- End Cloudflare Web Analytics -->
