@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v49-yoga-wellness-presentation";
+const CACHE_NAME = "port-side-v50-spotify-albums";
 const FILES = [
   "./",
   "./index.html",
-  "./style.css?v=49",
-  "./script.js?v=49",
+  "./style.css?v=50",
+  "./script.js?v=50",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -40,7 +40,9 @@ const FILES = [
   "./music/index.html",
   "./music/style.css",
   "./music/player.js",
-  "./music/main-player.js",
+  "./music/main-player.js?v=50",
+  "./spotify-midnight-tides.jpg",
+  "./spotify-golden-nights.jpg",
   "./manifest.json"
 ];
 

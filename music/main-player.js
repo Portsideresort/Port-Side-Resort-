@@ -3,13 +3,6 @@
     { src: "music/audio/gunaydin.mp3", title: "Günaydın", duration: 139.8, durationLabel: "2:20", number: "01" },
     { src: "music/audio/club-dans.mp3", title: "Merhaba", duration: 117.432, durationLabel: "1:57", number: "02" },
     { src: "music/audio/anons-jingle.mp3", title: "Hey! Hey!", duration: 138.504, durationLabel: "2:19", number: "03" },
-    { src: "music/audio/moonlight.mp3", title: "Moonlight", duration: 138.792, durationLabel: "2:19", number: "04" },
-    { src: "music/audio/run-run.mp3", title: "Run Run", duration: 184.704, durationLabel: "3:05", number: "05" },
-    { src: "music/audio/violin.mp3", title: "Violin", duration: 157.104, durationLabel: "2:37", number: "06" },
-    { src: "music/audio/feels-like-home.mp3", title: "Feels Like Home", duration: 174.672, durationLabel: "2:55", number: "07" },
-    { src: "music/audio/im-not-leaving.mp3", title: "I'm Not Leaving", duration: 182.64, durationLabel: "3:03", number: "08" },
-    { src: "music/audio/port-side-feel.mp3", title: "Port Side Feel", duration: 94.992, durationLabel: "1:35", number: "09" },
-    { src: "music/audio/lights-are-low.mp3", title: "Lights Are Low", duration: 167.784, durationLabel: "2:48", number: "10" },
   ];
 
   const labels = {

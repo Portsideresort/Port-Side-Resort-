@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
-  <link rel="stylesheet" href="style.css?v=49" />
+  <link rel="stylesheet" href="style.css?v=50" />
 </head>
 <body>
   <div class="page-glow glow-one"></div>
@@ -395,9 +395,9 @@
           <div class="music-library-copy">
             <p class="section-kicker gold" data-i18n="musicKicker">PORT SIDE SOUNDS</p>
             <h2 data-i18n="musicTitle">Listen to the rhythm of your holiday</h2>
-            <p data-i18n="musicIntro">Discover ten original Port Side tracks, from the morning welcome to sunset sounds.</p>
+            <p data-i18n="musicIntro">Listen to our three Port Side signature tracks here, then discover both full albums on Spotify.</p>
             <div class="music-library-meta">
-              <span data-i18n="musicTrackCount">10 EXCLUSIVE TRACKS</span>
+              <span data-i18n="musicTrackCount">3 SIGNATURE TRACKS</span>
               <span aria-hidden="true">✦</span>
               <span data-i18n="musicListenOnly">LISTEN ONLINE</span>
             </div>
@@ -414,13 +414,7 @@
         </div>
 
         <div class="music-library-toolbar">
-          <p data-i18n="musicCollectionHint">Choose a track and start listening.</p>
-          <div class="music-filter-row" aria-label="Music categories">
-            <button class="active" type="button" data-music-filter="all" data-i18n="musicFilterAll">ALL</button>
-            <button type="button" data-music-filter="signature" data-i18n="musicFilterSignature">HOTEL SIGNATURES</button>
-            <button type="button" data-music-filter="hook" data-i18n="musicFilterHook">HOOK SOUNDS</button>
-            <button type="button" data-music-filter="sunset" data-i18n="musicFilterSunset">SUNSET &amp; SOUL</button>
-          </div>
+          <p data-i18n="musicCollectionHint">Choose a track or open an album on Spotify.</p>
         </div>
 
         <div class="music-track-grid">
@@ -437,41 +431,6 @@
           <button class="music-track-card" type="button" data-main-track="2" data-music-category="signature" aria-pressed="false">
             <span class="music-track-number">03</span>
             <span class="music-track-copy"><small data-i18n="musicAnonsType">ANNOUNCEMENT JINGLE</small><strong>Hey! Hey!</strong><em>02:19</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="3" data-music-category="hook" aria-pressed="false">
-            <span class="music-track-number">04</span>
-            <span class="music-track-copy"><small data-i18n="musicMoonlightType">HOOK SOUND</small><strong>Moonlight</strong><em>02:19</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="4" data-music-category="hook" aria-pressed="false">
-            <span class="music-track-number">05</span>
-            <span class="music-track-copy"><small data-i18n="musicRunType">HOOK SOUND</small><strong>Run Run</strong><em>03:05</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="5" data-music-category="hook" aria-pressed="false">
-            <span class="music-track-number">06</span>
-            <span class="music-track-copy"><small data-i18n="musicViolinType">HOOK SOUND</small><strong>Violin</strong><em>02:37</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="6" data-music-category="sunset" aria-pressed="false">
-            <span class="music-track-number">07</span>
-            <span class="music-track-copy"><small data-i18n="musicHomeType">JAZZ · POP · RETRO SOUL</small><strong>Feels Like Home</strong><em>02:55</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="7" data-music-category="sunset" aria-pressed="false">
-            <span class="music-track-number">08</span>
-            <span class="music-track-copy"><small data-i18n="musicLeavingType">JAZZ · POP · RETRO SOUL</small><strong>I'm Not Leaving</strong><em>03:03</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="8" data-music-category="sunset" aria-pressed="false">
-            <span class="music-track-number">09</span>
-            <span class="music-track-copy"><small data-i18n="musicFeelType">SUNSET SOUND</small><strong>Port Side Feel</strong><em>01:35</em></span>
-            <span class="music-track-play" aria-hidden="true">▶</span>
-          </button>
-          <button class="music-track-card" type="button" data-main-track="9" data-music-category="sunset" aria-pressed="false">
-            <span class="music-track-number">10</span>
-            <span class="music-track-copy"><small data-i18n="musicLightsType">SUNSET SOUND</small><strong>Lights Are Low</strong><em>02:48</em></span>
             <span class="music-track-play" aria-hidden="true">▶</span>
           </button>
         </div>
@@ -506,6 +465,36 @@
 
           <audio id="mainMusicAudio" preload="metadata" controlsList="nodownload noplaybackrate" disablePictureInPicture></audio>
         </div>
+
+        <section class="spotify-collection" aria-labelledby="spotifyCollectionTitle">
+          <div class="spotify-collection-heading">
+            <div>
+              <p class="spotify-kicker" data-i18n="spotifyKicker">NOW ON SPOTIFY</p>
+              <h3 id="spotifyCollectionTitle" data-i18n="spotifyTitle">Discover the full Port Side Sessions</h3>
+            </div>
+            <p data-i18n="spotifyIntro">Tap an album to open Spotify and listen.</p>
+          </div>
+
+          <div class="spotify-album-grid">
+            <a class="spotify-album-card" href="https://open.spotify.com/intl-tr/album/64u5HgMMze9xzkSp4jM4E4?si=cgeeK0NfR_Wn69G534lNKw" target="_blank" rel="noopener noreferrer">
+              <img src="spotify-midnight-tides.jpg" alt="Port Side Sessions, Vol. 1: Midnight Tides" loading="lazy">
+              <span class="spotify-album-copy">
+                <small>PORT SIDE SESSIONS · VOL. 1</small>
+                <strong>Midnight Tides</strong>
+                <span class="spotify-open"><span aria-hidden="true">♫</span><span data-i18n="spotifyListen">LISTEN ON SPOTIFY</span><b aria-hidden="true">→</b></span>
+              </span>
+            </a>
+
+            <a class="spotify-album-card" href="https://open.spotify.com/intl-tr/album/3mgCXVR6hGPjkL4NmuDcLR?si=LwRLTn-NQbqN0eRDutttLQ" target="_blank" rel="noopener noreferrer">
+              <img src="spotify-golden-nights.jpg" alt="Port Side Sessions, Vol. 2: Golden Nights" loading="lazy">
+              <span class="spotify-album-copy">
+                <small>PORT SIDE SESSIONS · VOL. 2</small>
+                <strong>Golden Nights</strong>
+                <span class="spotify-open"><span aria-hidden="true">♫</span><span data-i18n="spotifyListen">LISTEN ON SPOTIFY</span><b aria-hidden="true">→</b></span>
+              </span>
+            </a>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -564,8 +553,8 @@
     </div>
   </footer>
 
-  <script src="script.js?v=49"></script>
-  <script src="music/main-player.js"></script>
+  <script src="script.js?v=50"></script>
+  <script src="music/main-player.js?v=50"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b261336548f84659b75d9956d52f6413"}'></script>
   <!-- End Cloudflare Web Analytics -->
