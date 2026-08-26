@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v52-card-seek";
+const CACHE_NAME = "port-side-v53-happy-hour-expiry";
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=52",
-  "./script.js?v=52",
+  "./script.js?v=53",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",

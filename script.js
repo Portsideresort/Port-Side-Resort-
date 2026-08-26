@@ -9,6 +9,30 @@ window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
 
+function scheduleTimedContentRemoval() {
+  const maximumTimerDelay = 2_147_483_647;
+
+  document.querySelectorAll("[data-hide-after]").forEach(element => {
+    const hideAfter = Date.parse(element.dataset.hideAfter || "");
+    if (!Number.isFinite(hideAfter)) return;
+
+    const removeWhenExpired = () => {
+      const remaining = hideAfter - Date.now();
+
+      if (remaining <= 0) {
+        element.remove();
+        return;
+      }
+
+      window.setTimeout(removeWhenExpired, Math.min(remaining, maximumTimerDelay));
+    };
+
+    removeWhenExpired();
+  });
+}
+
+scheduleTimedContentRemoval();
+
 const content = {
   activities: [
     { time: "10:00", titleKey: "radioPortSide", locationKey: "poolArea", descriptionKey: "radioDesc", benefitsKey: "radioBenefits", musclesKey: "radioMuscles", jointsKey: "radioJoints", mindKey: "radioMind", image: "activity-radio.jpg" },
