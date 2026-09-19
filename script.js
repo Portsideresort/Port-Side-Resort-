@@ -60,7 +60,7 @@ const content = {
       { dayKey: "tuesday", title: "Dark Side", descriptionKey: "darkSideDesc", poster: "show-week2-dark-side.jpg" },
       { dayKey: "wednesday", title: "Michael Jackson", descriptionKey: "michaelJacksonDesc", poster: "show-week2-michael-jackson.jpg" },
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week2-bingo.png" },
-      { dayKey: "friday", title: "Gala", descriptionKey: "galaDesc", poster: "show-week2-gala.jpg" },
+      { dayKey: "friday", titleKey: "fridayProgrammeTitle", descriptionKey: "fridayProgrammeDesc", poster: null },
       { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "show-week2-echoes-mongolia.jpg" },
       { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week2-dj-port-side.jpg" }
     ]
@@ -172,9 +172,39 @@ const wellnessLabels = {
   }
 };
 
-const SHOW_TIME = "21:30";
+const SHOW_TIME = "21:15";
 const SHOW_CYCLE_START_UTC = Date.UTC(2026, 6, 13);
 const SPECIAL_SHOW_OVERRIDES = Object.freeze([
+  {
+    visibleFrom: "2026-09-19",
+    eventDate: "2026-10-02",
+    weekIndex: 1,
+    dayIndex: 4,
+    show: {
+      dayKey: "friday",
+      titleKey: "oktoberfestTitle",
+      descriptionKey: "oktoberfestDesc",
+      poster: "event-oktoberfest-2026.jpg",
+      dateKey: "oktoberfestDates",
+      timeKey: "evening",
+      locationKey: "poolArea"
+    }
+  },
+  {
+    visibleFrom: "2026-10-10",
+    eventDate: "2026-10-23",
+    weekIndex: 0,
+    dayIndex: 4,
+    show: {
+      dayKey: "friday",
+      titleKey: "oktoberfestTitle",
+      descriptionKey: "oktoberfestDesc",
+      poster: "event-oktoberfest-2026.jpg",
+      dateKey: "oktoberfestDates",
+      timeKey: "evening",
+      locationKey: "poolArea"
+    }
+  },
   {
     visibleFrom: "2026-07-13",
     eventDate: "2026-07-19",
@@ -303,10 +333,12 @@ const translations = {
     weatherPermitting: "Weather permitting",
     weekOneFriday: "Week 1 · Friday",
     weekTwoFriday: "Week 2 · Friday",
-    galaTitle: "Gala",
-    galaDesc: "A special gala evening by the pool, followed by The Blush cover band.",
-    theBlushTitle: "The Blush",
-    theBlushDesc: "Live favourites and timeless hits performed by The Blush cover band.",
+    oktoberfestTitle: "Oktoberfest",
+    oktoberfestDates: "2 & 23 October",
+    evening: "Evening",
+    oktoberfestDesc: "Join us for a special Oktoberfest evening at Port Side Resort with a festive Bavarian atmosphere.",
+    fridayProgrammeTitle: "Friday Evening",
+    fridayProgrammeDesc: "The programme for this Friday evening will be announced shortly.",
     tonight: "TONIGHT",
     showProgrammeKicker: "TWO-WEEK PROGRAMME",
     showsTitle: "14-Day Show Programme",
@@ -338,7 +370,6 @@ const translations = {
     tropicanaShowDesc: "Tropical rhythms, colourful costumes and energetic dance take the stage.",
     darkSideDesc: "A striking stage experience combining music, atmosphere and performance.",
     michaelJacksonDesc: "An exciting tribute celebrating the music and iconic moves of Michael Jackson.",
-    galaTheBlushDesc: "A special gala evening together with The Blush cover band.",
     echoesMongoliaDesc: "A spectacular acrobatics show from beginning to end, inspired by the strength and spirit of Mongolia.",
     featuredShow: "FEATURED SHOW",
     posterPlaceholder: "Tonight\'s poster will appear here",
@@ -504,10 +535,12 @@ const translations = {
     weatherPermitting: "Bei gutem Wetter",
     weekOneFriday: "Woche 1 · Freitag",
     weekTwoFriday: "Woche 2 · Freitag",
-    galaTitle: "Gala",
-    galaDesc: "Ein besonderer Galaabend am Pool, gefolgt von der Coverband The Blush.",
-    theBlushTitle: "The Blush",
-    theBlushDesc: "Live-Favoriten und zeitlose Hits, präsentiert von der Coverband The Blush.",
+    oktoberfestTitle: "Oktoberfest",
+    oktoberfestDates: "2. & 23. Oktober",
+    evening: "Am Abend",
+    oktoberfestDesc: "Freuen Sie sich auf einen besonderen Oktoberfestabend im Port Side Resort mit festlicher bayerischer Atmosphäre.",
+    fridayProgrammeTitle: "Freitagabend",
+    fridayProgrammeDesc: "Das Programm für diesen Freitagabend wird in Kürze bekannt gegeben.",
     tonight: "HEUTE ABEND",
     showProgrammeKicker: "ZWEI-WOCHEN-PROGRAMM",
     showsTitle: "14-Tage-Showprogramm",
@@ -539,7 +572,6 @@ const translations = {
     tropicanaShowDesc: "Tropische Rhythmen, farbenfrohe Kostüme und energiegeladener Tanz erobern die Bühne.",
     darkSideDesc: "Ein eindrucksvolles Bühnenerlebnis aus Musik, Atmosphäre und Performance.",
     michaelJacksonDesc: "Eine mitreißende Hommage an die Musik und legendären Moves von Michael Jackson.",
-    galaTheBlushDesc: "Ein besonderer Galaabend gemeinsam mit der Coverband The Blush.",
     echoesMongoliaDesc: "Eine spektakuläre Akrobatikshow von Anfang bis Ende, inspiriert von der Kraft und dem Geist der Mongolei.",
     featuredShow: "SHOW DES ABENDS",
     posterPlaceholder: "Das heutige Showplakat erscheint hier",
@@ -705,10 +737,12 @@ const translations = {
     weatherPermitting: "Hava koşulları uygunsa",
     weekOneFriday: "1. Hafta · Cuma",
     weekTwoFriday: "2. Hafta · Cuma",
-    galaTitle: "Gala",
-    galaDesc: "Havuz başında özel gala gecesi, ardından The Blush cover band performansı.",
-    theBlushTitle: "The Blush",
-    theBlushDesc: "The Blush cover band ile sevilen şarkılar ve unutulmaz canlı müzik performansı.",
+    oktoberfestTitle: "Oktoberfest",
+    oktoberfestDates: "2 ve 23 Ekim",
+    evening: "Akşam",
+    oktoberfestDesc: "Port Side Resort'ta Bavyera esintili festival atmosferiyle özel bir Oktoberfest akşamına katılın.",
+    fridayProgrammeTitle: "Cuma Akşamı",
+    fridayProgrammeDesc: "Bu cuma akşamının programı yakında duyurulacaktır.",
     tonight: "BU AKŞAM",
     showProgrammeKicker: "İKİ HAFTALIK PROGRAM",
     showsTitle: "14 Günlük Şov Programı",
@@ -740,7 +774,6 @@ const translations = {
     tropicanaShowDesc: "Tropikal ritimler, renkli kostümler ve enerjik danslar sahnede buluşuyor.",
     darkSideDesc: "Müzik, atmosfer ve performansı birleştiren etkileyici bir sahne deneyimi.",
     michaelJacksonDesc: "Michael Jackson'ın müziğini ve ikonik danslarını kutlayan heyecan verici bir gösteri.",
-    galaTheBlushDesc: "The Blush cover band eşliğinde özel bir gala gecesi.",
     echoesMongoliaDesc: "Moğolistan'ın gücünden ve ruhundan ilham alan, baştan sona etkileyici bir akrobasi gösterisi.",
     featuredShow: "GECENİN ŞOVU",
     posterPlaceholder: "Bu akşamki afiş burada görünecek",
@@ -906,10 +939,12 @@ const translations = {
     weatherPermitting: "При благоприятной погоде",
     weekOneFriday: "1-я неделя · Пятница",
     weekTwoFriday: "2-я неделя · Пятница",
-    galaTitle: "Гала-вечер",
-    galaDesc: "Особый гала-вечер у бассейна, после которого выступит кавер-группа The Blush.",
-    theBlushTitle: "The Blush",
-    theBlushDesc: "Любимые композиции и неподвластные времени хиты в живом исполнении кавер-группы The Blush.",
+    oktoberfestTitle: "Октоберфест",
+    oktoberfestDates: "2 и 23 октября",
+    evening: "Вечером",
+    oktoberfestDesc: "Приглашаем вас на особый вечер Октоберфеста в Port Side Resort с праздничной баварской атмосферой.",
+    fridayProgrammeTitle: "Вечер пятницы",
+    fridayProgrammeDesc: "Программа на этот вечер пятницы будет объявлена в ближайшее время.",
     tonight: "СЕГОДНЯ ВЕЧЕРОМ",
     showProgrammeKicker: "ДВУХНЕДЕЛЬНАЯ ПРОГРАММА",
     showsTitle: "Программа шоу на 14 дней",
@@ -941,7 +976,6 @@ const translations = {
     tropicanaShowDesc: "Тропические ритмы, яркие костюмы и энергичные танцы выходят на сцену.",
     darkSideDesc: "Яркое сценическое представление, объединяющее музыку, атмосферу и мастерство артистов.",
     michaelJacksonDesc: "Захватывающий трибьют музыке и легендарным движениям Майкла Джексона.",
-    galaTheBlushDesc: "Особый гала-вечер вместе с кавер-группой The Blush.",
     echoesMongoliaDesc: "Захватывающее акробатическое шоу от начала до конца, вдохновлённое силой и духом Монголии.",
     featuredShow: "ГЛАВНОЕ ШОУ",
     posterPlaceholder: "Здесь появится афиша сегодняшнего шоу",
@@ -1279,7 +1313,8 @@ function getShowTitle(show) {
 }
 
 function getShowTime(show) {
-  return show.time || SHOW_TIME;
+  const time = show.timeKey ? translate(show.timeKey) : (show.time || SHOW_TIME);
+  return show.dateKey ? `${translate(show.dateKey)} · ${time}` : time;
 }
 
 function getShowLocationKey(show) {

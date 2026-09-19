@@ -1,9 +1,9 @@
-const CACHE_NAME = "port-side-v53-happy-hour-expiry";
+const CACHE_NAME = "port-side-v54-oktoberfest";
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=52",
-  "./script.js?v=53",
+  "./script.js?v=54",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -19,12 +19,11 @@ const FILES = [
   "./show-week2-dark-side.jpg",
   "./show-week2-michael-jackson.jpg",
   "./show-week2-bingo.png",
-  "./show-week2-gala.jpg",
   "./show-week2-echoes-mongolia.jpg",
   "./show-week2-dj-port-side.jpg",
   "./event-happy-hour.jpg",
   "./event-mini-disco.jpg",
-  "./event-the-blush.jpg",
+  "./event-oktoberfest-2026.jpg",
   "./hotel-logo-gold.png",
   "./game-hotel-background.jpg",
   "./activity-radio.jpg",
