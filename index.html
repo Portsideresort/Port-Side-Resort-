@@ -11,6 +11,7 @@
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
   <link rel="stylesheet" href="style.css?v=57" />
+  <link rel="stylesheet" href="gallery.css?v=1" />
 </head>
 <body>
   <div class="page-glow glow-one"></div>
@@ -195,6 +196,16 @@
             </div>
           </div>
         </article>
+        <section id="gallery" class="guest-gallery" aria-labelledby="guestGalleryTitle">
+          <div class="guest-gallery-heading">
+            <div><span class="guest-gallery-kicker" data-gallery-i18n="kicker">UNSERE URLAUBSMOMENTE</span><h2 id="guestGalleryTitle" data-gallery-i18n="title">Gästegalerie</h2></div>
+            <button type="button" class="gallery-button gallery-button-small" id="galleryShare" data-gallery-i18n="share">Foto teilen</button>
+          </div>
+          <p class="guest-gallery-intro" data-gallery-i18n="intro">Eure schönsten Momente im Port Side.</p>
+          <div class="guest-gallery-grid" id="galleryLatest"></div>
+          <p class="gallery-status" id="galleryStatus" role="status" data-gallery-i18n="loading">Fotos werden geladen…</p>
+          <button type="button" class="gallery-text-button" id="galleryAll" data-gallery-i18n="all">Alle Fotos ansehen →</button>
+        </section>
       </div>
     </div>
 
@@ -568,25 +579,6 @@
       </div>
     </section>
 
-    <section id="gallery" class="section gallery-section">
-      <div class="shell">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="section-kicker" data-i18n="memories">MEMORIES</p>
-            <h2 data-i18n="galleryTitle">Gallery</h2>
-          </div>
-          <p class="section-intro" data-i18n="galleryIntro">
-            Photos, posters and special moments will be added here.
-          </p>
-        </div>
-
-        <div class="gallery-coming-soon">
-          <span class="gallery-coming-icon">✦</span>
-          <strong data-i18n="galleryComingSoon">COMING SOON</strong>
-        </div>
-      </div>
-    </section>
-
     <section id="contact" class="section contact-section">
       <div class="shell contact-shell">
         <div>
@@ -624,6 +616,9 @@
   </footer>
 
   <script src="script.js?v=54"></script>
+  <script src="gallery-config.js?v=1"></script>
+  <script src="gallery-frames.js?v=1"></script>
+  <script src="gallery.js?v=1"></script>
   <script src="sudoku-config.js?v=1"></script>
   <script src="sudoku-i18n.js?v=3"></script>
   <script src="sudoku.js?v=6"></script>

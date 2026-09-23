@@ -1,9 +1,15 @@
-const CACHE_NAME = "port-side-v62-sudoku-live";
+const CACHE_NAME = "port-side-v63-guest-gallery";
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=57",
   "./script.js?v=54",
+  "./gallery-config.js?v=1",
+  "./gallery.css?v=1",
+  "./gallery-frames.js?v=1",
+  "./gallery.js?v=1",
+  "./gallery-assets/frames-atlas.png",
+  "./gallery-assets/frames-manifest.json",
   "./sudoku-config.js?v=1",
   "./sudoku-i18n.js?v=3",
   "./sudoku.js?v=6",

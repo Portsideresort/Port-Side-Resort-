@@ -1,0 +1,16 @@
+{
+  "atlas": "frames-atlas.png",
+  "logo": [0.22, 0.835, 0.56, 0.14],
+  "frames": [
+    { "id": "gold", "label": {"de":"Gold", "en":"Gold", "tr":"Altın", "ru":"Золото"}, "sourceRect": [32,31,321,391], "aperture": [0.10280,0.09207,0.78816,0.73146], "matte":"#091c2a" },
+    { "id": "navy", "label": {"de":"Nachtblau", "en":"Midnight", "tr":"Gece mavisi", "ru":"Полночь"}, "sourceRect": [380,31,318,392], "aperture": [0.10692,0.08418,0.78302,0.74235], "matte":"#091a2d" },
+    { "id": "white", "label": {"de":"Polaroid", "en":"Polaroid", "tr":"Polaroid", "ru":"Полароид"}, "sourceRect": [726,30,321,393], "aperture": [0.06854,0.06107,0.85981,0.75318], "matte":"#e7e2d7" },
+    { "id": "sea", "label": {"de":"Meereswelle", "en":"Sea wave", "tr":"Deniz", "ru":"Волна"}, "sourceRect": [1075,31,321,392], "aperture": [0.08723,0.08163,0.82243,0.73980], "matte":"#cae9e5" },
+    { "id": "sunset", "label": {"de":"Sonnenuntergang", "en":"Sunset", "tr":"Gün batımı", "ru":"Закат"}, "sourceRect": [1424,31,321,392], "aperture": [0.09657,0.08163,0.80997,0.72704], "matte":"#ebb195" },
+    { "id": "palm", "label": {"de":"Palmen", "en":"Palm", "tr":"Palmiye", "ru":"Пальмы"}, "sourceRect": [32,453,321,399], "aperture": [0.10280,0.08271,0.79128,0.71679], "matte":"#ece8d7" },
+    { "id": "sand", "label": {"de":"Sand & Muschel", "en":"Sand & shell", "tr":"Kum & deniz kabuğu", "ru":"Песок"}, "sourceRect": [380,453,321,399], "aperture": [0.10592,0.07769,0.78505,0.72431], "matte":"#dac9a6" },
+    { "id": "film", "label": {"de":"Filmstreifen", "en":"Film", "tr":"Film şeridi", "ru":"Киноплёнка"}, "sourceRect": [726,453,321,399], "aperture": [0.06231,0.10777,0.87227,0.71930], "matte":"#101414", "logo":[0.24,0.835,0.52,0.12] },
+    { "id": "postcard", "label": {"de":"Postkarte", "en":"Postcard", "tr":"Kartpostal", "ru":"Открытка"}, "sourceRect": [1075,453,321,399], "aperture": [0.07788,0.07268,0.84112,0.72682], "matte":"#eee8d8" },
+    { "id": "floral", "label": {"de":"Blüten", "en":"Bougainvillea", "tr":"Begonvil", "ru":"Цветы"}, "sourceRect": [1424,453,321,399], "aperture": [0.10280,0.08521,0.79751,0.71429], "matte":"#eee8db" }
+  ]
+}
