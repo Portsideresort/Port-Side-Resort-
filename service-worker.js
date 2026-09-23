@@ -1,9 +1,13 @@
-const CACHE_NAME = "port-side-v54-oktoberfest";
+const CACHE_NAME = "port-side-v62-sudoku-live";
 const FILES = [
   "./",
   "./index.html",
-  "./style.css?v=52",
+  "./style.css?v=57",
   "./script.js?v=54",
+  "./sudoku-config.js?v=1",
+  "./sudoku-i18n.js?v=3",
+  "./sudoku.js?v=6",
+  "./sudoku-night-pool-bg.jpg",
   "./logo.png",
   "./stage-bg.png",
   "./show-week1-face-africa.jpg",
@@ -54,6 +58,8 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("fetch", event => {
+  // Never cache cross-origin game API calls or score submissions.
+  if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
   event.respondWith(
     caches.match(event.request).then(response => response || fetch(event.request))
   );

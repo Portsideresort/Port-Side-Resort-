@@ -1,0 +1,5 @@
+.test-runtime/
+sudoku-preview-*.png
+sudoku-engine.js
+tests/sudoku-engine.test.cjs
+tests/sudoku-ui.test.cjs

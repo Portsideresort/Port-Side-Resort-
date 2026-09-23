@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
-  <link rel="stylesheet" href="style.css?v=52" />
+  <link rel="stylesheet" href="style.css?v=57" />
 </head>
 <body>
   <div class="page-glow glow-one"></div>
@@ -25,6 +25,7 @@
         <a href="#shows" class="nav-link" data-i18n="navShows">Shows</a>
         <a href="#music" class="nav-link" data-i18n="navMusic">Music</a>
         <a href="#game" class="nav-link" data-i18n="navGame">Game</a>
+        <a href="#sudoku" class="nav-link" data-sudoku-i18n="nav">Sudoku</a>
         <a href="#gallery" class="nav-link" data-i18n="navGallery">Gallery</a>
 
         <div class="nav-weather-wrap">
@@ -116,6 +117,10 @@
             <a href="#game" class="section-shortcut">
               <span class="section-shortcut-icon" aria-hidden="true">★</span>
               <strong data-i18n="quickGame">Game</strong>
+            </a>
+            <a href="#sudoku" class="section-shortcut">
+              <span class="section-shortcut-icon" aria-hidden="true">▦</span>
+              <strong data-sudoku-i18n="quick">Sudoku</strong>
             </a>
             <a href="#contact" class="section-shortcut">
               <span class="section-shortcut-icon" aria-hidden="true">✉</span>
@@ -340,6 +345,91 @@
       </div>
     </section>
 
+    <section id="sudoku" class="sudoku-section" aria-labelledby="sudokuTitle">
+      <div class="shell sudoku-shell">
+        <div class="sudoku-heading">
+          <div>
+            <p class="section-kicker gold" data-sudoku-i18n="kicker">A QUIET MOMENT BY THE POOL</p>
+            <h2 id="sudokuTitle" data-sudoku-i18n="title">Port Side Sudoku</h2>
+            <p class="sudoku-intro" data-sudoku-i18n="intro">Classic 9 × 9 Sudoku. Fill the empty squares and see how quickly you can finish.</p>
+          </div>
+          <div class="sudoku-daily-note">
+            <span aria-hidden="true">✦</span>
+            <p data-sudoku-i18n="saveNote">Your game never resets automatically. Continue whenever you like.</p>
+          </div>
+        </div>
+
+        <div class="sudoku-card">
+          <div class="sudoku-board-panel">
+            <div class="sudoku-board-topline">
+              <span class="sudoku-board-label" data-sudoku-i18n="boardLabel">YOUR PUZZLE</span>
+              <div class="sudoku-clock"><span data-sudoku-i18n="timeLabel">YOUR TIME</span><strong id="sudokuTimer">00:00</strong><button id="sudokuPause" type="button" data-sudoku-i18n="pause" hidden>Pause</button></div>
+            </div>
+            <div class="sudoku-board-wrap is-locked" id="sudokuBoardWrap">
+              <div class="sudoku-grid" id="sudokuGrid" role="grid" aria-label="Sudoku board" aria-describedby="sudokuStatus"></div>
+              <div class="sudoku-board-overlay" id="sudokuBoardOverlay">
+                <span aria-hidden="true">▦</span><strong id="sudokuOverlayTitle"></strong><p id="sudokuOverlayNote"></p>
+                <button type="button" class="sudoku-start-button" id="sudokuResume" data-sudoku-i18n="resume" hidden>Continue game</button>
+              </div>
+            </div>
+            <div class="sudoku-status" id="sudokuStatus" role="status" aria-live="polite"></div>
+            <div class="sudoku-number-pad" id="sudokuNumberPad" aria-label="Number pad"></div>
+            <div class="sudoku-result" id="sudokuResult" hidden><span data-sudoku-i18n="resultTitle">PUZZLE COMPLETE</span><strong id="sudokuResultTime"></strong></div>
+          </div>
+
+          <aside class="sudoku-controls">
+            <form id="sudokuJoinForm" class="sudoku-join-form">
+              <h3 data-sudoku-i18n="joinTitle">Your poolside puzzle awaits</h3>
+              <p data-sudoku-i18n="joinIntro">Enter your name and room number to start.</p>
+              <label for="sudokuPlayerInput" data-sudoku-i18n="nameLabel">Your name</label>
+              <input id="sudokuPlayerInput" name="sudokuName" type="text" maxlength="30" autocomplete="given-name" required />
+              <label for="sudokuRoomInput" data-sudoku-i18n="roomLabel">Room number</label>
+              <input id="sudokuRoomInput" name="sudokuRoom" type="text" maxlength="8" autocomplete="off" required />
+              <p id="sudokuJoinError" class="sudoku-form-error" role="alert" hidden></p>
+              <button class="sudoku-start-button" type="submit" data-sudoku-i18n="start">Start playing</button>
+              <small data-sudoku-i18n="privacy">Only your name and time appear in the ranking. Your room number is not shown.</small>
+            </form>
+            <div class="sudoku-player-bar" id="sudokuPlayerBar" hidden>
+              <div><span data-sudoku-i18n="playerLabel">PLAYER</span><strong id="sudokuPlayerName"></strong></div>
+              <button class="sudoku-text-button" id="sudokuChangePlayer" type="button" data-sudoku-i18n="changePlayer">Change player</button>
+            </div>
+            <div class="sudoku-control-heading">
+              <span class="sudoku-control-icon" aria-hidden="true">▦</span>
+              <div>
+                <p data-sudoku-i18n="classicLabel">CLASSIC SUDOKU</p>
+                <small data-sudoku-i18n="classicHelp">9 × 9 squares · One solution</small>
+              </div>
+            </div>
+            <div class="sudoku-rules">
+              <h3 data-sudoku-i18n="howToPlay">How to play</h3>
+              <p data-sudoku-i18n="rules">Use each number from 1 to 9 once in every row, column and 3 × 3 box.</p>
+              <p data-sudoku-i18n="inputHelp">Tap an empty square, then choose a number below. Gold numbers are the clues.</p>
+            </div>
+            <div class="sudoku-progress">
+              <span data-sudoku-i18n="progressLabel">YOUR PROGRESS</span>
+              <strong id="sudokuProgressText"></strong>
+              <progress id="sudokuProgress" value="0" max="81" aria-label="Sudoku progress"></progress>
+            </div>
+
+            <div class="sudoku-action-list">
+              <button class="sudoku-action-button" id="sudokuHint" type="button" disabled><span aria-hidden="true">✧</span><span data-sudoku-i18n="hint">Give me a hint</span></button>
+              <button class="sudoku-action-button" id="sudokuCheck" type="button" disabled><span aria-hidden="true">✓</span><span data-sudoku-i18n="check">Check my answers</span></button>
+              <button class="sudoku-action-button" id="sudokuRestart" type="button" disabled><span aria-hidden="true">↺</span><span data-sudoku-i18n="restart">Start this puzzle again</span></button>
+              <button class="sudoku-action-button sudoku-action-new" id="sudokuNew" type="button" disabled><span aria-hidden="true">✦</span><span data-sudoku-i18n="newGame">New combination</span></button>
+            </div>
+            <p class="sudoku-local-note" data-sudoku-i18n="timerNote">The timer pauses when you leave the page.</p>
+            <p id="sudokuStorageWarning" class="sudoku-form-error" data-sudoku-i18n="storageWarning" hidden>Progress could not be saved. Keep this page open to continue.</p>
+          </aside>
+        </div>
+        <div class="sudoku-leaderboard">
+          <div class="sudoku-leaderboard-heading"><div><h3 data-sudoku-i18n="leaderboardTitle">FASTEST FINISHES</h3><p data-sudoku-i18n="leaderboardIntro">Completed games, ranked by time.</p></div><span class="sudoku-demo-label" data-sudoku-i18n="localNote">SHARED RANKING · Only names and times are public.</span></div>
+          <p id="sudokuLeaderboardEmpty" data-sudoku-i18n="leaderboardEmpty">No finished games yet. Be the first!</p>
+          <table id="sudokuLeaderboardTable" hidden><thead><tr><th scope="col" data-sudoku-i18n="rankHeader">Rank</th><th scope="col" data-sudoku-i18n="nameHeader">Name</th><th scope="col" data-sudoku-i18n="timeHeader">Time</th></tr></thead><tbody id="sudokuLeaderboardBody"></tbody></table>
+          <p class="sudoku-local-note" data-sudoku-i18n="scoreNote">First attempts without hints or answer checks enter the ranking.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="shows" class="section dark-section">
       <div class="shell">
         <div class="section-heading split-heading">
@@ -534,6 +624,9 @@
   </footer>
 
   <script src="script.js?v=54"></script>
+  <script src="sudoku-config.js?v=1"></script>
+  <script src="sudoku-i18n.js?v=3"></script>
+  <script src="sudoku.js?v=6"></script>
   <script src="music/main-player.js?v=52"></script>
   <!-- Cloudflare Web Analytics -->
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b261336548f84659b75d9956d52f6413"}'></script>
