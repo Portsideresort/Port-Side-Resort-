@@ -1547,7 +1547,19 @@ loadWeather();
 setInterval(loadWeather, 30 * 60 * 1000);
 
 if ("serviceWorker" in navigator) {
+  const hadServiceWorkerController = Boolean(navigator.serviceWorker.controller);
+  let refreshingForServiceWorker = false;
+
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (!hadServiceWorkerController || refreshingForServiceWorker) return;
+    refreshingForServiceWorker = true;
+    window.location.reload();
+  });
+
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("service-worker.js").catch(() => {});
+    navigator.serviceWorker
+      .register("service-worker.js", { updateViaCache: "none" })
+      .then(registration => registration.update())
+      .catch(() => {});
   });
 }

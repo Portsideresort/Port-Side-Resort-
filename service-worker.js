@@ -1,9 +1,10 @@
-const CACHE_NAME = "port-side-v64-gallery-game-only";
+const CACHE_PREFIX = "port-side-programme-";
+const CACHE_NAME = `${CACHE_PREFIX}v65-fresh-navigation`;
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=58",
-  "./script.js?v=55",
+  "./script.js?v=56",
   "./gallery-config.js?v=1",
   "./gallery.css?v=2",
   "./gallery-frames.js?v=1",
@@ -67,8 +68,39 @@ self.addEventListener("install", event => {
 self.addEventListener("fetch", event => {
   // Never cache cross-origin game API calls or score submissions.
   if (event.request.method !== "GET" || new URL(event.request.url).origin !== self.location.origin) return;
+
+  // Always prefer the newest page while online so returning QR guests do not
+  // remain on an older programme cached by a previous service worker.
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      caches.open(CACHE_NAME).then(cache => (
+        fetch(event.request)
+          .then(async response => {
+            if (response.ok) await cache.put(event.request, response.clone());
+            return response;
+          })
+          .catch(async error => {
+            const cachedResponse = await cache.match(event.request, { ignoreSearch: true });
+            if (cachedResponse) return cachedResponse;
+
+            const requestUrl = new URL(event.request.url);
+            const scopePath = new URL(self.registration.scope).pathname;
+            if (requestUrl.pathname === scopePath || requestUrl.pathname === `${scopePath}index.html`) {
+              const homeFallback = await cache.match("./index.html");
+              if (homeFallback) return homeFallback;
+            }
+
+            throw error;
+          })
+      ))
+    );
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    caches.open(CACHE_NAME)
+      .then(cache => cache.match(event.request))
+      .then(response => response || fetch(event.request))
   );
 });
 
@@ -78,7 +110,7 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys
-          .filter(key => key !== CACHE_NAME)
+          .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
           .map(key => caches.delete(key))
       )
     ).then(() => self.clients.claim())
