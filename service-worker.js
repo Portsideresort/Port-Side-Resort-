@@ -1,13 +1,13 @@
-const CACHE_NAME = "port-side-v63-guest-gallery";
+const CACHE_NAME = "port-side-v64-gallery-game-only";
 const FILES = [
   "./",
   "./index.html",
-  "./style.css?v=57",
-  "./script.js?v=54",
+  "./style.css?v=58",
+  "./script.js?v=55",
   "./gallery-config.js?v=1",
-  "./gallery.css?v=1",
+  "./gallery.css?v=2",
   "./gallery-frames.js?v=1",
-  "./gallery.js?v=1",
+  "./gallery.js?v=2",
   "./gallery-assets/frames-atlas.png",
   "./gallery-assets/frames-manifest.json",
   "./sudoku-config.js?v=1",
@@ -29,6 +29,7 @@ const FILES = [
   "./show-week2-dark-side.jpg",
   "./show-week2-michael-jackson.jpg",
   "./show-week2-bingo.png",
+  "./show-week2-friday-show-time.jpg",
   "./show-week2-echoes-mongolia.jpg",
   "./show-week2-dj-port-side.jpg",
   "./event-happy-hour.jpg",

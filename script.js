@@ -60,7 +60,7 @@ const content = {
       { dayKey: "tuesday", title: "Dark Side", descriptionKey: "darkSideDesc", poster: "show-week2-dark-side.jpg" },
       { dayKey: "wednesday", title: "Michael Jackson", descriptionKey: "michaelJacksonDesc", poster: "show-week2-michael-jackson.jpg" },
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week2-bingo.png" },
-      { dayKey: "friday", titleKey: "fridayProgrammeTitle", descriptionKey: "fridayProgrammeDesc", poster: null },
+      { dayKey: "friday", title: "SHOW TIME", description: "", poster: "show-week2-friday-show-time.jpg" },
       { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "show-week2-echoes-mongolia.jpg" },
       { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week2-dj-port-side.jpg" }
     ]
@@ -289,24 +289,17 @@ const translations = {
     quickMusic: "Music",
     quickGame: "Game",
     quickContact: "Contact",
-    leaderboardKicker: "LIVE RANKING",
-    leaderboardTitle: "This week's Top 3",
-    leaderboardLoading: "Loading ranking…",
-    leaderboardEmpty: "No scores yet — take first place!",
-    leaderboardUnavailable: "The ranking will be back shortly.",
-    leaderboardButton: "PLAY STAR CATCH",
     wheelKicker: "YOUR LUCKY MOMENT",
     wheelTitle: "Diamond Wheel",
     wheelIntro: "Try your luck and claim your free gift.",
     wheelButton: "SPIN NOW",
-    gameKicker: "WEEKLY GUEST CHALLENGE",
+    gameKicker: "HOLIDAY GAME",
     gameTitle: "Port Side Star Catch",
-    gameIntro: "Catch the holiday icons, protect your three lives and enter the weekly Top 10.",
+    gameIntro: "Catch the holiday icons, protect your three lives and enjoy a quick game just for fun.",
     gameRuleLives: "3 lives · No time limit",
-    gameRuleWeekly: "Shared weekly Top 10",
-    gameRulePrize: "Prize on stage every Thursday",
+    gameRuleFullscreen: "Simple controls · Full-screen fun",
+    gameRuleAnytime: "Play anytime · Just for fun",
     gameButton: "PLAY NOW",
-    gameClose: "Scores close Thursday at 21:00",
     eyebrow: "ENTERTAINMENT & ACTIVITIES",
     entertainmentProgramme: "ENTERTAINMENT<br>PROGRAMME",
     heroLine1: "Your holiday.",
@@ -337,8 +330,6 @@ const translations = {
     oktoberfestDates: "2 & 23 October",
     evening: "Evening",
     oktoberfestDesc: "Join us for a special Oktoberfest evening at Port Side Resort with a festive Bavarian atmosphere.",
-    fridayProgrammeTitle: "Friday Evening",
-    fridayProgrammeDesc: "The programme for this Friday evening will be announced shortly.",
     tonight: "TONIGHT",
     showProgrammeKicker: "TWO-WEEK PROGRAMME",
     showsTitle: "14-Day Show Programme",
@@ -491,24 +482,17 @@ const translations = {
     quickMusic: "Musik",
     quickGame: "Spiel",
     quickContact: "Kontakt",
-    leaderboardKicker: "LIVE-RANGLISTE",
-    leaderboardTitle: "Top 3 dieser Woche",
-    leaderboardLoading: "Rangliste wird geladen…",
-    leaderboardEmpty: "Noch keine Punkte — hol dir Platz 1!",
-    leaderboardUnavailable: "Die Rangliste ist gleich wieder da.",
-    leaderboardButton: "STAR CATCH SPIELEN",
     wheelKicker: "DEIN GLÜCKSMOMENT",
     wheelTitle: "Glücksrad",
     wheelIntro: "Versuche dein Glück und sichere dir dein kostenloses Geschenk.",
     wheelButton: "JETZT DREHEN",
-    gameKicker: "WÖCHENTLICHE GÄSTE-CHALLENGE",
+    gameKicker: "URLAUBSSPIEL",
     gameTitle: "Port Side Star Catch",
-    gameIntro: "Fange die Urlaubssymbole, schütze deine drei Leben und erreiche die wöchentlichen Top 10.",
+    gameIntro: "Fange die Urlaubssymbole, schütze deine drei Leben und genieße ein kurzes Spiel – einfach nur zum Spaß.",
     gameRuleLives: "3 Leben · Kein Zeitlimit",
-    gameRuleWeekly: "Gemeinsame wöchentliche Top 10",
-    gameRulePrize: "Jeden Donnerstag Preisvergabe auf der Bühne",
+    gameRuleFullscreen: "Einfache Steuerung · Spielspaß im Vollbild",
+    gameRuleAnytime: "Jederzeit spielen · Einfach zum Spaß",
     gameButton: "JETZT SPIELEN",
-    gameClose: "Punkteannahme endet Donnerstag um 21:00 Uhr",
     eyebrow: "ANIMATION & AKTIVITÄTEN",
     entertainmentProgramme: "UNTERHALTUNGS<br>PROGRAMM",
     heroLine1: "Ihr Urlaub.",
@@ -539,8 +523,6 @@ const translations = {
     oktoberfestDates: "2. & 23. Oktober",
     evening: "Am Abend",
     oktoberfestDesc: "Freuen Sie sich auf einen besonderen Oktoberfestabend im Port Side Resort mit festlicher bayerischer Atmosphäre.",
-    fridayProgrammeTitle: "Freitagabend",
-    fridayProgrammeDesc: "Das Programm für diesen Freitagabend wird in Kürze bekannt gegeben.",
     tonight: "HEUTE ABEND",
     showProgrammeKicker: "ZWEI-WOCHEN-PROGRAMM",
     showsTitle: "14-Tage-Showprogramm",
@@ -693,24 +675,17 @@ const translations = {
     quickMusic: "Müzik",
     quickGame: "Oyun",
     quickContact: "İletişim",
-    leaderboardKicker: "CANLI SIRALAMA",
-    leaderboardTitle: "Bu haftanın ilk 3'ü",
-    leaderboardLoading: "Sıralama yükleniyor…",
-    leaderboardEmpty: "Henüz skor yok — ilk sırayı sen al!",
-    leaderboardUnavailable: "Sıralama kısa süre sonra yeniden gösterilecek.",
-    leaderboardButton: "STAR CATCH OYNA",
     wheelKicker: "ŞANS ANI",
     wheelTitle: "Şans Çarkı",
     wheelIntro: "Şansınızı deneyin, ücretsiz hediyenizi alın.",
     wheelButton: "ÇARKI ÇEVİR",
-    gameKicker: "HAFTALIK MİSAFİR YARIŞMASI",
+    gameKicker: "TATİL OYUNU",
     gameTitle: "Port Side Star Catch",
-    gameIntro: "Tatil ikonlarını yakala, üç canını koru ve haftalık İlk 10'a gir.",
+    gameIntro: "Tatil ikonlarını yakala, üç canını koru ve sadece eğlence için kısa bir oyun oyna.",
     gameRuleLives: "3 can · Süre sınırı yok",
-    gameRuleWeekly: "Ortak haftalık İlk 10",
-    gameRulePrize: "Her Perşembe sahnede ödül",
+    gameRuleFullscreen: "Kolay kontrol · Tam ekran eğlencesi",
+    gameRuleAnytime: "İstediğin zaman oyna · Sadece eğlence",
     gameButton: "HEMEN OYNA",
-    gameClose: "Skor alımı Perşembe 21:00'de kapanır",
     eyebrow: "ANİMASYON & AKTİVİTELER",
     entertainmentProgramme: "EĞLENCE<br>PROGRAMI",
     heroLine1: "Tatiliniz.",
@@ -741,8 +716,6 @@ const translations = {
     oktoberfestDates: "2 ve 23 Ekim",
     evening: "Akşam",
     oktoberfestDesc: "Port Side Resort'ta Bavyera esintili festival atmosferiyle özel bir Oktoberfest akşamına katılın.",
-    fridayProgrammeTitle: "Cuma Akşamı",
-    fridayProgrammeDesc: "Bu cuma akşamının programı yakında duyurulacaktır.",
     tonight: "BU AKŞAM",
     showProgrammeKicker: "İKİ HAFTALIK PROGRAM",
     showsTitle: "14 Günlük Şov Programı",
@@ -895,24 +868,17 @@ const translations = {
     quickMusic: "Музыка",
     quickGame: "Игра",
     quickContact: "Контакты",
-    leaderboardKicker: "ТЕКУЩИЙ РЕЙТИНГ",
-    leaderboardTitle: "Топ-3 этой недели",
-    leaderboardLoading: "Рейтинг загружается…",
-    leaderboardEmpty: "Результатов пока нет — займите первое место!",
-    leaderboardUnavailable: "Рейтинг скоро снова будет доступен.",
-    leaderboardButton: "ИГРАТЬ В STAR CATCH",
     wheelKicker: "ВАШ СЧАСТЛИВЫЙ МОМЕНТ",
     wheelTitle: "Колесо удачи",
     wheelIntro: "Испытайте удачу и получите бесплатный подарок.",
     wheelButton: "КРУТИТЬ СЕЙЧАС",
-    gameKicker: "ЕЖЕНЕДЕЛЬНОЕ ИСПЫТАНИЕ ДЛЯ ГОСТЕЙ",
+    gameKicker: "ИГРА НА ОТДЫХЕ",
     gameTitle: "Port Side Star Catch",
-    gameIntro: "Ловите символы отдыха, берегите три жизни и войдите в еженедельный топ-10.",
+    gameIntro: "Ловите символы отдыха, берегите три жизни и просто наслаждайтесь короткой игрой.",
     gameRuleLives: "3 жизни · Без ограничения времени",
-    gameRuleWeekly: "Общий еженедельный топ-10",
-    gameRulePrize: "Вручение приза на сцене каждый четверг",
+    gameRuleFullscreen: "Простое управление · Игра во весь экран",
+    gameRuleAnytime: "Играйте в любое время · Просто для удовольствия",
     gameButton: "ИГРАТЬ СЕЙЧАС",
-    gameClose: "Приём результатов завершается в четверг в 21:00",
     eyebrow: "АНИМАЦИЯ И АКТИВНЫЙ ОТДЫХ",
     entertainmentProgramme: "АНИМАЦИОННАЯ<br>ПРОГРАММА",
     heroLine1: "Ваш отдых.",
@@ -943,8 +909,6 @@ const translations = {
     oktoberfestDates: "2 и 23 октября",
     evening: "Вечером",
     oktoberfestDesc: "Приглашаем вас на особый вечер Октоберфеста в Port Side Resort с праздничной баварской атмосферой.",
-    fridayProgrammeTitle: "Вечер пятницы",
-    fridayProgrammeDesc: "Программа на этот вечер пятницы будет объявлена в ближайшее время.",
     tonight: "СЕГОДНЯ ВЕЧЕРОМ",
     showProgrammeKicker: "ДВУХНЕДЕЛЬНАЯ ПРОГРАММА",
     showsTitle: "Программа шоу на 14 дней",
@@ -1072,67 +1036,9 @@ function getInitialLanguage() {
 
 let currentLanguage = getInitialLanguage();
 const GAME_SITE_URL = "https://port-side-star-catch.cream-melon-9853.chatgpt.site";
-let leaderboardPreviewEntries = [];
-let leaderboardPreviewStatus = "leaderboardLoading";
 
 function translate(key) {
   return translations[currentLanguage][key] || key;
-}
-
-function renderLeaderboardPreview() {
-  const list = document.getElementById("leaderboardPreviewList");
-  if (!list) return;
-
-  list.replaceChildren();
-
-  if (!leaderboardPreviewEntries.length) {
-    const status = document.createElement("li");
-    status.className = "leaderboard-preview-status";
-    status.textContent = translate(leaderboardPreviewStatus);
-    list.appendChild(status);
-    return;
-  }
-
-  leaderboardPreviewEntries.forEach((entry, index) => {
-    const item = document.createElement("li");
-    const rank = document.createElement("span");
-    const name = document.createElement("strong");
-    const score = document.createElement("b");
-
-    rank.className = "leaderboard-preview-rank";
-    name.className = "leaderboard-preview-name";
-    score.className = "leaderboard-preview-score";
-    rank.textContent = String(index + 1);
-    name.textContent = entry.name;
-    score.textContent = new Intl.NumberFormat(currentLanguage).format(entry.score);
-
-    item.append(rank, name, score);
-    list.appendChild(item);
-  });
-}
-
-async function loadLeaderboardPreview() {
-  try {
-    const response = await fetch(`${GAME_SITE_URL}/api/leaderboard`, {
-      cache: "no-store",
-      credentials: "omit"
-    });
-    if (!response.ok) throw new Error("Leaderboard unavailable");
-
-    const data = await response.json();
-    leaderboardPreviewEntries = Array.isArray(data.entries)
-      ? data.entries
-          .filter(entry => typeof entry?.name === "string" && Number.isFinite(Number(entry?.score)))
-          .slice(0, 3)
-          .map(entry => ({ name: entry.name, score: Number(entry.score) }))
-      : [];
-    leaderboardPreviewStatus = "leaderboardEmpty";
-  } catch {
-    leaderboardPreviewEntries = [];
-    leaderboardPreviewStatus = "leaderboardUnavailable";
-  }
-
-  renderLeaderboardPreview();
 }
 
 function localizedWellness(value) {
@@ -1413,7 +1319,10 @@ function openShowModal(weekIndex, showIndex) {
   selectedShow = { weekIndex, showIndex };
   document.getElementById("showModalDay").textContent = translate(show.dayKey);
   document.getElementById("showModalTitle").textContent = getShowTitle(show);
-  document.getElementById("showModalDescription").textContent = translate(show.descriptionKey);
+  const description = show.descriptionKey ? translate(show.descriptionKey) : (show.description || "");
+  const descriptionElement = document.getElementById("showModalDescription");
+  descriptionElement.textContent = description;
+  descriptionElement.hidden = !description;
   document.getElementById("showModalTime").textContent = getShowTime(show);
   setPoster(document.getElementById("showModalPoster"), show.poster);
 
@@ -1458,7 +1367,6 @@ function setLanguage(lang, { rememberPreference = false } = {}) {
   renderShowSchedule();
   renderSundayDayOffNotice();
   refreshOpenShowModal();
-  renderLeaderboardPreview();
   renderWeatherDate();
 
   if (window.latestWeatherData) {
@@ -1488,8 +1396,6 @@ showModal?.addEventListener("click", event => {
 });
 
 setLanguage(currentLanguage);
-loadLeaderboardPreview();
-window.setInterval(loadLeaderboardPreview, 60_000);
 
 
 const WEATHER_COORDINATES = {
