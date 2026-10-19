@@ -1,10 +1,10 @@
 const CACHE_PREFIX = "port-side-programme-";
-const CACHE_NAME = `${CACHE_PREFIX}v65-fresh-navigation`;
+const CACHE_NAME = `${CACHE_PREFIX}v66-programme-order`;
 const FILES = [
   "./",
   "./index.html",
-  "./style.css?v=58",
-  "./script.js?v=56",
+  "./style.css?v=59",
+  "./script.js?v=57",
   "./gallery-config.js?v=1",
   "./gallery.css?v=2",
   "./gallery-frames.js?v=1",
@@ -23,7 +23,6 @@ const FILES = [
   "./show-week1-bingo.png",
   "./show-week1-diva-nova.jpg",
   "./show-week1-mexico.jpg",
-  "./show-week1-dj-port-side.jpg",
   "./show-week1-world-cup-final.jpg",
   "./sunday-animation-day-off.jpg",
   "./show-week2-tropicana.jpg",
@@ -32,7 +31,6 @@ const FILES = [
   "./show-week2-bingo.png",
   "./show-week2-friday-show-time.jpg",
   "./show-week2-echoes-mongolia.jpg",
-  "./show-week2-dj-port-side.jpg",
   "./event-happy-hour.jpg",
   "./event-mini-disco.jpg",
   "./event-oktoberfest-2026.jpg",
@@ -46,7 +44,6 @@ const FILES = [
   "./activity-water-gym.jpg",
   "./activity-water-polo.jpg",
   "./activity-aqua-yoga.jpg",
-  "./activity-sunrise-yoga.jpg",
   "./music/",
   "./music/index.html",
   "./music/style.css",

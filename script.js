@@ -53,7 +53,7 @@ const content = {
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week1-bingo.png" },
       { dayKey: "friday", title: "Diva Nova", descriptionKey: "divaNovaDesc", poster: "show-week1-diva-nova.jpg" },
       { dayKey: "saturday", title: "Mexico Show", descriptionKey: "mexicoShowDesc", poster: "show-week1-mexico.jpg" },
-      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week1-dj-port-side.jpg" }
+      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "stage-bg.png" }
     ],
     [
       { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "show-week2-tropicana.jpg" },
@@ -62,7 +62,7 @@ const content = {
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week2-bingo.png" },
       { dayKey: "friday", title: "SHOW TIME", description: "", poster: "show-week2-friday-show-time.jpg" },
       { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "show-week2-echoes-mongolia.jpg" },
-      { dayKey: "sunday", title: "DJ Port Side", descriptionKey: "djPortSideDesc", poster: "show-week2-dj-port-side.jpg" }
+      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "stage-bg.png" }
     ]
   ]
 };
@@ -104,44 +104,6 @@ const wellnessActivities = [
       tr: "Sakin nefesi, beden farkındalığını, odaklanmayı ve stresin azalmasını destekler.",
       ru: "Способствует спокойному дыханию, осознанности тела, концентрации и снижению стресса."
     }
-  },
-  {
-    id: "sunrise-yoga",
-    time: "06:00",
-    image: "activity-sunrise-yoga.jpg",
-    title: { en: "Sunrise Yoga", de: "Sunrise Yoga", tr: "Sunrise Yoga", ru: "Йога на рассвете" },
-    location: { en: "Beach", de: "Strand", tr: "Sahil", ru: "Пляж" },
-    instructor: { en: "With Animator Olga", de: "Mit Animateurin Olga", tr: "Animatör Olga ile", ru: "С аниматором Ольгой" },
-    description: {
-      en: "Welcome the first light of the day with mindful movement and calm breathing by the sea. Sunrise Yoga gently awakens the body, improves flexibility and creates a peaceful start to your holiday.",
-      de: "Begrüßen Sie das erste Licht des Tages mit achtsamer Bewegung und ruhiger Atmung am Meer. Sunrise Yoga weckt den Körper sanft, verbessert die Beweglichkeit und schenkt einen entspannten Start in den Urlaubstag.",
-      tr: "Deniz kenarında bilinçli hareketler ve sakin nefesle günün ilk ışıklarını karşılayın. Sunrise Yoga vücudu nazikçe uyandırır, esnekliği destekler ve tatil gününe huzurlu bir başlangıç sağlar.",
-      ru: "Встретьте первые лучи дня у моря осознанными движениями и спокойным дыханием. Йога на рассвете мягко пробуждает тело, развивает гибкость и дарит спокойное начало дня."
-    },
-    benefits: {
-      en: "Supports flexibility, posture, balance, mobility and healthy morning circulation.",
-      de: "Fördert Beweglichkeit, Haltung, Gleichgewicht, Mobilität und die morgendliche Durchblutung.",
-      tr: "Esnekliği, duruşu, dengeyi, hareketliliği ve sabah dolaşımını destekler.",
-      ru: "Поддерживает гибкость, осанку, равновесие, подвижность и утреннее кровообращение."
-    },
-    muscles: {
-      en: "Core, back, shoulders, hips, glutes and legs.",
-      de: "Rumpf, Rücken, Schultern, Hüfte, Gesäß und Beine.",
-      tr: "Karın ve merkez bölgesi, sırt, omuzlar, kalça ve bacaklar.",
-      ru: "Мышцы корпуса, спины, плеч, бёдер, ягодиц и ног."
-    },
-    joints: {
-      en: "Spine, shoulders, hips, knees and ankles.",
-      de: "Wirbelsäule, Schultern, Hüfte, Knie und Sprunggelenke.",
-      tr: "Omurga, omuzlar, kalça, diz ve ayak bilekleri.",
-      ru: "Позвоночник, плечи, тазобедренные, коленные и голеностопные суставы."
-    },
-    mind: {
-      en: "Promotes calm, focus, mindful breathing and a positive mood for the day.",
-      de: "Fördert Ruhe, Konzentration, bewusste Atmung und eine positive Stimmung für den Tag.",
-      tr: "Sakinliği, odaklanmayı, bilinçli nefesi ve gün boyu pozitif ruh halini destekler.",
-      ru: "Способствует спокойствию, концентрации, осознанному дыханию и позитивному настрою на весь день."
-    }
   }
 ];
 
@@ -149,25 +111,25 @@ const wellnessLabels = {
   en: {
     kicker: "RESERVATION-ONLY WELLNESS",
     title: "Begin the Day in Balance",
-    intro: "Two peaceful early-morning experiences designed for body and mind.",
+    intro: "A peaceful morning experience designed for body and mind.",
     reservation: "Reservation required · Please contact Animator Olga"
   },
   de: {
     kicker: "WELLNESS MIT RESERVIERUNG",
     title: "Beginnen Sie den Tag in Balance",
-    intro: "Zwei ruhige Erlebnisse am frühen Morgen für Körper und Geist.",
+    intro: "Ein ruhiges Erlebnis am Morgen für Körper und Geist.",
     reservation: "Reservierung erforderlich · Bitte wenden Sie sich an Animateurin Olga"
   },
   tr: {
     kicker: "REZERVASYONLU WELLNESS",
     title: "Güne Dengeyle Başlayın",
-    intro: "Beden ve zihin için hazırlanmış iki huzurlu sabah deneyimi.",
+    intro: "Beden ve zihin için hazırlanmış huzurlu bir sabah deneyimi.",
     reservation: "Rezervasyon gereklidir · Lütfen Animatör Olga ile iletişime geçin"
   },
   ru: {
     kicker: "WELLNESS ПО ЗАПИСИ",
     title: "Начните день в гармонии",
-    intro: "Два спокойных утренних занятия для тела и душевного равновесия.",
+    intro: "Спокойное утреннее занятие для тела и душевного равновесия.",
     reservation: "Требуется запись · Пожалуйста, обратитесь к аниматору Ольге"
   }
 };
@@ -351,7 +313,8 @@ const translations = {
     bingoDesc: "Join us for a fun bingo evening full of excitement and surprises.",
     divaNovaDesc: "Enjoy a stylish live music evening with Diva Nova.",
     mexicoShowDesc: "A colourful show inspired by the music, dance and spirit of Mexico.",
-    djPortSideDesc: "Dance, celebrate and enjoy the night with DJ Port Side.",
+    liveMusicTitle: "Live Music",
+    liveMusicDesc: "Enjoy an evening of live music at Port Side Resort.",
     worldCupFinalTitle: "World Cup Final 2026",
     worldCupFinalDesc: "Argentina vs Spain — watch the 2026 FIFA World Cup Final live on the big screen in the Theatre.",
     dayOffKicker: "SUNDAY NOTICE",
@@ -544,7 +507,8 @@ const translations = {
     bingoDesc: "Freuen Sie sich auf einen unterhaltsamen Bingoabend voller Spannung und Überraschungen.",
     divaNovaDesc: "Genießen Sie einen stilvollen Live-Musik-Abend mit Diva Nova.",
     mexicoShowDesc: "Eine farbenfrohe Show, inspiriert von Musik, Tanz und Lebensfreude Mexikos.",
-    djPortSideDesc: "Tanzen, feiern und genießen Sie den Abend mit DJ Port Side.",
+    liveMusicTitle: "Live-Musik",
+    liveMusicDesc: "Genießen Sie einen stimmungsvollen Abend mit Live-Musik im Port Side Resort.",
     worldCupFinalTitle: "FIFA-WM-Finale 2026",
     worldCupFinalDesc: "Argentinien gegen Spanien — erleben Sie das Finale der FIFA Fußball-Weltmeisterschaft 2026 live auf der großen Leinwand im Theater.",
     dayOffKicker: "SONNTAGSHINWEIS",
@@ -737,7 +701,8 @@ const translations = {
     bingoDesc: "Heyecan ve sürprizlerle dolu eğlenceli bingo gecemize katılın.",
     divaNovaDesc: "Diva Nova ile şık ve keyifli bir canlı müzik akşamının tadını çıkarın.",
     mexicoShowDesc: "Meksika'nın müziğinden, dansından ve ruhundan ilham alan renkli bir gösteri.",
-    djPortSideDesc: "DJ Port Side ile dans edin, eğlenin ve gecenin tadını çıkarın.",
+    liveMusicTitle: "Canlı Müzik",
+    liveMusicDesc: "Port Side Resort’ta canlı müzik eşliğinde keyifli bir akşam geçirin.",
     worldCupFinalTitle: "2026 Dünya Kupası Finali",
     worldCupFinalDesc: "Arjantin - İspanya: 2026 FIFA Dünya Kupası Finali’ni tiyatrodaki büyük ekranda canlı izleyin.",
     dayOffKicker: "PAZAR GÜNÜ DUYURUSU",
@@ -930,7 +895,8 @@ const translations = {
     bingoDesc: "Присоединяйтесь к весёлому вечеру бинго, полному азарта и сюрпризов.",
     divaNovaDesc: "Насладитесь стильным вечером живой музыки с Diva Nova.",
     mexicoShowDesc: "Красочное шоу, вдохновлённое музыкой, танцами и духом Мексики.",
-    djPortSideDesc: "Танцуйте, празднуйте и наслаждайтесь вечером вместе с DJ Port Side.",
+    liveMusicTitle: "Живая музыка",
+    liveMusicDesc: "Насладитесь вечером живой музыки в Port Side Resort.",
     worldCupFinalTitle: "Финал чемпионата мира 2026",
     worldCupFinalDesc: "Аргентина — Испания: смотрите финал чемпионата мира FIFA 2026 в прямом эфире на большом экране в театре.",
     dayOffKicker: "ВОСКРЕСНОЕ ОБЪЯВЛЕНИЕ",

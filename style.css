@@ -4330,6 +4330,10 @@ footer {
 
 /* ===== 14-DAY SHOW PROGRAMME ===== */
 
+#shows {
+  padding-top: clamp(32px, 5vw, 64px);
+}
+
 .programme-tabs {
   width: fit-content;
   display: grid;
@@ -5407,6 +5411,10 @@ footer {
 .wellness-card-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+}
+
+.wellness-card-grid > :only-child {
+  grid-column: 1 / -1;
 }
 
 .wellness-card {

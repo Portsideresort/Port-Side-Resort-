@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
-  <link rel="stylesheet" href="style.css?v=58" />
+  <link rel="stylesheet" href="style.css?v=59" />
   <link rel="stylesheet" href="gallery.css?v=2" />
 </head>
 <body>
@@ -197,6 +197,27 @@
   </header>
 
   <main>
+    <section id="shows" class="section dark-section">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker gold" data-i18n="showProgrammeKicker">TWO-WEEK PROGRAMME</p>
+            <h2 data-i18n="showsTitle">14-Day Show Programme</h2>
+          </div>
+          <p class="section-intro muted" data-i18n="showsIntro">
+            Choose a week and tap a show to see its poster and details.
+          </p>
+        </div>
+
+        <div class="programme-tabs" role="tablist" aria-label="Show programme weeks">
+          <button class="programme-tab active" id="week1Tab" type="button" role="tab" data-week="0" aria-selected="true" data-i18n="weekOne">WEEK 1</button>
+          <button class="programme-tab" id="week2Tab" type="button" role="tab" data-week="1" aria-selected="false" data-i18n="weekTwo">WEEK 2</button>
+        </div>
+
+        <div class="show-programme-grid" id="showProgrammeGrid" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
     <section id="activities" class="section light-section">
       <div class="shell">
         <div class="section-heading split-heading">
@@ -422,27 +443,6 @@
       </div>
     </section>
 
-    <section id="shows" class="section dark-section">
-      <div class="shell">
-        <div class="section-heading split-heading">
-          <div>
-            <p class="section-kicker gold" data-i18n="showProgrammeKicker">TWO-WEEK PROGRAMME</p>
-            <h2 data-i18n="showsTitle">14-Day Show Programme</h2>
-          </div>
-          <p class="section-intro muted" data-i18n="showsIntro">
-            Choose a week and tap a show to see its poster and details.
-          </p>
-        </div>
-
-        <div class="programme-tabs" role="tablist" aria-label="Show programme weeks">
-          <button class="programme-tab active" id="week1Tab" type="button" role="tab" data-week="0" aria-selected="true" data-i18n="weekOne">WEEK 1</button>
-          <button class="programme-tab" id="week2Tab" type="button" role="tab" data-week="1" aria-selected="false" data-i18n="weekTwo">WEEK 2</button>
-        </div>
-
-        <div class="show-programme-grid" id="showProgrammeGrid" role="tabpanel" aria-live="polite"></div>
-      </div>
-    </section>
-
     <dialog class="show-modal" id="showModal" aria-labelledby="showModalTitle">
       <button class="show-modal-close" id="showModalClose" type="button" aria-label="Close">×</button>
       <div class="show-modal-poster" id="showModalPoster">
@@ -596,7 +596,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=56"></script>
+  <script src="script.js?v=57"></script>
   <script src="gallery-config.js?v=1"></script>
   <script src="gallery-frames.js?v=1"></script>
   <script src="gallery.js?v=2"></script>
