@@ -1,10 +1,10 @@
 const CACHE_PREFIX = "port-side-programme-";
-const CACHE_NAME = `${CACHE_PREFIX}v66-programme-order`;
+const CACHE_NAME = `${CACHE_PREFIX}v67-live-music-poster`;
 const FILES = [
   "./",
   "./index.html",
   "./style.css?v=59",
-  "./script.js?v=57",
+  "./script.js?v=58",
   "./gallery-config.js?v=1",
   "./gallery.css?v=2",
   "./gallery-frames.js?v=1",
@@ -17,6 +17,7 @@ const FILES = [
   "./sudoku-night-pool-bg.jpg",
   "./logo.png",
   "./stage-bg.png",
+  "./show-sunday-live-music.jpg",
   "./show-week1-face-africa.jpg",
   "./show-week1-bonnles.jpg",
   "./show-week1-raza-urbana.jpg",

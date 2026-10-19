@@ -53,7 +53,7 @@ const content = {
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week1-bingo.png" },
       { dayKey: "friday", title: "Diva Nova", descriptionKey: "divaNovaDesc", poster: "show-week1-diva-nova.jpg" },
       { dayKey: "saturday", title: "Mexico Show", descriptionKey: "mexicoShowDesc", poster: "show-week1-mexico.jpg" },
-      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "stage-bg.png" }
+      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "show-sunday-live-music.jpg" }
     ],
     [
       { dayKey: "monday", title: "Tropicana Show", descriptionKey: "tropicanaShowDesc", poster: "show-week2-tropicana.jpg" },
@@ -62,7 +62,7 @@ const content = {
       { dayKey: "thursday", title: "Bingo", descriptionKey: "bingoDesc", poster: "show-week2-bingo.png" },
       { dayKey: "friday", title: "SHOW TIME", description: "", poster: "show-week2-friday-show-time.jpg" },
       { dayKey: "saturday", title: "Echoes of Mongolia", descriptionKey: "echoesMongoliaDesc", poster: "show-week2-echoes-mongolia.jpg" },
-      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "stage-bg.png" }
+      { dayKey: "sunday", titleKey: "liveMusicTitle", descriptionKey: "liveMusicDesc", poster: "show-sunday-live-music.jpg" }
     ]
   ]
 };
